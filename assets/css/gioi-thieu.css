@@ -1,0 +1,63 @@
+.breadcrumbs {
+    background-color: #eee;
+}
+
+.breadcrumb-wrapper {}
+
+.breadcrumb-wrapper .breadcrumb {
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item {}
+
+.breadcrumb-item a {
+    color: #212529;
+}
+
+.breadcrumb-item.active a span {
+    color: #6c757d;
+}
+
+/* MAIN CONTENT */
+.main-content-intro {}
+
+.main-content-wrapper {}
+
+.main-content-left {}
+
+.main-content-left .category-block {}
+
+.main-content-left .category-content {}
+
+.main-content-left .category-menu {}
+
+.category-menu ul {}
+
+.category-menu ul li {}
+
+.category-menu ul li a {}
+
+
+.main-content-left .news-block {}
+
+.main-content-left .news-block .news-content {}
+
+.main-content-left .news-block .news-content .new-item-wrapper {}
+
+.main-content-left .news-block .news-content .new-item-wrapper .new-item-link {}
+
+.main-content-left .news-block .news-content .new-item-wrapper .new-item-link img {}
+
+.main-content-left .news-block .news-content .new-item-wrapper .new-item-info {}
+
+.main-content-left .news-block .news-content .new-item-wrapper .new-item-info h3 {}
+
+.main-content-left .news-block .news-content .new-item-wrapper .new-item-info h3 a {}
+
+.main-content-right {}
+.main-content-right .title{}
+.main-content-right .title h2{}
+.main-content-right .title h2 a{}
+
+/* END MAIN CONTENT */
