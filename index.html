@@ -59,12 +59,12 @@
         <div class="main-header">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 company-logo">
+                    <div class="col-xl-2 col-lg-2 col-md-2 company-logo">
                         <a href="#" class="company-logo-link">
                             <img src="./assets/images/logo-4752.png" alt="">
                         </a>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-xl-8 col-lg-10  col-md-10 col-12">
                         <div class="company-info">
                             <div class="company-name">
                                 <span>MÁI HIÊN DI ĐỘNG</span>
@@ -78,7 +78,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-xl-2 col-md-2">
                         <div class="company-hotline">
                             <div class="company-hotline-img">
                                 <img src="./assets/images/logo-phone.png" alt="">
@@ -434,7 +434,7 @@
             <div class="box-news">
                 <div class="container box-news-info">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
                             <div class="news-block">
                                 <h2><a href="#" class="title">TIN TỨC & SỰ KIỆN</a></h2>
                                 <div class="new-item">
@@ -483,7 +483,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 customers-block-col">
+                        <div class="col-xl-6 col-lg-6 col-md-12 customers-block-col">
                             <div class="customers-block">
                                 <h2><a href="#" class="title">KHÁCH HÀNG</a></h2>
                                 <div class="customer-item">
@@ -697,6 +697,9 @@
 
             });
         });
+        $("#navbarSupportedContent a:not(.dropdown-toggle)").click(function() {
+      $("#navbarSupportedContent").collapse("hide");
+    });
     </script>
 
 </body>

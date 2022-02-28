@@ -38,3 +38,22 @@
     color: #fff;
     text-decoration: none !important;
 }
+@media screen and (max-width:1200px){
+    .main-content-construct .project-item-wrapper .project-item-info{
+        padding-left: 20px;
+    }
+    .main-content-construct .project-item-wrapper .project-item-info h3,.main-content-construct .project-item-wrapper .project-item-info p{
+        padding-left: 130px;
+    }
+    .main-content-construct .project-item-wrapper .project-item-info .project-item-title{
+        color: #000;
+    }
+}
+@media screen and (max-width: 992px){
+    .main-content-wrapper{
+        display: block;
+    }
+    .main-content-left .news-block .news-content .new-item-wrapper .new-item-info{
+        padding-top: 15px;
+    }
+}

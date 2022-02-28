@@ -19,3 +19,8 @@
     content: url(../images/tb-icon.png);
     height: unset;
 }
+@media screen and (max-width: 1200px){
+    .main-content-videos .main-content-right .box-product-block .box-product-item-wrapper{
+        width: 195px;
+    }
+}
