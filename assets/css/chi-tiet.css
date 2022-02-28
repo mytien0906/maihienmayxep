@@ -1,0 +1,13 @@
+.main-content-details .main-content-right p.title{
+    text-align: center;
+}
+.main-content-details .main-content-right p.title::after{
+    content: url(../images/tb-icon.png);
+    display: block;
+}
+.detail-block{}
+.detail-item-wrapper{}
+.detail-text{}
+.detail-item-link{}
+.detail-item-info{}
+.detail-item-title{}

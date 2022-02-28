@@ -1,0 +1,21 @@
+.main-content-videos .main-content-left{
+    flex: 1;
+}
+.main-content-videos .main-content-right{
+    flex: 3;
+}
+.main-content-videos .main-content-right .title {
+    text-align: center;
+}
+.main-content-videos .main-content-right .box-products{
+    padding-top: 0;
+}
+.main-content-videos .main-content-right .title h2 p::after{
+}
+.main-content-videos .main-content-right .box-product-block .box-product-item-wrapper{
+    width: 275px;
+}
+.main-content-videos .main-content-right .box-products .title::after{
+    content: url(../images/tb-icon.png);
+    height: unset;
+}
