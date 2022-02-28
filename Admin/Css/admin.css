@@ -1,0 +1,26 @@
+.danhmuc1{
+    width: 100%;
+    margin-top: 68px;
+}
+.container-fluid{
+    padding: 0 !important;
+}
+#select{
+    width: 10%;
+}
+.card .card-body{
+    width: 85%;
+}
+.stretch-card > .card{
+    min-width: 83%;
+}
+.card-body.table-responsive.p-0{
+    margin-left: 15px;
+}
+.form-hinhanh{
+    display: flex;
+    flex-direction: column;
+}
+.form-hinhanh img{
+    width: 30%;
+}
