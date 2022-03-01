@@ -1015,7 +1015,11 @@ ul.slick-dots {
     display: flex;
 }
 
-.top-footer .img-fanpage img {}
+.top-footer .img-fanpage img {
+    width: 60px;
+    height: 60px;
+    object-fit: scale-down;
+}
 
 .top-footer .img-fanpage p {
     color: white;
