@@ -26,7 +26,6 @@ $gioithieu = $UserModel->getGioiThieuhbyId();
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/gioi-thieu.css">
     <link rel="stylesheet" type="text/css" href="./assets/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/slick/slick-theme.css" />
 </head>
 
 <body>

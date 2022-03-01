@@ -117,23 +117,46 @@ $getAllSlide = $UserModel->getAllSlide();
             </div>
         </div>
         <div class="bottom-header" id="myHeader">
-            <nav class="header-navbar">
-                <div class="container">
-                    <ul class="header-navbar-list">
-                        <li class="header-navbar-item active"><a href="#" class="header-navbar-link">Danh Mục Sản
-                                phẩm</a></li>
-                        <li class="header-navbar-item"><a href="index.php" class="header-navbar-link">Trang chủ</a>
-                        </li>
-                        <li class="header-navbar-item"><a href="gioi-thieu.php" class="header-navbar-link">Giới
-                                thiệu</a></li>
-                        <li class="header-navbar-item"><a href="cong-trinh.php" class="header-navbar-link">Công trình</a></li>
-                        <li class="header-navbar-item"><a href="dich-vu.php" class="header-navbar-link">Dịch vụ</a></li>
-                        <li class="header-navbar-item"><a href="tin-tuc.php" class="header-navbar-link">Tin tức</a></li>
-                        <li class="header-navbar-item"><a href="video.php" class="header-navbar-link">Video</a></li>
-                        <li class="header-navbar-item"><a href="lien-he.php" class="header-navbar-link">Liên hệ</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light header-navbar">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav header-navbar-list">
+                                <li class="nav-item header-navbar-item active">
+                                    <a href="#" class="header-navbar-link">Danh Mục Sản
+                                        phẩm</a>
+                                </li>
+                                <li class="nav-item header-navbar-item">
+                                    <a href="index.php" class="header-navbar-link">Trang chủ</a>
+                                </li>
+                                <li class="nav-item header-navbar-item">
+                                    <a href="gioi-thieu.php" class="header-navbar-link">Giới thiệu</a>
+                                </li>
+                                <li class="nav-item header-navbar-item">
+                                    <a href="cong-trinh.php" class="header-navbar-link">Công trình</a>
+                                </li>
+                                <li class="nav-item header-navbar-item">
+                                    <a href="dich-vu.php" class="header-navbar-link">Dịch vụ</a>
+                                </li>
+                                <li class="nav-item header-navbar-item">
+                                    <a href="tin-tuc.php" class="header-navbar-link">Tin tức</a>
+                                </li>
+                                <li class="nav-item header-navbar-item">
+                                    <a href="video.php" class="header-navbar-link">Video</a>
+                                </li>
+                                <li class="nav-item header-navbar-item">
+                                    <a href="lien-he.php" class="header-navbar-link">Liên hệ</a>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
         <div class="header-slider">
             <div class="container">
@@ -167,10 +190,6 @@ $getAllSlide = $UserModel->getAllSlide();
                                 <div class="carousel-inner">
                                 <?php foreach($getAllSlide as $key=>$slide){ ?>
                                     <div class="carousel-item<?= $key == 0 ? ' active' : '' ?>">
-                                        <img src="/Admin/thumb/<?= $slide['photo'] ?>" class="d-block w-100"
-                                            alt="...">
-                                    </div>
-                                    <div class="carousel-item ">
                                         <img src="/Admin/thumb/<?= $slide['photo'] ?>" class="d-block w-100"
                                             alt="...">
                                     </div>
@@ -368,7 +387,7 @@ $getAllSlide = $UserModel->getAllSlide();
         <div class="scrollToTop" style="display: none;">
             <img src="assets/images/top.png" alt="Go Top">
         </div>
-        <div class="sticky-icon-block">
+        <!-- <div class="sticky-icon-block">
             <div class="sticky-icon-wrapper">
                 <a href="" class="sticky-icon-link">
                     <p>
@@ -383,7 +402,12 @@ $getAllSlide = $UserModel->getAllSlide();
                     </p>
                 </a>
             </div>
-        </div>
+        </div> -->
+        <a class="btn-zalo btn-frame text-decoration-none" target="_blank" href="https://zalo.me/0972378247">
+            <div class="animated infinite zoomIn kenit-alo-circle"></div>
+            <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+            <i><img src="assets/images/zl.png" alt="Zalo"></i>
+        </a>
         <div class="top-footer">
             <div class="container">
                 <div class="row">
