@@ -5,6 +5,11 @@
    $UserModel = new UserModel();
    $gioithieus=$UserModel->getAllGioiThieu();
    $getGioiThieuhbyId = $UserModel->getGioiThieuhbyId();
+   if(isset($_POST['reset'])){
+    echo '<script type="text/javascript"> 
+    form.reset() 
+    </script>';
+  }
    if(isset($_POST['submit'])){
     //  echo($_FILES['fileupload']['tmp_name']);die();
       $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
@@ -80,7 +85,7 @@
                       <?php } ?>
                     </div>
                     <button type="submit" name="submit"  value="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button class="btn btn-light" name="reset">Cancel</button>
                   </form>
                 </div>
               </div>

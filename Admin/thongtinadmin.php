@@ -1,15 +1,23 @@
 
   <?php
+  session_start();
    require_once ('./Model/UserModel.php');
    include "/head.php" ;
    $UserModel = new UserModel();
-   $admin=$UserModel->admin();
+   $admin=$UserModel->admin($_SESSION['userid']);
+   if(isset($_POST['reset'])){
+    echo '<script type="text/javascript"> 
+    form.reset() 
+    </script>';
+  }
+  // echo ($_SESSION['userid']);die();
    if(!empty ($_POST['submit'])){
+       $id = $_SESSION['userid'];
        $fullname = $_POST['fullname'];
        $email = $_POST['email'];
        $address = $_POST['address'];
        $gender = $_POST['gender'];
-       $admins = $UserModel->Updateadmin($fullname,$email,$gender,$address);
+       $admins = $UserModel->Updateadmin($id,$fullname,$email,$gender,$address);
    }
 ?>
   <div class="container-scroller">
@@ -55,7 +63,7 @@
                       </div>
                       <?php } ?>
                     <button type="submit" name="submit"  value="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button class="btn btn-light" name="reset">Cancel</button>
                   </form>
                 </div>
               </div>

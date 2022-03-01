@@ -3,6 +3,38 @@ require_once ('./Admin/Model/UserModel_index.php');
 include '/head.php';
 $UserModel = new UserModel();
 $lienhe = $UserModel->getlienhehbyId();
+$error = "";
+if(isset($_POST['reset'])){
+    echo '<script type="text/javascript"> 
+    form.reset() 
+    </script>';
+}
+if(isset($_POST['submit-contact'])){
+    // echo(1);die();
+    if(isset($_POST['ten']) && isset($_POST['dienthoai'])&& isset($_POST['diachi'])&& isset($_POST['email'])&& isset($_POST['tieude'])&& isset($_POST['noidung'])) {
+      $foderPath = './Admin/file/' . time() . $_FILES['fileupload']['name'];
+      $target_file = $_FILES["fileupload"]["name"];
+      $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+          if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
+            $name = $_POST['ten'];
+            $dienthoai = $_POST['dienthoai'];
+            $diachi = $_POST['diachi'];
+            $email = $_POST['email'];
+            $tieude = $_POST['tieude'];
+            $noidung = $_POST['noidung'];
+            $file = time().$_FILES['fileupload']['name'];
+            
+            $UserModel->insertThongtinlienhe($name, $dienthoai,$diachi,$email,$tieude,$noidung,$file);
+            header('Location: lien-he.php');
+            }
+          else{
+            $error = "Lỗi File";
+          } 
+    } 
+    else{
+        $error = "Nhập Đủ Thông Tin";
+    }
+}
 ?>
     <!-- Start Header-->
     <?php include 'header.php' ?>
@@ -18,6 +50,13 @@ $lienhe = $UserModel->getlienhehbyId();
                         </div>
                         <form class="form-contact validation-contact" novalidate="" method="post" action=""
                             enctype="multipart/form-data">
+                            <?php 
+                                if($error != "") {
+                                ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?= $error ?>
+                                </div>
+                            <?php } ?>
                             <div class="row">
                                 <div class="input-contact col-sm-6">
                                     <input type="text" class="form-control" id="ten" name="ten" placeholder="Họ tên"
@@ -53,11 +92,15 @@ $lienhe = $UserModel->getlienhehbyId();
                                 <div class="invalid-feedback">Vui lòng nhập nội dung</div>
                             </div>
                             <div class="input-contact">
-                                <input type="file" class="custom-file-input" name="file">
+                                <input type="file" class="custom-file-input" name="fileupload" id="fileupload">
                                 <label class="custom-file-label" for="file" title="Chọn">Đính kèm file</label>
                             </div>
+                            <!-- <div class="form-group form-hinhanh input-contact">
+                                Chọn file để upload:
+                                <input type="file" name="fileupload" id="fileupload"/>
+                            </div> -->
                             <input type="submit" class="btn btn-primary" name="submit-contact" value="Gửi">
-                            <input type="reset" class="btn btn-secondary" value="Nhập lại">
+                            <input type="reset" class="btn btn-secondary" name="reset" value="Nhập lại">
                             <input type="hidden" name="recaptcha_response_contact" id="recaptchaResponseContact">
                         </form>
                     </div>

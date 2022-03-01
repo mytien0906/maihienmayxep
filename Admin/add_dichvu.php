@@ -8,7 +8,11 @@ if(!empty($_GET['dichvu_id'])){
   $getdichvu = $UserModel->getdichvubyId($_GET['dichvu_id']);
 }
 $error = "";
-// echo $_GET['ds_id'];die();
+if(isset($_POST['reset'])){
+  echo '<script type="text/javascript"> 
+  form.reset() 
+  </script>';
+}
 if(isset($_POST['submit'])){
   if(!empty($_POST['dichvu_name']) && !empty($_POST['dichvu_noidung']) && !empty($_FILES['fileupload'])) {
     $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
@@ -104,7 +108,7 @@ if(isset($_POST['submit'])){
               <?php } ?>
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-light" name="reset">Cancel</button>
           </form>
         </div>
       </div>

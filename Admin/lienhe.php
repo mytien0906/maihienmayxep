@@ -4,6 +4,11 @@
    include "/head.php" ;
    $UserModel = new UserModel();
    $lienhe = $UserModel->getlienhehbyId();
+   if(isset($_POST['reset'])){
+    echo '<script type="text/javascript"> 
+    form.reset() 
+    </script>';
+  }
    if(isset($_POST['submit'])){
     $noidung = $_POST['noidung'];
     $updatefooter=$UserModel->updatelienhe( $noidung);
@@ -32,7 +37,7 @@
                       <textarea name="noidung" id="" cols="100" rows="10" ><?php if(!empty($lienhe[0]['noidung'])) echo htmlspecialchars_decode($lienhe[0]['noidung']) ?></textarea>
                     </div>
                     <button type="submit" name="submit"  value="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button class="btn btn-light" name="reset">Cancel</button>
                   </form>
                 </div>
               </div>

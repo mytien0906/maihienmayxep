@@ -9,9 +9,13 @@ if(!empty ($_POST['submit'])){
   $passWord = trim($_POST["password"]);
   if ($userName != "" && $passWord != "") {
     $rows = $UserModel->login($userName, $passWord);
-    if($rows != []){
-      $_SESSION['admin_login'] = true;
-      header("location:index.php");
+    if(!empty($rows)){
+      foreach($rows as $row){
+        $_SESSION['admin_login'] = true;
+        $_SESSION['userid'] = $row['id'];
+        // echo ($_SESSION['userid']);die();
+        header("location:index.php");
+      }
     }
     else{
       // echo(2);

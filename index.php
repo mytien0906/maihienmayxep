@@ -137,11 +137,11 @@ $getAllSlide = $UserModel->getAllSlide();
                                         <a href="chi-tiet.php?id=<?= $tintuc['tintuc_id'] ?>" class="new-item-link">
                                             <img src="./Admin/thumb/<?= $tintuc['photo'] ?>"
                                                 alt="hinh anh cong trinh"></a>
-                                        <div class="new-item-info">
+                                        <div class="new-item-info tintuc">
                                             <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep")  ?>" class="new-item-title">
                                                    <?= $tintuc['tintuc_name'] ?>
                                                 </a></h3>
-                                            <p><?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?>
+                                                <div class="tintuc_noidung"><p><?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?></div>
                                             </p>
                                         </div>
                                     </div>
@@ -189,3 +189,15 @@ $getAllSlide = $UserModel->getAllSlide();
     <!-- End Main Content -->
     <!-- Start Footer -->
     <?php include 'footer.php'; include 'map-index.php' ?>
+<script>
+    function trimText(str ,wordCount){
+        var strArray = str.split(' ');
+    var subArray = strArray.slice(0, wordCount);
+    var result = subArray.join(" ");
+    return result + '...';
+}
+
+var str = $('.tintuc .tintuc_noidung').text();
+var result = trimText(str, 200);
+$('.tintuc .tintuc_noidung').text(result);
+</script>

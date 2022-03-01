@@ -5,6 +5,12 @@ include "/head.php" ;
 $UserModel = new UserModel();
 $error = "";
 $getdanhsasch1 = $UserModel->getAlleDanhSach1();
+if(isset($_POST['reset'])){
+  echo '<script type="text/javascript"> 
+  form.reset() 
+  </script>';
+}
+if(isset($_POST['submit'])){
   if(isset($_POST['tenvi']) && isset($_POST['motavi']) && !empty($_FILES['fileupload'])) {
     // echo(1);die();
     $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
@@ -32,6 +38,7 @@ $getdanhsasch1 = $UserModel->getAlleDanhSach1();
       } 
     } 
   }
+}
 
  ?>
 <div class="container-scroller">
@@ -88,7 +95,7 @@ $getdanhsasch1 = $UserModel->getAlleDanhSach1();
               <input type="file" name="fileupload" id="fileupload"/>
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-light" name="reset">Cancel</button>
           </form>
         </div>
       </div>
