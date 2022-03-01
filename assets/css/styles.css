@@ -28,6 +28,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    margin-bottom: 0;
+}
+
 .container {
     max-width: 1250px !important;
 }
@@ -86,7 +90,7 @@ a {
 
 .company-logo {
     position: relative;
-    width: 130px !important;
+    width: 150px;
 
 }
 
@@ -167,6 +171,7 @@ a {
 
 .bottom-header nav.header-navbar div {
     padding: 0;
+    display: block;
 }
 
 .bottom-header nav.header-navbar .header-navbar-list {
@@ -380,7 +385,18 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
 .box-product-categories {
     text-align: center;
 }
-
+.box-product-categories .box-product-item-wrapper .box-product-link img{
+    width: 100%;
+    height: 200px;
+}
+.box-product-categories .box-product-item-wrapper h3{
+    font-size: 18px;
+    color: #212529;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 25px;
+    font-weight: 500;
+}
 .box-product-categories a {
     color: var(--red-light-color);
     padding-top: 5px;
@@ -491,6 +507,8 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     border: thin solid #dfdfdf;
     overflow: hidden;
     position: relative;
+    width: 100%;
+    height: 180px;
 }
 
 .box-projects .project-block .project-item-wrapper .project-item-info p {
@@ -531,47 +549,9 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     max-height: 80px;
 }
 
-.box-fields-wrapper .box-field-link:hover img {
-    border: 1px solid #fff;
-}
-
-.box-fields-wrapper .box-field-link::after {
-    position: absolute;
-    top: 0;
-    left: -66%;
-    z-index: 2;
-    display: block;
-    content: "";
-    width: 50%;
-    height: 100%;
-    background: -webkit-linear-gradient( left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100% );
-    background: linear-gradient( to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100% );
-    -webkit-transform: skewX(-10deg);
-    transform: skewX(-10deg);
-}
-
-.box-fields-wrapper .box-field-link:hover::after {
-    -webkit-animation: shine 0.75s;
-    animation: shine 0.75s;
-}
-
-@-webkit-keyframes shine {
-    100% {
-      left: 125%;
-    }
-}
-
-@keyframes shine {
-    100% {
-      left: 125%;
-    }
-}
-
 .box-fields-wrapper .box-field-link img {
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: 100%;
-    border: 5px solid #fff;
-    transition: 0.5s;
 }
 
 .box-fields-wrapper .box-field-info p {
@@ -914,11 +894,12 @@ ul.slick-dots {
 }
 
 .slider-item .your-class div {
+    /* width: 94px; */
     margin-right: 10px;
     margin-left: 10px;
-    padding-bottom: 8px;
     overflow: hidden;
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
 }
 
 .slider-item .your-class ul.slick-dots button {
@@ -1173,16 +1154,136 @@ ul.slick-dots {
 
 /* END FOOTER */
 
-@media screen and (max-width: 992px) {
-    .bottom-header {
-        background: none;
-        box-shadow: 0 0 3px 1px #f3f3f3;
+@media screen and (max-width: 1200px) {
+
+    /* START HEADER */
+    .main-header {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .company-hotline {
+        display: none;
+    }
+
+    .company-info {
+        text-align: right;
+        margin-right: 15px;
+    }
+
+    .company-info .company-name span:nth-child(2) {
+        margin-right: 40px;
     }
 
     .bottom-header nav.header-navbar .header-navbar-item {
-        width: 30%;
-        padding: 11px 18px;
-        background: #ff2731;
+        /* padding: 0; */
+    }
+
+    .bottom-header nav.header-navbar .header-navbar-item {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .bottom-header nav.header-navbar .header-navbar-link, .header-navbar-category-item a {
+        font-weight: 400;
+    }
+
+    .header-slider {
+        display: none;
+    }
+
+    .top-main-content .intro-block .title, .box-projects .title, .news-block .title, .customers-block .title {
+        padding-top: 0;
+    }
+
+    .top-main-content .intro-block .intro-des p:nth-child(2) {
+        text-align: justify;
+    }
+
+    .box-fields-wrapper .box-field-info p {
         text-align: center;
+    }
+
+    .box-fields-wrapper .box-field-info h3 {
+        text-align: center;
+        margin: 0;
+    }
+
+    /* END HEADER */
+    .main-content-intro .main-content-wrapper .main-content-left,
+    .main-content-construct .main-content-wrapper .main-content-left,
+    .main-content-videos .main-content-wrapper .main-content-left{
+        flex: 2;
+    }
+
+    .main-content-intro .main-content-wrapper .main-content-right,
+    .main-content-construct .main-content-wrapper .main-content-right,
+    .main-content-videos .main-content-wrapper .main-content-right
+    {
+        flex: 5;
+    }
+
+    .main-content-left .news-block .news-content .new-item-wrapper .new-item-info h3 {
+        width: 100%;
+        color: #000;
+        text-transform: capitalize;
+        font-size: 18px;
+    }
+    .new-item-info{
+        flex: 3;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .new-item-link{
+        flex: 2;
+    }
+    .main-content-left .news-block .news-content .new-item-wrapper .new-item-link{
+        margin: 3%;
+    }
+}
+/* large */
+@media screen and (max-width: 992px){
+    .bottom-header{
+        background: none;
+    }
+    .bottom-header li.header-navbar-item{
+        width: 30%;
+        background: #ff2731;
+    }
+    .box-projects .project-block{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .box-news .new-item{
+        width: 98%
+    }
+    .new-item-info{
+        padding-left: 35px;
+    }
+    .main-content-videos .main-content-right .box-product-block .box-product-item-wrapper{
+        width: 275px !important;
+    }
+    .top-footer .img-fanpage p{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 768px){
+    .box-product-categories .box-product-block, .box-projects .project-block{
+        grid-template-columns: 1fr;
+    }
+    .box-product-block .box-product-item-wrapper .box-product-link img,
+    .box-projects .project-block img
+    {
+        height: 100%;
+    }
+    .box-projects .project-block .project-item-wrapper .project-item-info .project-item-title{
+        min-height:45px;
+    }
+    .top-footer .img-fanpage{
+       justify-content:center;
+       align-items:center;
+    }
+    .fg-text, .fp-link{
+        text-align:center;
+        margin-top: 15px;
     }
 }
