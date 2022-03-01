@@ -14,7 +14,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+        <!-- Link file css -->
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/chi-tiet.css">
+    <link rel="stylesheet" href="./assets/css/cong-trinh.css">
+    <link rel="stylesheet" href="./assets/css/gioi-thieu.css">
+    <link rel="stylesheet" href="./assets/css/lien-he.css">
+    <link rel="stylesheet" href="./assets/css/tin-tuc.css">
+    <link rel="stylesheet" href="./assets/css/video.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
     <link rel="stylesheet" type="text/css" href="./assets/slick/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

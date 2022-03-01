@@ -1,3 +1,90 @@
+.btn-contact-block {
+   display: block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.btn-contact-block p.btn-img{
+    display: flex;
+    display: -ms-flex;
+    justify-content: center;
+    align-items: center;
+    -ms-flex-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1e88ec;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-contact-block p.btn-img img{
+    vertical-align: middle;
+    width: 70%;
+}
+
+.btn-contact-block .child-nth-2 {
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    width: 70px;
+    height: 70px;
+    top: -10px;
+    right: -10px;
+    position: absolute;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: #1e88ec;
+    opacity: 0.4;
+}
+
+.btn-contact-block .child-nth-1 {
+
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    width: 60px;
+    height: 60px;
+    top: -5px;
+    right: -5px;
+    position: absolute;
+    background-color: transparent;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid #1e88ec;
+    opacity: 0.1;
+    border-color: #1e88ec;
+    opacity: 0.5;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+.btn-effect{
+    bottom: 315px;
+position: fixed;
+}
+/* .btn-effect:nth-child(1){
+    bottom: 315px;
+} */
+.btn-effect:nth-child(2){
+    bottom: 230px;
+}
 :root {
     --green-dark-color: #246a34;
     --green-light-color: #006600;
@@ -385,11 +472,13 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
 .box-product-categories {
     text-align: center;
 }
-.box-product-categories .box-product-item-wrapper .box-product-link img{
+
+.box-product-categories .box-product-item-wrapper .box-product-link img {
     width: 100%;
     height: 200px;
 }
-.box-product-categories .box-product-item-wrapper h3{
+
+.box-product-categories .box-product-item-wrapper h3 {
     font-size: 18px;
     color: #212529;
     margin-bottom: 10px;
@@ -397,6 +486,7 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     padding-top: 25px;
     font-weight: 500;
 }
+
 .box-product-categories a {
     color: var(--red-light-color);
     padding-top: 5px;
@@ -555,9 +645,11 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     width: 100%;
     border: 4px solid #fff;
 }
-.box-fields-wrapper .box-field-link:hover img{
+
+.box-fields-wrapper .box-field-link:hover img {
     transform: scale(1.1)
 }
+
 .box-fields-wrapper .box-field-info p {
     font-size: 13px;
     color: #ffffff;
@@ -1216,14 +1308,13 @@ ul.slick-dots {
     /* END HEADER */
     .main-content-intro .main-content-wrapper .main-content-left,
     .main-content-construct .main-content-wrapper .main-content-left,
-    .main-content-videos .main-content-wrapper .main-content-left{
+    .main-content-videos .main-content-wrapper .main-content-left {
         flex: 2;
     }
 
     .main-content-intro .main-content-wrapper .main-content-right,
     .main-content-construct .main-content-wrapper .main-content-right,
-    .main-content-videos .main-content-wrapper .main-content-right
-    {
+    .main-content-videos .main-content-wrapper .main-content-right {
         flex: 5;
     }
 
@@ -1233,61 +1324,75 @@ ul.slick-dots {
         text-transform: capitalize;
         font-size: 18px;
     }
-    .new-item-info{
+
+    .new-item-info {
         flex: 3;
         padding-right: 15px;
         padding-left: 15px;
     }
-    .new-item-link{
+
+    .new-item-link {
         flex: 2;
     }
-    .main-content-left .news-block .news-content .new-item-wrapper .new-item-link{
+
+    .main-content-left .news-block .news-content .new-item-wrapper .new-item-link {
         margin: 3%;
     }
 }
+
 /* large */
-@media screen and (max-width: 992px){
-    .bottom-header{
+@media screen and (max-width: 992px) {
+    .bottom-header {
         background: none;
     }
-    .bottom-header li.header-navbar-item{
+
+    .bottom-header li.header-navbar-item {
         width: 30%;
         background: #ff2731;
     }
-    .box-projects .project-block{
-        grid-template-columns: repeat(2,1fr);
+
+    .box-projects .project-block {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .box-news .new-item{
+
+    .box-news .new-item {
         width: 98%
     }
-    .new-item-info{
+
+    .new-item-info {
         padding-left: 35px;
     }
-    .main-content-videos .main-content-right .box-product-block .box-product-item-wrapper{
+
+    .main-content-videos .main-content-right .box-product-block .box-product-item-wrapper {
         width: 275px !important;
     }
-    .top-footer .img-fanpage p{
+
+    .top-footer .img-fanpage p {
         margin-top: 10px;
     }
 }
-@media screen and (max-width: 768px){
-    .box-product-categories .box-product-block, .box-projects .project-block{
+
+@media screen and (max-width: 768px) {
+    .box-product-categories .box-product-block, .box-projects .project-block {
         grid-template-columns: 1fr;
     }
+
     .box-product-block .box-product-item-wrapper .box-product-link img,
-    .box-projects .project-block img
-    {
+    .box-projects .project-block img {
         height: 100%;
     }
-    .box-projects .project-block .project-item-wrapper .project-item-info .project-item-title{
-        min-height:45px;
+
+    .box-projects .project-block .project-item-wrapper .project-item-info .project-item-title {
+        min-height: 45px;
     }
-    .top-footer .img-fanpage{
-       justify-content:center;
-       align-items:center;
+
+    .top-footer .img-fanpage {
+        justify-content: center;
+        align-items: center;
     }
-    .fg-text, .fp-link{
-        text-align:center;
+
+    .fg-text, .fp-link {
+        text-align: center;
         margin-top: 15px;
     }
 }
