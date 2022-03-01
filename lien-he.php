@@ -12,7 +12,7 @@ $lienhe = $UserModel->getlienhehbyId();
         <div class="container">
             <div class="main-content-wrapper">
                     <h2><span class="title">LIÊN HỆ</span></h2>
-                    <div>
+                    <div id="main-content">
                         <div class="lienhe">
                             <?= $lienhe[0]['noidung'] ?>
                         </div>

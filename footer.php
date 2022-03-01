@@ -4,7 +4,6 @@
         <img src="assets/images/top.png" alt="Go Top">
     </div>
 
-    <div class="btn-contact-wrapper">
     <a class="btn-effect btn-contact-block">
         <div class="child-nth-1 animate__animated animate__zoomIn"></div>
         <div class="child-nth-2 animate__animated animate__pulse"></div>
@@ -20,7 +19,6 @@
             <img src="./assets/images/hl.png" alt="">
         </p>
     </a>
-    </div>
     <!-- CHUA CO ICON ZALO & HOTLINE -->
     <div class="top-footer">
         <div class="container">

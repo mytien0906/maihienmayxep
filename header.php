@@ -37,12 +37,12 @@
         <div class="main-header">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 company-logo">
+                    <div class="col-lg-2 col-md-2 company-logo">
                         <a href="#" class="company-logo-link">
                             <img src="./assets/images/logo-4752.png" alt="">
                         </a>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-lg-10 col-md-10">
                         <div class="company-info">
                             <div class="company-name">
                                 <span>MÁI HIÊN DI ĐỘNG</span>
@@ -56,7 +56,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2">
                         <div class="company-hotline">
                             <div class="company-hotline-img">
                                 <img src="./assets/images/logo-phone.png" alt="">
@@ -75,7 +75,7 @@
         </div>
         <div class="bottom-header" id="myHeader">
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light header-navbar">
+                <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
