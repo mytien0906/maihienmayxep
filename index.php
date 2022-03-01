@@ -34,10 +34,9 @@ $getAllSlide = $UserModel->getAllSlide();
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="./assets/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/slick/slick-theme.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 </head>
 
 <body>
@@ -117,7 +116,7 @@ $getAllSlide = $UserModel->getAllSlide();
                 </div>
             </div>
         </div>
-        <div class="bottom-header">
+        <div class="bottom-header" id="myHeader">
             <nav class="header-navbar">
                 <div class="container">
                     <ul class="header-navbar-list">
@@ -166,8 +165,8 @@ $getAllSlide = $UserModel->getAllSlide();
                         <div class="header-carousel">
                             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
-                                <?php foreach($getAllSlide as $slide){ ?>
-                                    <div class="carousel-item active">
+                                <?php foreach($getAllSlide as $key=>$slide){ ?>
+                                    <div class="carousel-item<?= $key == 0 ? ' active' : '' ?>">
                                         <img src="/Admin/thumb/<?= $slide['photo'] ?>" class="d-block w-100"
                                             alt="...">
                                     </div>
@@ -443,46 +442,8 @@ $getAllSlide = $UserModel->getAllSlide();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="./assets/slick/slick.min.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.your-class').slick({
-                dots: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 1000,
-                centerMode: true,
-                centerPadding: 0,
-                responsive: [{
-                    breakpoint: 768,
-                    infinite: true,
-                    settings: {
-                        slidesToScroll: 1,
-                        slidesToShow: 1,
-                        centerMode: true,
-                        centerPadding: 0,
-                    }
-                }]
-
-            });
-        });
-        $('.card-deck a').fancybox({
-  caption : function( instance, item ) {
-    return $(this).parent().find('.card-text').html();
-  }
-});
-    </script>
-
 </body>
 
 </html>
