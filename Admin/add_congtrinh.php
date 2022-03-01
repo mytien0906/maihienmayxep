@@ -8,7 +8,11 @@ if(!empty($_GET['congtrinh_id'])){
   $getcongtrinh = $UserModel->getcongtrinhbyId($_GET['congtrinh_id']);
 }
 $error ="";
-// echo $getcongtrinh[0]['congtrinh_name'];die();
+if(isset($_POST['reset'])){
+  echo '<script type="text/javascript"> 
+  form.reset() 
+  </script>';
+}
 if(isset($_POST['submit'])){
   if(!empty($_POST['congtrinh_name']) && !empty($_POST['congtrinh_noidung']) && !empty($_FILES['fileupload'])) {
     $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
@@ -102,7 +106,7 @@ if(isset($_POST['submit'])){
               <?php } ?>
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-light" name="reset">Cancel</button>
           </form>
         </div>
       </div>

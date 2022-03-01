@@ -8,7 +8,11 @@ if(!empty($_GET['video_id'])){
   $getvideo = $UserModel->getVideobyId($_GET['video_id']);
 }
 $error = "";
-// echo $_GET['video_id'];die();
+if(isset($_POST['reset'])){
+  echo '<script type="text/javascript"> 
+  form.reset() 
+  </script>';
+}
 if(isset($_POST['submit'])){
 // echo $_POST['video_name'];die();
   if(!empty($_POST['video_name']) && !empty($_POST['video_noidung']) && !empty($_FILES['fileupload'])) {
@@ -105,7 +109,7 @@ if(isset($_POST['submit'])){
               <?php } ?>
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-light" name="reset">Cancel</button>
           </form>
         </div>
       </div>

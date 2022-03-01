@@ -7,7 +7,11 @@ $UserModel = new UserModel();
 if(!empty($_GET['id'])){
   $getproductbyid = $UserModel->getproductbyId($_GET['id']);
 }
-// var_dump($getproductbyid[0]['id']);die();
+if(isset($_POST['reset'])){
+  echo '<script type="text/javascript"> 
+  form.reset() 
+  </script>';
+}
 $getdanhsasch1 = $UserModel->getAlleDanhSach1();
 
 if(isset($_GET['id'])){
@@ -96,7 +100,7 @@ if(isset($_GET['id'])){
               <img src="./thumb/<?php echo $getproductbyid[0]['photo']?>" alt="">
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-light" name="reset">Cancel</button>
           </form>
         </div>
       </div>

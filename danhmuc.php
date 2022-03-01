@@ -28,12 +28,25 @@ $tintucs = $UserModel->getAllTintuc();
                 <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-link">
                     <img src="./Admin/thumb/<?= $tintuc['photo'] ?>"
                         alt="hinh anh cong trinh"></a>
-                <div class="new-item-info">
-                    <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
-                            <?= $tintuc['tintuc_name'] ?>
-                        </a></h3>
-                </div>
+                        <div class="new-item-info tintuc_danhmuc">
+                          <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
+                                  <?= $tintuc['tintuc_name'] ?>
+                              </a></h3>
+                          <div class="tintuc_noidung_danhmuc"><p> <?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?> </p></div>
+                        </div>
             </div>
         <?php } }?>
       </div>
 </div>
+<script>
+function trimText(str ,wordCount){
+    var strArray = str.split(' ');
+    var subArray = strArray.slice(0, wordCount);
+    var result = subArray.join(" ");
+    return result + '...';
+}
+
+var str = $('.tintuc_danhmuc .tintuc_noidung_danhmuc').text();
+var result = trimText(str, 50);
+$('.tintuc_danhmuc .tintuc_noidung_danhmuc').text(result);
+</script>

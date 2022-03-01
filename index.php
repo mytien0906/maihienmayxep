@@ -1,5 +1,5 @@
 <?php
-require_once('./Admin/Model/UserModel_index.php');
+require_once ('./Admin/Model/UserModel_index.php');
 include 'head.php';
 $UserModel = new UserModel();
 $danhsachs = $UserModel->getAlleDanhSach1();
@@ -128,20 +128,19 @@ $getAllSlide = $UserModel->getAllSlide();
                         <div class="col-md-6">
                             <div class="news-block">
                                 <h2><a href="#" class="title">TIN TỨC & SỰ KIỆN</a></h2>
-                                <?php foreach ($tintucs as $tintuc) { ?>
-                                    <?php if ($tintuc['noibat'] == 1) { ?>
-                                        <div class="new-item">
-                                            <div class="new-item-wrapper">
-                                                <a href="chi-tiet.php?id=<?= $tintuc['tintuc_id'] ?>" class="new-item-link">
-                                                    <img src="./Admin/thumb/<?= $tintuc['photo'] ?>" alt="hinh anh cong trinh"></a>
-                                                <div class="new-item-info">
-                                                    <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep")  ?>" class="new-item-title">
-                                                            <?= $tintuc['tintuc_name'] ?>
-                                                        </a></h3>
-                                                    <p><?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?>
-                                                    </p>
-                                                </div>
-                                            </div>
+                                <?php foreach($tintucs as $tintuc){ ?>
+                                    <?php if($tintuc['noibat'] == 1) {?>
+                                <div class="new-item">
+                                    <div class="new-item-wrapper">
+                                        <a href="chi-tiet.php?id=<?= $tintuc['tintuc_id'] ?>" class="new-item-link">
+                                            <img src="./Admin/thumb/<?= $tintuc['photo'] ?>"
+                                                alt="hinh anh cong trinh"></a>
+                                        <div class="new-item-info tintuc">
+                                            <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep")  ?>" class="new-item-title">
+                                                   <?= $tintuc['tintuc_name'] ?>
+                                                </a></h3>
+                                                <div class="tintuc_noidung"><p><?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?></div>
+                                            </p>
                                         </div>
                                     <?php } ?>
                                 <?php } ?>
@@ -184,5 +183,15 @@ $getAllSlide = $UserModel->getAllSlide();
     </div>
     <!-- End Main Content -->
     <!-- Start Footer -->
-    <?php include 'footer.php';
-    include 'map-index.php' ?>
+    <?php include 'footer.php'; include 'map-index.php' ?>
+<script>
+    function trimText(str ,wordCount){
+        var strArray = str.split(' ');
+    var subArray = strArray.slice(0, wordCount);
+    var result = subArray.join(" ");
+    return result + '...';
+}
+
+var str = $('.tintuc .tintuc_noidung').text();
+var result = trimText(str, 200);
+$('.tintuc .tintuc_noidung').text(result);

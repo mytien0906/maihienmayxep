@@ -1,7 +1,10 @@
 <?php 
+session_start();
 require_once ('./Model/UserModel.php');
 include "/head.php" ;
 $UserModel = new UserModel();
+$thongtinlienhe = $UserModel->getAllThongTinLienHe();
+$admin=$UserModel->admin($_SESSION['userid']);
 ?>
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
@@ -67,9 +70,17 @@ $UserModel = new UserModel();
           </li>
           <li class="nav-item nav-profile dropdown mr-0 mr-sm-3">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <span class="nav-profile-name mr-2">Craig Estrada</span>              
+              <?php foreach($admin as $ad) {?>
+              <span class="nav-profile-name mr-2"><?= $ad['fullname'] ?></span>              
+              <?php }?>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item" href="thong-tin-lien-he.php">
+              <i class="mdi mdi-settings text-primary"></i>
+              <?php foreach($thongtinlienhe as $thongtin) {?>
+                Liên Hệ <?php if($thongtin['xacnhan'] == 0) echo count($thongtin['xacnhan']) ?>
+              <?php }?>
+              </a>
               <a class="dropdown-item" href="thongtinadmin.php">
                 <i class="mdi mdi-settings text-primary"></i>
                 Settings

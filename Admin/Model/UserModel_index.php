@@ -277,4 +277,12 @@ class UserModel extends BaseModel{
             $product = $this->select($sql);
             return $product;
     }
+    // Thong tin lien he
+    public function insertThongtinlienhe($name, $sdt,$diachi,$email,$chude,$noidung,$file){
+        $date = date("Y-m-d");
+        $sql = "INSERT INTO `table_lienhe_user`( `name`, `sđt`, `address`, `email`, `chude`, `noidung`, `file`, `ngaytao`) VALUES ('$name','$sdt','$diachi','$email','$chude','$noidung','$file','$date')";
+        // echo($sql);die();
+        $product = $this->insert($sql);
+        return $product;
+    }
 }

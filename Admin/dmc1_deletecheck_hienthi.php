@@ -145,3 +145,16 @@ if($_GET['atc']=='mangxh'){
         }
     }
 }
+if($_GET['atc']=='thongtinlienhe'){
+    if(isset($_POST['id'])){
+        $id = $_POST['id'];
+        // echo($id);die();
+        $res = $UserModel->updateXacNhanBangKhongThongTinLienHe($id);
+        if($res){
+            echo 1;
+        }
+        else{
+            echo 0;
+        }
+    }
+}
