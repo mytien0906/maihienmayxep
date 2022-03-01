@@ -29,9 +29,9 @@ $chinhanh_noidung = $_POST['chinhanh_noidung'];
             $UserModel->insertChinhanh($chinhanh_name, $chinhanh_noidung);
             header('Location: chi-nhanh.php');
         }
-        }
-      else{
-        $error = "uploaded failed";
+      }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
       } 
     } 
 

@@ -31,8 +31,14 @@ if(isset($_POST['submit'])){
         $tieuchi_name = $_POST['tieuchi_name'];
         $tieuchi_noidung = $_POST['tieuchi_noidung'];
         $photo = $gettieuchi[0]['photo'];
-        $UserModel->updayteTieuchi($_GET['tieuchi_id'],$tieuchi_name, $tieuchi_noidung, $photo);
-        header('Location: tieu-chi.php');
+        if(isset($_GET['tieuchi_id'])) {
+          // echo(1);die();
+          $UserModel->updayteTieuchi($_GET['tieuchi_id'],$tieuchi_name, $tieuchi_noidung, $photo);
+          header('Location: tieu-chi.php');
+      }
+      else{
+        $error = "Không được bỏ trống trường dữ liệu";
+      }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -57,6 +63,9 @@ if(isset($_POST['submit'])){
       }
       
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 

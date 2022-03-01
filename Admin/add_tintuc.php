@@ -29,8 +29,17 @@ if(isset($_POST['submit'])){
         $tintuc_name = $_POST['tintuc_name'];
         $tintuc_noidung = $_POST['tintuc_noidung'];
         $photo = $gettintuc[0]['photo'];
-        $UserModel->updayteTintuc($_GET['tintuc_id'],$tintuc_name, $tintuc_noidung, $photo);
-        header('Location: tin-tuc.php');
+        if(isset($_GET['tintuc_id'])) {
+          // echo(1);die();
+          $UserModel->updayteTintuc($_GET['tintuc_id'],$tintuc_name, $tintuc_noidung, $photo);
+          header('Location: tin-tuc.php');
+      }
+      else{
+          // echo(1);die();
+          $error = "Không được để trống trường dữ liệu";
+          // $UserModel->insertTintuc($tintuc_name, $tintuc_noidung, $photo);
+          // header('Location: tin-tuc.php');
+      }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -44,7 +53,7 @@ if(isset($_POST['submit'])){
               header('Location: tin-tuc.php');
           }
           else{
-            // echo(1);die();
+            echo(1);die();
               $UserModel->insertTintuc($tintuc_name, $tintuc_noidung, $photo);
               header('Location: tin-tuc.php');
           }
@@ -55,6 +64,9 @@ if(isset($_POST['submit'])){
       }
       
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 

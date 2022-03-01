@@ -30,8 +30,14 @@ if(isset($_POST['submit'])){
         $video_name = $_POST['video_name'];
           $video_noidung = $_POST['video_noidung'];
         $photo = $getvideo[0]['photo'];
-        $UserModel->updateVideo($_GET['video_id'],$video_name, $video_noidung, $photo);
-        header('Location: video.php');
+        if(isset($_GET['video_id'])) {
+          // echo(1);die();
+          $UserModel->updateVideo($_GET['video_id'],$video_name, $video_noidung, $photo);
+          header('Location: video.php');
+      }
+      else{
+        $error = "Không được bỏ trống trường dữ liệu";
+      }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -56,6 +62,9 @@ if(isset($_POST['submit'])){
       }
       
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 

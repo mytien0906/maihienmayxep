@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 require_once ('./Model/UserModel.php');
 include "/head.php" ;
 $UserModel = new UserModel();

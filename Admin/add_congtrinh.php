@@ -29,8 +29,14 @@ if(isset($_POST['submit'])){
         $congtrinh_name = $_POST['congtrinh_name'];
         $congtrinh_noidung = $_POST['congtrinh_noidung'];
         $photo = $getcongtrinh[0]['congtrinh_photo'];
-        $UserModel->updaytecongtrinh($_GET['congtrinh_id'],$congtrinh_name, $congtrinh_noidung, $photo);
-        header('Location: cong-trinh.php');
+        if(isset($_GET['congtrinh_id'])) {
+          // echo(1);die();
+          $UserModel->updaytecongtrinh($_GET['congtrinh_id'],$congtrinh_name, $congtrinh_noidung, $photo);
+          header('Location: cong-trinh.php');
+        }
+        else{
+          $error = "Không được bỏ trống trường dữ liệu";
+        }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -53,6 +59,9 @@ if(isset($_POST['submit'])){
         } 
       }
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 

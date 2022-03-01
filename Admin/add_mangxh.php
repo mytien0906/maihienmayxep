@@ -29,8 +29,14 @@ if(isset($_POST['submit'])){
         $name = $_POST['name'];
         $link = $_POST['link'];
         $photo = $getmangxh[0]['photo'];
-        $UserModel->updaytMangxh($_GET['id'],$name, $link, $photo);
-        header('Location: mang-xh.php');
+        if(isset($_GET['id'])) {
+          // echo(1);die();
+          $UserModel->updaytMangxh($_GET['id'],$name, $link, $photo);
+          header('Location: mang-xh.php');
+      }
+      else{
+        $error = "Không được bỏ trống trường dữ liệu";
+      }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -55,6 +61,9 @@ if(isset($_POST['submit'])){
       }
       
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 

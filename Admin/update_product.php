@@ -32,19 +32,31 @@ if(isset($_GET['id'])){
         echo "Chỉ được upload các định dạng JPG, PNG, JPEG, GIF";
       }
       else{
-        if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
+        if($_FILES['fileupload']['tmp_name'] == ''){
           $tenvi = $_POST['tenvi'];
           $motavi = $_POST['motavi'];
-          $photo = time().$_FILES['fileupload']['name'];
+          $photo =  $getproductbyid[0]['photo'];
           $ds_id = $_POST['manufacture'];
           // echo(1);die();
               $UserModel->updateproduct($_GET['id'],$tenvi, $motavi, $photo,$ds_id );
               //  var_dump( $UserModel->insertproduct($tenvi, $motavi, $photo, $ds_id)); die();
               header('Location: san-pham.php');
-          }
+        }
         else{
-          echo "uploaded failed";
-        } 
+          if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
+            $tenvi = $_POST['tenvi'];
+            $motavi = $_POST['motavi'];
+            $photo = time().$_FILES['fileupload']['name'];
+            $ds_id = $_POST['manufacture'];
+            // echo(1);die();
+                $UserModel->updateproduct($_GET['id'],$tenvi, $motavi, $photo,$ds_id );
+                //  var_dump( $UserModel->insertproduct($tenvi, $motavi, $photo, $ds_id)); die();
+                header('Location: san-pham.php');
+            }
+          else{
+            echo "uploaded failed";
+          } 
+        }
       } 
     }
   }

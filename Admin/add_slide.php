@@ -28,8 +28,14 @@ if(isset($_POST['submit'])){
         // echo($getdanhsach1[0]['photo']);die();
         $name = $_POST['name'];
         $photo = $getslide[0]['photo'];
-        $UserModel->updaytSlide($_GET['id'],$name, $photo);
-        header('Location: slide.php');
+        if(isset($_GET['id'])) {
+          // echo(1);die();
+          $UserModel->updaytSlide($_GET['id'],$name, $photo);
+          header('Location: slide.php');
+      }
+      else{
+        $error = "Không được bỏ trống trường dữ liệu";
+      }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -53,6 +59,9 @@ if(isset($_POST['submit'])){
       }
       
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 

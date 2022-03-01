@@ -14,7 +14,7 @@ if(isset($_POST['reset'])){
   </script>';
 }
 if(isset($_POST['submit'])){
-  if(isset($_POST['tenvi']) && isset($_POST['motavi'])) {
+  if(!empty($_POST['tenvi']) && !empty($_POST['motavi'])) {
     $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
     $target_file = $_FILES["fileupload"]["name"];
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -29,8 +29,14 @@ if(isset($_POST['submit'])){
         $tenvi = $_POST['tenvi'];
         $motavi = $_POST['motavi'];
         $photo = $getdanhsach1[0]['photo'];
-        $UserModel->updayteDanhSach1($_GET['ds_id'],$tenvi, $motavi, $photo);
-        header('Location: dan-muc-cap-1.php');
+        if(isset($_GET['ds_id'])) {
+          // echo(2);die();
+            $UserModel->updayteDanhSach1($_GET['ds_id'],$tenvi, $motavi, $photo);
+            header('Location: dan-muc-cap-1.php');
+        }
+        else{
+          $error = "Không được bỏ trống trường dữ liệu";
+        }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -55,6 +61,9 @@ if(isset($_POST['submit'])){
       }
       
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 
