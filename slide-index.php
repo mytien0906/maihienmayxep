@@ -33,10 +33,6 @@
                                         <img src="/Admin/thumb/<?= $slide['photo'] ?>" class="d-block w-100"
                                             alt="...">
                                     </div>
-                                    <div class="carousel-item ">
-                                        <img src="/Admin/thumb/<?= $slide['photo'] ?>" class="d-block w-100"
-                                            alt="...">
-                                    </div>
                                     <?php }?>
                                 </div>
                                 <button class="carousel-control-prev" type="button"
