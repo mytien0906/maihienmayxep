@@ -37,8 +37,8 @@ $danhsasch1 = $UserModel->getAlleDanhSach1();
             <div class="card-header">
               <h3 class="card-title">Danh sách Danh mục cấp 1</h3>
             </div>
-            <div class="card-body table-responsive p-0" >
-              <table class="table table-hover" >
+            <div class="card-body table-responsive p-0"  >
+              <table class="table table-hover" id="order-listing">
                 <thead >
                   <tr>
                     <th class="align-middle" width="5%">
