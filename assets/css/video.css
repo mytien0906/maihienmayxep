@@ -1,9 +1,4 @@
-.main-content-videos .main-content-left{
-    flex: 1;
-}
-.main-content-videos .main-content-right{
-    flex: 3;
-}
+
 .main-content-videos .main-content-right .title {
     text-align: center;
 }
@@ -18,4 +13,11 @@
 .main-content-videos .main-content-right .box-products .title::after{
     content: url(../images/tb-icon.png);
     height: unset;
+}
+.card{
+    border: none;
+}
+.card iframe{
+    width: 100%;
+    border-radius: 3px;
 }

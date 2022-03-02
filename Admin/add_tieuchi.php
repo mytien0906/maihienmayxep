@@ -8,6 +8,11 @@ if(!empty($_GET['tieuchi_id'])){
   $gettieuchi = $UserModel->getTieuchibyId($_GET['tieuchi_id']);
 }
 $error = "";
+if(isset($_POST['reset'])){
+  echo '<script type="text/javascript"> 
+  form.reset() 
+  </script>';
+}
 if(isset($_POST['submit'])){
   // echo $_POST['tieuchi_name'];die();
   if(!empty($_POST['tieuchi_name']) && !empty($_POST['tieuchi_noidung']) && !empty($_FILES['fileupload'])) {
@@ -105,7 +110,7 @@ if(isset($_POST['submit'])){
               <?php } ?>
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-light" name="reset">Cancel</button>
           </form>
         </div>
       </div>

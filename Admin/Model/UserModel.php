@@ -1019,6 +1019,11 @@ class UserModel extends BaseModel{
         $product = $this->insert($sql);
         return $product;
     }
+    public function TruncateThongTinLienHe(){
+        $sql = "TRUNCATE `maixep`.`ThongTinLienHe`";
+        $product = $this->insert($sql);
+        return $product;
+    }
 
     // Login
     public function login($username, $password){
@@ -1027,16 +1032,86 @@ class UserModel extends BaseModel{
         $product = $this->select($sql);
         return $product;
     }
-    public function admin(){
-        $sql = 'SELECT * FROM `user` WHERE `id` = 1';
+    public function admin($id){
+        $sql = 'SELECT * FROM `user` WHERE `id` = '.$id;
         // echo($sql);die();
         $product = $this->select($sql);
         return $product;
     }
-    public function Updateadmin($fullname,$email,$gender,$address){
-        $sql = 'UPDATE `user` SET `fullname`="'.$fullname.'",`email`="'.$email.'",`gender`="'.$gender.'",`address`="'.$address.'" WHERE id = 1';
+    public function Updateadmin($id,$fullname,$email,$gender,$address){
+        $sql = 'UPDATE `user` SET `fullname`="'.$fullname.'",`email`="'.$email.'",`gender`="'.$gender.'",`address`="'.$address.'" WHERE id = '.$id;
         // echo($sql);die();
         $product = $this->update($sql);
         return $product;
+    }
+    //thông tin Liên hệ
+
+    public function getAllThongTinLienHe(){
+        $sql = 'SELECT * FROM `table_lienhe_user`';
+        // echo($sql);die();
+        $product = $this->select($sql);
+        return $product;
+    }
+    public function getAllThongTinLienHeById($id){
+        $ds = 'SELECT id FROM table_lienhe_user';
+        $dss = $this->select($ds);
+        foreach($dss as $vd){
+            $md5id = md5($vd['id'] . "maixep");
+            
+            if($id == $md5id){
+            // var_dump($id);
+            // var_dump($md5id);die();
+            $sql = 'SELECT * FROM `table_lienhe_user` WHERE id = '.$vd['id'];
+            // echo($sql);die();
+            $product = $this->select($sql);
+            return $product;
+            }
+        }
+        
+    }
+    public function UpdateThongTinLienHe($id,$name, $sdt,$diachi,$email,$chude,$noidung,$file){
+
+        $ds = 'SELECT id FROM table_lienhe_user';
+        $dss = $this->select($ds);
+        foreach($dss as $vd){
+            $md5id = md5($vd['id'] . "maixep");
+            
+            if($id == $md5id){
+            // var_dump($id);
+            // var_dump($md5id);die();
+            $sql = 'UPDATE `table_lienhe_user` SET `name`= "'.$name.'",`sđt`= "'.$sdt.'",`address`= "'.$diachi.'",`email`= "'.$email.'",`chude`="'.$chude.'",`noidung`= "'.$noidung.'",`file`= "'.$file.'",`ngaytao`="'.date("Y-m-d").'" WHERE `id` =' .$vd['id'];
+            // echo($sql);die();
+            $product = $this->update($sql);
+            return $product;
+            }
+        }
+        
+    }
+    public function DeleteThongTinLienHe($id){
+        $ds = 'SELECT id FROM table_lienhe_user';
+        $dss = $this->select($ds);
+        foreach($dss as $vd){
+            $md5id = md5($vd['id'] . "maixep");
+            if($id == $md5id){
+            //     var_dump($id);
+            // var_dump($md5id);die();
+            $sql = 'DELETE FROM `table_lienhe_user` WHERE  id = '.$vd['id'];
+            // echo($sql);die();
+            $product = $this->delete($sql);
+            return $product;
+            }
+        }
+    
+    }
+    public function updateXacNhanThongTinLienHe($id){
+        $sql = "UPDATE `table_lienhe_user` SET `xacnhan`= 1 WHERE `id` = " .$id;
+        $product = $this->update($sql);
+        return $product; 
+    }
+    public function updateXacNhanBangKhongThongTinLienHe($id){
+        $sql = "UPDATE `table_lienhe_user` SET `xacnhan`= 0 WHERE `id` = " .$id;
+        // echo($sql);die();
+        $product = $this->update($sql);
+        return $product; 
     }
 }

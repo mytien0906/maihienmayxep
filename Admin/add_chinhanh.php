@@ -8,6 +8,11 @@ if(!empty($_GET['chinhanh_id'])){
   $getchinhanh = $UserModel->getChinhanhbyId($_GET['chinhanh_id']);
 }
 $error = "";
+if(isset($_POST['reset'])){
+  echo '<script type="text/javascript"> 
+  form.reset() 
+  </script>';
+}
 if(isset($_POST['submit'])){
   $chinhanh_name = $_POST['chinhanh_name'];
 $chinhanh_noidung = $_POST['chinhanh_noidung'];
@@ -73,7 +78,7 @@ $chinhanh_noidung = $_POST['chinhanh_noidung'];
               ><?php if(!empty($getchinhanh[0]['chinhanh_noidung'])) echo $getchinhanh[0]['chinhanh_noidung']?></textarea>
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-light" name="reset">Cancel</button>
           </form>
         </div>
       </div>

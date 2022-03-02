@@ -6,7 +6,9 @@
     display: block;
     margin-bottom: 30px;
 }
-.main-content-contacts .main-content-wrapper div{
+.main-content-contacts .main-content-wrapper div#main-content{
+    display: flex;
+    justify-content: space-between;
 }
  
 .main-content-contacts .main-content-wrapper .title{
@@ -28,10 +30,10 @@
     justify-content: space-between;
     margin-bottom: 30px;
 }
-.form-contact {
+/* .form-contact {
     width: 47%;
     float: right;
-}
+} */
 .input-contact {
     position: relative;
     margin-bottom: 15px;
@@ -44,6 +46,7 @@
     padding: 0px;
     outline: none;
     font-size: 14px;
+    text-indent: 10px;
 }
 .form-control {
     display: block;
@@ -94,4 +97,9 @@
 }
 .footer-contacts iframe {
     width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .lienhe{
+        margin-bottom: 30px;
+    }
 }

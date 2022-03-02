@@ -1,30 +1,26 @@
-.main-content-construct .project-item-wrapper{
+.main-content-construct .project-item-wrapper {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-.main-content-construct .project-item-wrapper div:nth-child(1){
-    flex: 1;
-}
-.main-content-construct .project-item-wrapper div:nth-child(2){
-    flex: 2;
-}
-.main-content-construct .project-item-wrapper .project-item-info{
+
+.main-content-construct .project-item-wrapper .project-item-info {
     background: #f2f2f2 !important;
-    min-height: 260px;
+    min-height: 230px;
     padding: 20px;
     padding-left: 150px;
 }
-.main-content-construct .project-item-wrapper .project-item-info 
-.project-item-title{
+
+.main-content-construct .project-item-wrapper .project-item-info .project-item-title {
     color: #f00;
     text-transform: uppercase;
     font-size: 18px;
     line-height: 1.5em;
     max-height: 3em;
+    font-weight: 600;
 }
-.main-content-construct .project-item-wrapper .project-item-info 
-.btn-load-more{
+
+.main-content-construct .project-item-wrapper .project-item-info .btn-load-more, .main-content-news .new-block .new-item-info .btn-load-more {
     display: inline-block;
     padding: 10px 25px;
     border: thin solid #f57e2e;
@@ -32,9 +28,64 @@
     transition: all 0.5s;
     float: right;
 }
-.main-content-construct .project-item-wrapper .project-item-info 
-.btn-load-more:hover{
+
+.main-content-construct .project-item-wrapper .project-item-info .btn-load-more:hover,
+.main-content-news .new-block .new-item-info .btn-load-more:hover {
     background: #f57e2e;
     color: #fff;
     text-decoration: none !important;
+}
+
+.main-content-construct .project-item-wrapper img {
+    /* height: 260px; */
+    height: 230px;
+}
+
+.main-content-construct .project-item-wrapper>div {
+    padding: 0;
+}
+
+.main-content-construct .main-content-right,
+.main-content-news .main-content-right {
+    padding-left: 30px;
+}
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+    .main-content-construct .project-item-wrapper .project-item-info {
+        min-height: unset;
+        padding-left: 50px;
+        height: 180px;
+        text-align: justify;
+        padding-right: 30px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+}
+
+@media screen and (max-width:992px) {
+    .main-content-construct .project-item-wrapper .project-item-info {
+        min-height: unset;
+        padding-left: 50px;
+        height: 180px;
+        text-align: justify;
+        padding-right: 30px;
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+
+    .main-content-construct .project-item-wrapper .project-item-link img {
+        /* width: 150px; */
+        height: 180px;
+    }
+
+    .main-content-construct .project-item-wrapper .project-item-info div {
+        /* padding-bottom: 15px; */
+    }
+}
+@media screen and (max-width: 768px) {
+    .main-content-construct .project-item-wrapper .project-item-info{
+        padding-top: 10px;
+    padding-right: 50px;
+    }
 }

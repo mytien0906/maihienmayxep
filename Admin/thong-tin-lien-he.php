@@ -3,7 +3,7 @@ session_start();
 require_once ('./Model/UserModel.php');
 include "/head.php" ;
 $UserModel = new UserModel();
-$danhsasch1 = $UserModel->getAlleDanhSach1();
+$thongtinlienhe = $UserModel->getAllThongTinLienHe();
 ?>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
@@ -16,15 +16,9 @@ $danhsasch1 = $UserModel->getAlleDanhSach1();
         <section class="content danhmuc1">
           <div class="card-footer text-sm sticky-top">
             <a
-              class="btn btn-sm bg-gradient-primary text-white"
-              href="add_danhmuc1.php"
-              title="Thêm mới"
-              ><i class="fas fa-plus mr-2"></i>Thêm mới</a
-            >
-            <a
               class="btn btn-sm bg-gradient-danger text-white"
               id="delete-all"
-              href="delete_danhmuc1.php"
+              href="delete_thongtinlienhe.php"
               title="Xóa tất cả"
               ><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a
             >
@@ -35,7 +29,7 @@ $danhsasch1 = $UserModel->getAlleDanhSach1();
           </div>
           <div class="card card-primary card-outline text-sm mb-0">
             <div class="card-header">
-              <h3 class="card-title">Danh sách Danh mục cấp 1</h3>
+              <h3 class="card-title">Danh sách Thông Tin Lien Hệ</h3>
             </div>
             <div class="card-body table-responsive p-0"  >
               <table class="table table-hover" id="order-listing">
@@ -46,15 +40,16 @@ $danhsasch1 = $UserModel->getAlleDanhSach1();
                       </div>
                     </th>
                     <th class="align-middle text-center" width="10%">STT</th>
-                    <th class="align-middle">Hình</th>
-                    <th class="align-middle" style="width: 30%">Tiêu đề</th>
-                    <th class="align-middle text-center">Nổi bật</th>
-                    <th class="align-middle text-center">Hiển thị</th>
+                    <th class="align-middle text-center">Name</th>
+                    <th class="align-middle text-center" >Số Điện Thoại</th>
+                    <th class="align-middle text-center">Địa Chỉ</th>
+                    <th class="align-middle text-center">Email</th>
+                    <th class="align-middle text-center">Xác Nhận</th>
                     <th class="align-middle text-center">Thao tác</th>
                   </tr>
                 </thead>
                 <tbody id="dmc1">
-                  <?php foreach($danhsasch1 as $ds1){ ?>
+                  <?php foreach($thongtinlienhe as $thongtin){ ?>
                   <tr>
                     <td class="align-middle">
                       <div class="custom-control custom-checkbox my-checkbox">
@@ -75,59 +70,58 @@ $danhsasch1 = $UserModel->getAlleDanhSach1();
                       />
                     </td>
                     <td class="align-middle">
-                      <a
-                        href="index.php?com=product&amp;act=edit_list&amp;type=san-pham&amp;p=1&amp;id=29"
+                    <a
+                        class="text-dark"
+                        href="add_thongtinlienhe.php?id=<?= $thongtin['id'] ?>"
                         title="Cổng xếp tự động"
-                        >
-                        <img
-                          class="rounded img-preview"
-                          src="./thumb/<?php echo $ds1['photo'] ?>"
-                          alt="Cổng xếp tự động"
-                        />
-                      </a>
+                        ><?= $thongtin['name'] ?></a
+                      >
                     </td>
                     <td class="align-middle">
                       <a
                         class="text-dark"
-                        href="add_danhmuc.php?ds_id=<?= $ds1['id'] ?>"
+                        href="add_thongtinlienhe.php?id=<?= $thongtin['id'] ?>"
                         title="Cổng xếp tự động"
-                        ><?= $ds1['tenvi'] ?></a
+                        ><?= $thongtin['sđt'] ?></a
                       >
                     </td>
                     <td class="align-middle text-center">
-                      <div class="custom-control custom-checkbox my-checkbox">
-                        <input
-                          class="check_noibat"
-                          value="1"
-                          type="checkbox"
-                          data-loai="noibat"
-                          btn-id="btn-noibat-<?= $ds1['id'] ?>"
-                          data-id-noibat="<?= $ds1['id'] ?>"
-                          <?= $ds1['noibat'] == 1 ? "checked" : "" ?>
-                        />
-                      </div>
+                    <a
+                        class="text-dark"
+                        href="add_thongtinlienhe.php?id=<?= $thongtin['id'] ?>"
+                        title="Cổng xếp tự động"
+                        ><?= $thongtin['address'] ?></a
+                      >
+                    </td>
+                    <td class="align-middle text-center">
+                    <a
+                        class="text-dark"
+                        href="add_thongtinlienhe.php?id=<?= $thongtin['id'] ?>"
+                        title="Cổng xếp tự động"
+                        ><?= $thongtin['email'] ?></a
+                      >
                     </td>
                     <td class="align-middle text-center ">
                       <div class="custom-control custom-checkbox my-checkbox">
                         <input
-                          btn-id="btn-hienthi-<?= $ds1['id'] ?>"
-                          data-id = "<?= $ds1['id'] ?>"
+                          btn-id="btn-hienthi-<?= $thongtin['id'] ?>"
+                          data-id = "<?= $thongtin['id'] ?>"
                           type="checkbox"
                           data-loai="hienthi"
-                          <?= $ds1['hienthi'] == 1 ? "checked" : "" ?>
+                          <?= $thongtin['xacnhan'] == 1 ? "checked" : "" ?>
                         />
                       </div>
                     </td>
                     <td class="align-middle text-center text-md text-nowrap">
                       <a
                         class="text-primary mr-2"
-                        href="add_danhmuc1.php?ds_id=<?= md5($ds1['id'] . "maixep") ?>"
+                        href="add_thongtinlienhe.php?id=<?= md5($thongtin['id'] . "maixep") ?>"
                         title="Chỉnh sửa"
                         ><i class="bi bi-pencil-square"></i></a>
                       <a
                         class="text-danger"
                         id="delete-item"
-                        href="delete_danhmuc1.php?ds_id=<?= md5($ds1['id'] . "maixep") ?>"
+                        href="delete_thongtinlienhe.php?id=<?= md5($thongtin['id'] . "maixep") ?>"
                         title="Xóa"
                         ><i class="bi bi-trash3-fill"></i></a>
                     </td>
@@ -153,11 +147,11 @@ $(document).ready(function(){
         var id = $(this).attr('data-id');
         // console.log(id);
         $.ajax({
-          url: "dmc1_action_hienthi.php?atc=dmc1",
+          url: "dmc1_action_hienthi.php?atc=thongtinlienhe",
           method: "POST",
           data:{id:id},
           success:function(data){
-            if(data = 1){
+            if(data == 1){
             console.log("Insert thanh cong");
             }
             else{
@@ -170,7 +164,7 @@ $(document).ready(function(){
       var id = $(this).attr('data-id');
         // console.log(id);
         $.ajax({
-          url: "dmc1_deletecheck_hienthi.php?atc=dmc1",
+          url: "dmc1_deletecheck_hienthi.php?atc=thongtinlienhe",
           method: "POST",
           data:{id:id},
           success:function(data){
@@ -183,45 +177,6 @@ $(document).ready(function(){
           }
         });
         // console.log(' is now unchecked');
-    }
-    });
-    $("[data-id-noibat]").click(function(){
-      var id = $(this).attr('data-id-noibat');
-      // alert(id);
-      if ($(this).is(':checked')) {
-        
-        console.log(id);
-        $.ajax({
-          url: "dmc1_action.php?atc=dmc1",
-          method: "POST",
-          data:{id:id},
-          success:function(data){
-            if(data = 1){
-            console.log("Insert thanh cong");
-            }
-            else{
-              console.log("Insert khong thanh cong");
-            }
-          }
-        });
-        console.log($(this).val() + ' is now checked');
-    } else {
-      // var id = $(this).attr('data-id');
-        console.log(id);
-        $.ajax({
-          url: "dmc1_deletecheck.php?atc=dmc1",
-          method: "POST",
-          data:{id:id},
-          success:function(data){
-            if(data == 1){
-            console.log("up thanh cong");
-            }
-            else{
-              console.log("Insert khong thanh cong");
-            }
-          }
-        });
-        console.log(' is now unchecked');
     }
     });
 })

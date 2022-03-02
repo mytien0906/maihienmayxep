@@ -5,7 +5,11 @@ include "/head.php" ;
 $UserModel = new UserModel();
 $logo = $UserModel->getlogobyId();
 $error = "";
-// echo $_GET['ds_id'];die();
+if(isset($_POST['reset'])){
+  echo '<script type="text/javascript"> 
+  form.reset() 
+  </script>';
+}
 if(isset($_POST['submit'])){
     $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
     $target_file = $_FILES["fileupload"]["name"];
@@ -67,7 +71,7 @@ if(isset($_POST['submit'])){
               <?php }?>
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-light" name="reset">Cancel</button>
           </form>
         </div>
       </div>

@@ -1,5 +1,6 @@
 <?php
-require_once ('./Admin/Model/UserModel_index.php');
+require_once('./Admin/Model/UserModel_index.php');
+include 'head.php';
 $UserModel = new UserModel();
 $videos = $UserModel->getAllVideo();
 $danhsachs = $UserModel->getAlleDanhSach1();
@@ -7,295 +8,61 @@ $tintucs = $UserModel->getAllTintuc();
 $congtrinhs = $UserModel->getAllcongtrinh();
 $mangxhs = $UserModel->getAllMangXH();
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/gioi-thieu.css">
-    <link rel="stylesheet" type="text/css" href="./assets/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/slick/slick-theme.css" />
-    <link rel="stylesheet" href="./assets/css/cong-trinh.css">
-</head>
-
-<body>
-    <!-- Start Header-->
-    <header class="header">
-        <div class="top-header">
-            <div class="container">
-                <div class="top-header-block">
-                    <div class="company-address">
-                        <i class="fa fa-map-marker-alt"></i>
-                        <span>Địa chỉ: Số 29 Đường số 4, Khu Phố 17, Phường Bình Hưng Hòa A, Quận Bình Tân, TP. Hồ Chí
-                            Minh</span>
-                    </div>
-                    <div class="contact-block">
-                        <ul class="contact-block-list">
-                            <li class="contact-block-item">
-                                <a href="#" class="contact-block-link">
-                                    <img src="./assets/images/face-5727.png" alt="">
-                                </a>
-                            </li>
-                            <li class="contact-block-item">
-                                <a href="#" class="contact-block-link">
-                                    <img src="./assets/images/gg-6227.png" alt="">
-                                </a>
-                            </li>
-                            <li class="contact-block-item">
-                                <a href="#" class="contact-block-link">
-                                    <img src="./assets/images/tt-3790.png" alt="">
-                                </a>
-                            </li>
-                            <li class="contact-block-item">
-                                <a href="#" class="contact-block-link">
-                                    <img src="./assets/images/rss-1322.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+<!-- Start Header-->
+<?php include 'header.php' ?>
+<!-- End Header -->
+<!-- Main Content -->
+<div class="main-content-construct">
+    <div class="container">
+        <div class="row main-content-wrapper">
+            <?php include 'danhmuc.php' ?>
+            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 main-content-right">
+                <div class="title">
+                    <h2>
+                        <p class="title">CÔNG TRÌNH</p>
+                    </h2>
                 </div>
-            </div>
-        </div>
-        <div class="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 company-logo">
-                        <a href="#" class="company-logo-link">
-                            <img src="./assets/images/logo-4752.png" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="company-info">
-                            <div class="company-name">
-                                <span>MÁI HIÊN DI ĐỘNG</span>
-                                <span>HOÀNG DƯƠNG</span>
-                            </div>
-                            <div class="company-des">
-                                <span>CHUYÊN:</span>
-                                <span>Thi công và lắp đặt Mái Hiên, Mái Xếp, Mái Che, Bạt Kéo, Mái Vòm, ...
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="company-hotline">
-                            <div class="company-hotline-img">
-                                <img src="./assets/images/logo-phone.png" alt="">
-                            </div>
-                            <div class="company-hotline-text">
-                                <p>HOTLINE:</p>
-                                <p class="company-hotline-number">
-                                    <span>0972378247</span>
-                                    <span>(MR.Dương)</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-header" id="myHeader">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light header-navbar">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <div class="navbar-nav header-navbar-list">
-                                <li class="nav-item header-navbar-item active">
-                                    <a href="#" class="header-navbar-link">Danh Mục Sản
-                                        phẩm</a>
-                                </li>
-                                <li class="nav-item header-navbar-item">
-                                    <a href="index.php" class="header-navbar-link">Trang chủ</a>
-                                </li>
-                                <li class="nav-item header-navbar-item">
-                                    <a href="gioi-thieu.php" class="header-navbar-link">Giới thiệu</a>
-                                </li>
-                                <li class="nav-item header-navbar-item">
-                                    <a href="cong-trinh.php" class="header-navbar-link">Công trình</a>
-                                </li>
-                                <li class="nav-item header-navbar-item">
-                                    <a href="dich-vu.php" class="header-navbar-link">Dịch vụ</a>
-                                </li>
-                                <li class="nav-item header-navbar-item">
-                                    <a href="tin-tuc.php" class="header-navbar-link">Tin tức</a>
-                                </li>
-                                <li class="nav-item header-navbar-item">
-                                    <a href="video.php" class="header-navbar-link">Video</a>
-                                </li>
-                                <li class="nav-item header-navbar-item">
-                                    <a href="lien-he.php" class="header-navbar-link">Liên hệ</a>
-                                </li>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <div class="breadcrumbs">
-            <div class="container">
-                <div class="breadcrumb-wrapper">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php"><span>Trang chủ</span></a></li>
-                        <li class="breadcrumb-item active"><a href="cong-trinh.php"><span>Công trình</span></a></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- End Header -->
-    <!-- Main Content -->
-    <div class="main-content-construct">
-        <div class="container">
-            <div class="main-content-wrapper">
-                <div class="main-content-left">
-                    <div class="category-block">
-                        <div class="category-content">
-                            <h3>Danh mục sản phẩm</h3>
-                            <div class="category-menu">
-                                <ul>
-                                <?php foreach($danhsachs as $danhsach){ ?>
-                                <?php if($danhsach['hienthi']==1){ ?>
-                                    <li>
-                                        <a href=""><?= $danhsach['tenvi'] ?></a>
-                                    </li>
-                                    <?php } }?>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news-block">
-                        <div class="news-content">
-                        <?php foreach($tintucs as $tintuc){ ?>
-                            <?php if($tintuc['noibat'] == 1) {?>
-                            <div class="new-item-wrapper">
-                                <a href="" class="new-item-link">
-                                    <img src="./Admin/thumb/<?= $tintuc['photo'] ?>"
-                                        alt="hinh anh cong trinh"></a>
-                                <div class="new-item-info">
-                                    <h3><a href="" class="new-item-title">
-                                            <?= $tintuc['tintuc_name'] ?>
+                <div class="project-block">
+                    <?php foreach ($congtrinhs as $congtrinh) { ?>
+                        <?php if ($congtrinh['hienthi'] == 1) { ?>
+                            <div class="row project-item-wrapper">
+                                <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
+                                    <div>
+                                        <a href="" class="project-item-link">
+                                            <img src="/Admin/thumb/<?= $congtrinh['congtrinh_photo'] ?>" alt="hinh anh cong trinh"></a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-xs-9 project-item-info">
+                                    <h3><a href="" class="project-item-title">
+                                            <?= $congtrinh['congtrinh_name'] ?>
                                         </a></h3>
-                                </div>
-                            </div>
-                            <?php } }?>
-                        </div>
-                    </div>
-                </div>
-                <div class="main-content-right">
-                    <div class="title">
-                        <h2><p class="title">CÔNG TRÌNH</p></h2>
-                    </div>
-                    <div class="project-block">
-                        <?php foreach($congtrinhs as $congtrinh) {?>
-                        <?php if($congtrinh['hienthi'] == 1){ ?>
-                        <div class="project-item-wrapper">
-                            <div>
-                                <div>
-                                    <a href="" class="project-item-link">
-                                        <img src="/Admin/thumb/<?= $congtrinh['congtrinh_photo'] ?>" alt="hinh anh cong trinh"></a>
-                                </div>
-                            </div>
-                            <div class="project-item-info">
-                                <h3><a href="" class="project-item-title">
-                                        <?= $congtrinh['congtrinh_name'] ?>
-                                    </a></h3>
-                                <p><?= htmlspecialchars_decode($congtrinh['congtrinh_noidung']) ?></p>
+                                        <div class="congtrinh_noidung">
+                                            <p><?= htmlspecialchars_decode($congtrinh['congtrinh_noidung']) ?></p>
+                                        </div>
                                     <a href="chi-tiet.html" class="btn-load-more">Xem Thêm</a>
+                                </div>
                             </div>
-                        </div>
-                        <?php } }?>
-                    </div>
+                    <?php }
+                    } ?>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Main Content -->
-    <!-- Start Footer -->
-    <footer class="footer">
-        <div class="scrollToTop" style="display: none;">
-            <img src="assets/images/top.png" alt="Go Top">
-        </div>
-        <!-- CHUA CO ICON ZALO & HOTLINE -->
-        <div class="top-footer">
-            <div class="container">
-                <div class="row">
-                <?php foreach($mangxhs as $mangxh){ ?>
-                    <div class="col-md-4 col-sx-1">
-                        <div class="fp-wrapper">
-                            <div class="img-fanpage">
-                                <img src="./Admin/thumb/<?= $mangxh['photo'] ?>" alt="">
-                                <p><?= $mangxh['name'] ?></p>
-                            </div>
-                            <p class="fg-text">Like để cập nhật những thông tin hoạt động mới nhất</p>
-                            <a href="<?= $mangxh['link'] ?>" class="fp-link"><span>THAM GIA NGAY</span></a>
-                        </div>
-                    </div>
-                    <?php }?>
-                </div>
-            </div>
-        </div>
-        <div class="main-footer">
-            <h2 class="main-footer-title">Mái Hiên Mái Xếp 247</h2>
-            <p class="copy-right">Copyright © 2022 Mái Hiên Mái Xếp Hoàng Dương. All rights reserved. Design by
-                SotaGroup Co.,Ltd</p>
-        </div>
-    </footer>
-    <!-- End Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="./assets/slick/slick.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+</div>
+<!-- End Main Content -->
+<!-- Start Footer -->
+<?php include 'footer.php' ?>
+<!-- End Footer -->
+<script>
+    function trimText(str, wordCount) {
+        var strArray = str.split(' ');
+        var subArray = strArray.slice(0, wordCount);
+        var result = subArray.join(" ");
+        return result + '...';
+    }
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.your-class').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 1000,
-                centerMode: true,
-                centerPadding: 0,
-                responsive: [{
-                    breakpoint: 768,
-                    infinite: true,
-                    settings: {
-                        slidesToScroll: 1,
-                        slidesToShow: 1,
-                        centerMode: true,
-                        centerPadding: 0,
-                    }
-                }]
-
-            });
-        });
-    </script>
-</body>
-
-</html>
+    var str = $('.congtrinh_noidung').text();
+    var result = trimText(str,80);
+    $('.congtrinh_noidung').text(result);
+</script>

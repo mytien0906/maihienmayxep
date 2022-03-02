@@ -11,6 +11,11 @@
     // var_dump($updatefooter);die();
     header('Location: footer.php');
   }
+  if(isset($_POST['reset'])){
+    echo '<script type="text/javascript"> 
+    form.reset() 
+    </script>';
+  }
 ?>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -37,7 +42,7 @@
                       <textarea name="noidung" id="" cols="100" rows="10" ><?php if(!empty($footer[0]['noidung'])) echo htmlspecialchars_decode($footer[0]['noidung']) ?></textarea>
                     </div>
                     <button type="submit" name="submit"  value="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button class="btn btn-light" name="reset">Cancel</button>
                   </form>
                 </div>
               </div>
