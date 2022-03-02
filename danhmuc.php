@@ -5,40 +5,49 @@ $UserModel = new UserModel();
 $danhsachs = $UserModel->getAlleDanhSach1();
 $tintucs = $UserModel->getAllTintuc();
 ?>
-<div class="category-block">
-  <div class="category-content">
-    <h3>Danh mục sản phẩm</h3>
-    <div class="category-menu">
-      <ul>
-        <?php foreach ($danhsachs as $danhsach) { ?>
-          <?php if ($danhsach['hienthi'] == 1) { ?>
-            <li>
-              <a href=""><?= $danhsach['tenvi'] ?></a>
-            </li>
-        <?php }
-        } ?>
-      </ul>
+<div class="col-xl-4 col-lg-4 main-content-left">
+  <div class="category-block">
+    <div class="category-content">
+      <h3>Danh mục sản phẩm</h3>
+      <div class="category-menu">
+        <ul>
+          <?php foreach ($danhsachs as $danhsach) { ?>
+            <?php if ($danhsach['hienthi'] == 1) { ?>
+              <li>
+                <a href=""><?= $danhsach['tenvi'] ?></a>
+              </li>
+          <?php }
+          } ?>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<div class="news-block">
-  <div class="news-content">
-    <?php foreach ($tintucs as $tintuc) { ?>
-      <?php if ($tintuc['noibat'] == 1) { ?>
-        <div class="new-item-wrapper">
-          <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-link">
-            <img src="./Admin/thumb/<?= $tintuc['photo'] ?>" alt="hinh anh cong trinh"></a>
-          <div class="new-item-info tintuc_danhmuc">
-            <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
-                <?= $tintuc['tintuc_name'] ?>
-              </a></h3>
-            <div class="tintuc_noidung_danhmuc">
-              <p> <?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?> </p>
+  <div class="news-block">
+    <div class="news-content">
+      <?php foreach ($tintucs as $tintuc) { ?>
+        <?php if ($tintuc['noibat'] == 1) { ?>
+          <div class="row new-item-wrapper">
+            <div class="col-xl-5 col-lg-5">
+              <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-link">
+                <img src="./Admin/thumb/<?= $tintuc['photo'] ?>" alt="hinh anh cong trinh"></a>
+
             </div>
+            <div class="col-xl-6 col-lg-6">
+              <div class="new-item-info tintuc_danhmuc">
+                <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
+                    <?= $tintuc['tintuc_name'] ?>
+                  </a></h3>
+                <div class="tintuc_noidung_danhmuc">
+                  <p> <?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?> </p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
-        </div>
-    <?php }
-    } ?>
+      <?php }
+      } ?>
+    </div>
   </div>
 </div>
 <script>

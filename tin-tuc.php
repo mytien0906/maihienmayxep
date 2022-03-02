@@ -13,11 +13,9 @@ $mangxhs = $UserModel->getAllMangXH();
     <!-- Main Content -->
     <div class="main-content-news">
         <div class="container">
-            <div class="main-content-wrapper">
-                <div class="main-content-left">
+            <div class="row main-content-wrapper">
                     <?php include 'danhmuc.php' ?>
-                </div>
-                <div class="main-content-right">
+                <div class="col-xl-8 col-lg-8  main-content-right">
                     <div class="title">
                         <h2>
                             <p class="title">TIN TỨC</p>

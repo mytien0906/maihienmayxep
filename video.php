@@ -13,11 +13,9 @@ $mangxhs = $UserModel->getAllMangXH();
     <!-- Main Content -->
     <div class="main-content-videos">
         <div class="container">
-            <div class="main-content-wrapper">
-                <div class="main-content-left">
+            <div class="row main-content-wrapper">
                     <?php include 'danhmuc.php' ?>
-                </div>
-                <div class="main-content-right">
+                <div class="col-xl-8 col-lg-8  main-content-right">
                     <div class="box-products">
                         <div class="container">
                             <h2><span class="title">VIDEO CLIP</span></h2>
