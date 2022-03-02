@@ -11,7 +11,7 @@ if(isset($_POST['reset'])){
   </script>';
 }
 if(isset($_POST['submit'])){
-  if(isset($_POST['tenvi']) && isset($_POST['motavi']) && !empty($_FILES['fileupload'])) {
+  if(!empty($_POST['tenvi']) && !empty($_POST['motavi']) && !empty($_FILES['fileupload'])) {
     // echo(1);die();
     $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
     $target_file = $_FILES["fileupload"]["name"];
@@ -23,20 +23,28 @@ if(isset($_POST['submit'])){
       $error = "Chỉ được upload các định dạng JPG, PNG, JPEG, GIF";
     }
     else{
-      if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
-        $tenvi = $_POST['tenvi'];
-        $motavi = $_POST['motavi'];
-        $photo = time().$_FILES['fileupload']['name'];
-        $ds_id = $_POST['manufacture'];
-          // echo $getdanhsasch1[0]['photo'];die();
-            $a = $UserModel->insertproduct($tenvi, $motavi, $photo, $ds_id);
-            // var_dump( $UserModel->insertproduct($tenvi, $motavi, $photo, $ds_id)); die();
-            header('Location: san-pham.php');
-        }
+      if($_FILES['fileupload']['tmp_name'] == ''){
+        $error = "Không được bỏ trống trường dữ liệu";
+      }
       else{
-        $error = "Insert failed";
-      } 
+        if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
+          $tenvi = $_POST['tenvi'];
+          $motavi = $_POST['motavi'];
+          $photo = time().$_FILES['fileupload']['name'];
+          $ds_id = $_POST['manufacture'];
+            // echo $getdanhsasch1[0]['photo'];die();
+              $a = $UserModel->insertproduct($tenvi, $motavi, $photo, $ds_id);
+              // var_dump( $UserModel->insertproduct($tenvi, $motavi, $photo, $ds_id)); die();
+              header('Location: san-pham.php');
+          }
+        else{
+          $error = "Insert failed";
+        } 
+      }
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 

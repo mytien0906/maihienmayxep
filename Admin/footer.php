@@ -1,5 +1,6 @@
 
   <?php
+  session_start();
    require_once ('./Model/UserModel.php');
    include "/head.php" ;
    $UserModel = new UserModel();
@@ -28,9 +29,7 @@
       <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Basic form elements</h4>
-                  <p class="card-description">
-                    Thông tin footer
+                  <h4 class="card-title">Thông tin footer</h4>
                   </p>
                   <form class="forms-sample" method="post">
                     <div class="form-group">

@@ -11,6 +11,9 @@
 .card .card-body{
     width: 95%;
 }
+.card .body_thongtin{
+    width: 80%;
+}
 .stretch-card > .card{
     min-width: 83%;
 }
@@ -28,7 +31,7 @@
     width: 50%;
     border: none;
 }
-.form-hinhanh a{
+.form-hinhanh .dowload_file{
     color: #000;
     text-decoration: none;
     border: 1px solid;

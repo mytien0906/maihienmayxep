@@ -47,10 +47,10 @@ include 'slide-index.php' ?>
                                 <?php if ($proudct['id_list'] == $danhsach['id']) { ?>
                                     <?php if ($proudct['noibat'] == 1) { ?>
                                         <div class="col-xl-4 col-lg-4 col-md-6 box-product-item-wrapper">
-                                            <a href="" class="box-product-link">
+                                            <a href="chi-tiet-san-pham.php?id=<?= md5($proudct['id'] . "maixep") ?>&mssid=<?= md5($proudct['id_list'] . "maixep") ?>" class="box-product-link">
                                                 <img src="./Admin/thumb/<?= $proudct['photo'] ?>" alt="cong trinh"></a>
                                             <h3><?= $proudct['tenvi'] ?></h3>
-                                            <a href="">Chi tiết</a>
+                                            <a href="chi-tiet-san-pham.php?id=<?= md5($proudct['id'] . "maixep") ?>&mssid=<?= md5($proudct['id_list'] . "maixep") ?>">Chi tiết</a>
                                         </div>
                                     <?php } ?>
                                 <?php } ?>
@@ -69,12 +69,12 @@ include 'slide-index.php' ?>
                             <div class="col-xl-4 col-lg-4 col-md-6 project-item-wrapper">
                                 <div>
                                     <div>
-                                        <a href="" class="project-item-link">
+                                        <a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="project-item-link">
                                             <img src="./Admin/thumb/<?= $congtrinh['congtrinh_photo'] ?>" alt="hinh anh cong trinh"></a>
                                     </div>
                                 </div>
                                 <div class="project-item-info">
-                                    <h3><a href="" class="project-item-title">
+                                    <h3><a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="project-item-title">
                                             <?= $congtrinh['congtrinh_name'] ?>
                                         </a></h3>
                                     <p><?= htmlspecialchars_decode($congtrinh['congtrinh_noidung']) ?></p>
@@ -91,10 +91,10 @@ include 'slide-index.php' ?>
                     <?php foreach ($dichvus as $dichvu) { ?>
                         <?php if ($dichvu['noibat'] == 1) { ?>
                             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 box-field-item">
-                                <a href="" class="box-field-link">
+                                <a href="chi-tiet.php?tsst=<?= md5($dichvu['dichvu_id'] . "maixep") ?>" class="box-field-link">
                                     <img src="./Admin/thumb/<?= $dichvu['photo'] ?>" alt="hinh anh cong trinh"></a>
                                 <div class="box-field-info">
-                                    <a href="" class="box-field-title">
+                                    <a href="chi-tiet.php?tsst=<?= md5($dichvu['dichvu_id'] . "maixep") ?>" class="box-field-title">
                                             <?= $dichvu['dichvu_name'] ?>
                                         </a>
                                     <p><?= htmlspecialchars_decode($dichvu['dichvu_noidung']) ?>

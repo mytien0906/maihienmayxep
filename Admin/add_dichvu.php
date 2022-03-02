@@ -29,8 +29,14 @@ if(isset($_POST['submit'])){
         $dichvu_name = $_POST['dichvu_name'];
         $dichvu_noidung = $_POST['dichvu_noidung'];
         $photo =  $getdichvu[0]['photo'];
-        $UserModel->updaytedichvu($_GET['dichvu_id'],$dichvu_name, $dichvu_noidung, $photo);
-        header('Location: dich-vu.php');
+        if(isset($_GET['congtrinh_id'])) {
+          // echo(1);die();
+          $UserModel->updaytedichvu($_GET['dichvu_id'],$dichvu_name, $dichvu_noidung, $photo);
+          header('Location: dich-vu.php');
+      }
+      else{
+        $error = "Không được bỏ trống trường dữ liệu";
+      }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -55,6 +61,9 @@ if(isset($_POST['submit'])){
       }
       
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 

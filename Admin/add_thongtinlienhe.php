@@ -17,7 +17,7 @@ if(isset($_POST['reset'])){
   </script>';
 }
 if(isset($_POST['submit'])){
-  if(isset($_POST['name']) && isset($_POST['sđt'])&& isset($_POST['diachi'])&& isset($_POST['email'])&& isset($_POST['chude'])&& isset($_POST['noidung'])) {
+  if(!empty($_POST['name']) && !empty($_POST['sđt'])&& !empty($_POST['diachi'])&& !empty($_POST['email'])&& !empty($_POST['chude'])&& !empty($_POST['noidung'])) {
     $foderPath = 'file/' . time() . $_FILES['fileupload']['name'];
     $target_file = $_FILES["fileupload"]["name"];
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -51,8 +51,11 @@ if(isset($_POST['submit'])){
             $error = "uploaded failed";
           } 
         }
-    } 
+  } 
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
+}
 
  ?>
 <div class="container-scroller">
@@ -143,7 +146,7 @@ if(isset($_POST['submit'])){
               <input type="file" name="fileupload" id="fileupload"/>
               <?php if(!empty($getthongtinlienhe[0]['file'])){ ?>
               <input  name="file" class="file_name" value="<?= $getthongtinlienhe[0]['file'] ?>">
-              <a href="dowload.php?id=<?= md5($getthongtinlienhe[0]['id'] . "maixep") ?>">Dowload File</a>
+              <a class="dowload_file" href="dowload.php?id=<?= md5($getthongtinlienhe[0]['id'] . "maixep") ?>">Dowload File</a>
               <?php } ?>
             </div>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>

@@ -14,7 +14,7 @@ if(isset($_POST['reset'])){
   </script>';
 }
 if(isset($_POST['submit'])){
-  if(!empty($_POST['doitac_name']) && !empty($_POST['link']) && !empty($_FILES['fileupload'])) {
+  if(!empty($_POST['doitac_name']) && !empty($_POST['link']) && !empty($_POST['noidung']) && !empty($_FILES['fileupload'])) {
     $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
     $target_file = $_FILES["fileupload"]["name"];
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -30,8 +30,14 @@ if(isset($_POST['submit'])){
         $link = $_POST['link'];
         $noidung = $_POST['noidung'];
         $photo = $getdoitac[0]['photo'];
-        $UserModel->updayteDoitac($_GET['id'],$doitac_name, $link, $photo, $noidung);
-        header('Location: doi-tac.php');
+        if(isset($_GET['id'])) {
+          // echo(1);die();
+          $UserModel->updayteDoitac($_GET['id'],$doitac_name, $link, $photo, $noidung);
+          header('Location: doi-tac.php');
+      }
+      else{
+        $error = "Không được bỏ trống trường dữ liệu";
+      }
       }
       else{
         if(is_uploaded_file($_FILES['fileupload']['tmp_name']) && move_uploaded_file($_FILES['fileupload']['tmp_name'], $foderPath)){
@@ -57,6 +63,9 @@ if(isset($_POST['submit'])){
       }
       
     } 
+  }
+  else{
+    $error = "Không được bỏ trống trường dữ liệu";
   }
 }
 
