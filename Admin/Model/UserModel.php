@@ -1114,4 +1114,20 @@ class UserModel extends BaseModel{
         $product = $this->update($sql);
         return $product; 
     }
+    // thiet lap thong tin
+    public function updateThieLapThongTin($phantrang_sp,$phantrang_baivet,$diachi,$email,$hotline,$dienthoai,$zalo,$wbsite,$fanpage,$toado,$google_map,$google_analytics,$google_webmaster,$head_js,$Body_js,$tieude,$seo_title,$seo_keyword,$seo_description){
+        $map = str_replace('"',"'",$google_map);
+        $sql = 'UPDATE `thongtin` SET `phantrang_sp`= "'.$phantrang_sp.'" ,`phantrang_baivet`= "'.$phantrang_baivet.'",`diachi`="'.$diachi.'",`email`="'.$email.'",`hotline`="'.$hotline.'",`dienthoai`="'.$dienthoai.'",`zalo`="'.$zalo.'",`wbsite`="'.$wbsite.'",`fanpage`="'.$fanpage.'",`toado`="'.$toado.'",`google_map`= "'.$map.'",`google_analytics`="'.$google_analytics.'",`google_webmaster`="'.$google_webmaster.'",`head_js`="'.$head_js.'",`Body_js`="'.$Body_js.'",`tieude`="'.$tieude.'",`seo_title`="'.$seo_title.'",`seo_keyword`="'.$seo_keyword.'",`seo_description`="'.$seo_description.'" WHERE `id` = 1';
+
+        // echo($sql);die();
+        $product = $this->update($sql);
+        // echo($product);die();
+        return $product; 
+    }
+    public function GetAllThietLapThongTin(){
+        $sql = 'SELECT * FROM `thongtin`';
+        // echo($sql);die();
+        $product = $this->select($sql);
+        return $product;
+    }
 }

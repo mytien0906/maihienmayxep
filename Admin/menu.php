@@ -378,7 +378,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="thiet_lap_thong_tin.php">
         <i class="mdi mdi-bell menu-icon"></i>
         <span class="menu-title">Thiết Lập Thông Tin</span>
       </a>

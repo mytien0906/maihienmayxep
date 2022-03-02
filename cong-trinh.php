@@ -29,16 +29,16 @@ $mangxhs = $UserModel->getAllMangXH();
                         <div class="project-item-wrapper">
                             <div>
                                 <div>
-                                    <a href="" class="project-item-link">
+                                    <a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="project-item-link">
                                         <img src="/Admin/thumb/<?= $congtrinh['congtrinh_photo'] ?>" alt="hinh anh cong trinh"></a>
                                 </div>
                             </div>
                             <div class="project-item-info">
-                                <h3><a href="" class="project-item-title">
+                                <h3><a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="project-item-title">
                                         <?= $congtrinh['congtrinh_name'] ?>
                                     </a></h3>
                                 <p><?= htmlspecialchars_decode($congtrinh['congtrinh_noidung']) ?></p>
-                                    <a href="chi-tiet.html" class="btn-load-more">Xem Thêm</a>
+                                    <a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="btn-load-more">Xem Thêm</a>
                             </div>
                         </div>
                         <?php } }?>

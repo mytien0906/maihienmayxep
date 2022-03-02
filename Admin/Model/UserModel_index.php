@@ -52,7 +52,23 @@ class UserModel extends BaseModel{
                 return $product;
             }
         }
-        
+    }
+    public function selectSpTheoListId($id_list){
+        $pro = 'SELECT id FROM table_product';
+        $pros = $this->select($pro);
+        // var_dump($id_pro);die();
+        foreach($pros as $pr){
+            $md5id = md5($pr['id'] . "maixep");
+            // var_dump($md5id);die();
+            if($id_list == $md5id){
+            //     var_dump($id_pro);
+            // var_dump($md5id);die();
+            $sql = 'SELECT * FROM `table_product` WHERE `id_list` = '.$pr['id'].' LIMIT 3';
+            $product = $this->select($sql);
+            return $product;
+            }
+        }
+       
     }
     public function getproductbyIdlist($id_loai){
         $sql = 'SELECT * FROM `table_product` WHERE  id_list = '.$id_loai;
@@ -283,6 +299,13 @@ class UserModel extends BaseModel{
         $sql = "INSERT INTO `table_lienhe_user`( `name`, `sđt`, `address`, `email`, `chude`, `noidung`, `file`, `ngaytao`) VALUES ('$name','$sdt','$diachi','$email','$chude','$noidung','$file','$date')";
         // echo($sql);die();
         $product = $this->insert($sql);
+        return $product;
+    }
+    // thonong tin thiết lập
+    public function GetAllThietLapThongTin(){
+        $sql = 'SELECT * FROM `thongtin`';
+        // echo($sql);die();
+        $product = $this->select($sql);
         return $product;
     }
 }

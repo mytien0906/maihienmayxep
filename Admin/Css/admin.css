@@ -11,6 +11,9 @@
 .card .card-body{
     width: 95%;
 }
+.card .body_thongtin{
+    width: 80%;
+}
 .stretch-card > .card{
     min-width: 83%;
 }

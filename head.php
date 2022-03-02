@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./assets/css/tin-tuc.css">
     <link rel="stylesheet" href="./assets/css/video.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/chi-tiet-sp.css">
 
 
     <link rel="stylesheet" type="text/css" href="./assets/slick/slick.css" />
