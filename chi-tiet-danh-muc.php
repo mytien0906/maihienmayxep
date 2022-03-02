@@ -21,18 +21,20 @@ $getAlleproduct_chitiet = $UserModel->getproductbyIdlist($_GET['ussd']);
                 </div>
                 <div class="main-content-right">
                     <div class="box-product-categories">
-                        <input type="hidden" name="id_loai" value="<?= $danhsach['id'] ?>">
                         <h2><span class="title"><?= $geteDanhSach1byId[0]['tenvi'] ?></span></h2>
                         <div class="box-product-block">
-                            <?php foreach ($getAlleproduct_chitiet as $danhsach) { ?>
-                                <?php if ($danhsach['hienthi'] == 1) { ?>
-                                    <div class="box-product-item-wrapper">
-                                        <a href="chi-tiet-san-pham.php?id=<?= md5($danhsach['id'] . "maixep") ?>&mssid=<?= md5($danhsach['id_list'] . "maixep") ?>" class="box-product-link">
-                                            <img src="./Admin/thumb/<?= $danhsach['photo'] ?>" alt="cong trinh"></a>
-                                        <h3><?= $danhsach['tenvi'] ?></h3>
-                                        <a href="chi-tiet-san-pham.php?id=<?= md5($danhsach['id'] . "maixep") ?>&mssid=<?= md5($danhsach['id_list'] . "maixep") ?>">Chi tiết</a>
-                                    </div>
-                                <?php } ?>
+                            <?php foreach ($getAlleproduct_chitiet as $danhsach_chitiet) { ?>
+                                <div class="box-product-item-wrapper">
+                                    <a href="chi-tiet-san-pham.php?id=<?= md5($danhsach_chitiet['id'] . "maixep") ?>&mssid=<?= md5($danhsach_chitiet['id_list'] . "maixep") ?>" class="box-product-link">
+                                        <img src="./Admin/thumb/<?= $danhsach_chitiet['photo'] ?>" alt="cong trinh"></a>
+                                    <h3><?= $danhsach_chitiet['tenvi'] ?></h3>
+                                    <a href="chi-tiet-san-pham.php?id=<?= md5($danhsach_chitiet['id'] . "maixep") ?>&mssid=<?= md5($danhsach_chitiet['id_list'] . "maixep") ?>">Chi tiết</a>
+                                </div>
+                            <?php } ?>
+                            <?php if( count($getAlleproduct_chitiet) == 0 ){?>
+                                <div class="alert alert-warning" role="alert">
+                                    <strong><?= "Không Tìm Thấy Kết Quả" ?></strong>
+                                </div>
                             <?php } ?>
                         </div>
                     </div>

@@ -80,7 +80,7 @@ class UserModel extends BaseModel{
             if($id_loai == $md5id){
             //     var_dump($id_pro);
             // var_dump($md5id);die();
-            $sql = 'SELECT * FROM `table_product` WHERE  id_list = '.$pr['id_list'];
+            $sql = 'SELECT * FROM `table_product` WHERE  id_list = ' .$pr['id_list'] ;
             // echo($sql);die();
             $product = $this->select($sql);
             return $product;
