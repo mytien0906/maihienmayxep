@@ -42,11 +42,11 @@ include 'slide-index.php' ?>
                     <div class="container">
                         <input type="hidden" name="id_loai" value="<?= $danhsach['id'] ?>">
                         <h2><span class="title"><?= $danhsach['tenvi'] ?></span></h2>
-                        <div class="box-product-block">
+                        <div class="row box-product-block">
                             <?php foreach ($getAlleproduct as $proudct) { ?>
                                 <?php if ($proudct['id_list'] == $danhsach['id']) { ?>
                                     <?php if ($proudct['noibat'] == 1) { ?>
-                                        <div class="box-product-item-wrapper">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 box-product-item-wrapper">
                                             <a href="chi-tiet-san-pham.php?id=<?= md5($proudct['id'] . "maixep") ?>&mssid=<?= md5($proudct['id_list'] . "maixep") ?>" class="box-product-link">
                                                 <img src="./Admin/thumb/<?= $proudct['photo'] ?>" alt="cong trinh"></a>
                                             <h3><?= $proudct['tenvi'] ?></h3>
@@ -63,10 +63,10 @@ include 'slide-index.php' ?>
         <div class="box-projects">
             <div class="container">
                 <h2><a href="#" class="title">DỰ ÁN CÔNG TRÌNH</a></h2>
-                <div class="project-block">
+                <div class="row project-block">
                     <?php foreach ($congtrinhs as $congtrinh) { ?>
                         <?php if ($congtrinh['noibat'] == 1) { ?>
-                            <div class="project-item-wrapper">
+                            <div class="col-xl-4 col-lg-4 col-md-6 project-item-wrapper">
                                 <div>
                                     <div>
                                         <a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="project-item-link">
@@ -87,16 +87,16 @@ include 'slide-index.php' ?>
         </div>
         <div class="box-fields">
             <div class="container">
-                <div class="box-fields-wrapper">
+                <div class="row box-fields-wrapper">
                     <?php foreach ($dichvus as $dichvu) { ?>
                         <?php if ($dichvu['noibat'] == 1) { ?>
-                            <div class="box-field-item">
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 box-field-item">
                                 <a href="chi-tiet.php?tsst=<?= md5($dichvu['dichvu_id'] . "maixep") ?>" class="box-field-link">
                                     <img src="./Admin/thumb/<?= $dichvu['photo'] ?>" alt="hinh anh cong trinh"></a>
                                 <div class="box-field-info">
-                                    <h3><a href="chi-tiet.php?tsst=<?= md5($dichvu['dichvu_id'] . "maixep") ?>" class="box-field-title">
+                                    <a href="chi-tiet.php?tsst=<?= md5($dichvu['dichvu_id'] . "maixep") ?>" class="box-field-title">
                                             <?= $dichvu['dichvu_name'] ?>
-                                        </a></h3>
+                                        </a>
                                     <p><?= htmlspecialchars_decode($dichvu['dichvu_noidung']) ?>
                                     </p>
                                 </div>
@@ -109,10 +109,10 @@ include 'slide-index.php' ?>
         <div class="box-products">
             <div class="container">
                 <h2><span class="title">VIDEO CLIP</span></h2>
-                <div class="box-product-block">
+                <div class="row box-product-block">
                     <?php foreach ($videos as $video) { ?>
                         <?php if ($video['noibat'] == 1) { ?>
-                            <div class="card">
+                            <div class="col-xl-4 col-lg-4 col-md-6 card">
                                 <iframe width="360" height="215" src="https://www.youtube.com/embed/
 <?= $video['video_noidung'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <p class="card-text"><?= $video['video_name'] ?></p>
@@ -126,7 +126,7 @@ include 'slide-index.php' ?>
         <div class="box-news">
             <div class="container box-news-info">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-sx-12">
                         <div class="news-block">
                             <h2><a href="#" class="title">TIN TỨC & SỰ KIỆN</a></h2>
                             <?php foreach ($tintucs as $tintuc) { ?>
@@ -144,12 +144,12 @@ include 'slide-index.php' ?>
                                             </div>
                                         </div>
                                     </div>
-                                   
+
                                 <?php } ?>
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="col-md-6 customers-block-col">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-sx-12 customers-block-col">
                         <div class="customers-block">
                             <h2><a href="#" class="title">KHÁCH HÀNG</a></h2>
                             <div class="customer-item">
