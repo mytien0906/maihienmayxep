@@ -1511,4 +1511,7 @@ ul.slick-dots {
     .company-hotline{
         display: none;
     }
+    .bottom-header li.header-navbar-item{
+        width: 40%;
+    }
 }
