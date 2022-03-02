@@ -33,10 +33,10 @@ $tintucs = $UserModel->getAllTintuc();
 
             </div>
             <div class="col-xl-8 col-lg-8">
-              <div class="new-item-info tintuc_danhmuc">
-                <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
+              <div class="tintuc_danhmuc">
+                  <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
                     <?= $tintuc['tintuc_name'] ?>
-                  </a></h3>
+                  </a>
                 <div class="tintuc_noidung_danhmuc">
                   <p> <?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?> </p>
                 </div>

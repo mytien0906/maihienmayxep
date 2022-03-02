@@ -42,11 +42,11 @@ include 'slide-index.php' ?>
                     <div class="container">
                         <input type="hidden" name="id_loai" value="<?= $danhsach['id'] ?>">
                         <h2><span class="title"><?= $danhsach['tenvi'] ?></span></h2>
-                        <div class="box-product-block">
+                        <div class="row box-product-block">
                             <?php foreach ($getAlleproduct as $proudct) { ?>
                                 <?php if ($proudct['id_list'] == $danhsach['id']) { ?>
                                     <?php if ($proudct['noibat'] == 1) { ?>
-                                        <div class="box-product-item-wrapper">
+                                        <div class="col-xl-4 col-lg-4 box-product-item-wrapper">
                                             <a href="" class="box-product-link">
                                                 <img src="./Admin/thumb/<?= $proudct['photo'] ?>" alt="cong trinh"></a>
                                             <h3><?= $proudct['tenvi'] ?></h3>
@@ -63,10 +63,10 @@ include 'slide-index.php' ?>
         <div class="box-projects">
             <div class="container">
                 <h2><a href="#" class="title">DỰ ÁN CÔNG TRÌNH</a></h2>
-                <div class="project-block">
+                <div class="row project-block">
                     <?php foreach ($congtrinhs as $congtrinh) { ?>
                         <?php if ($congtrinh['noibat'] == 1) { ?>
-                            <div class="project-item-wrapper">
+                            <div class="col-xl-4 col-lg-4 project-item-wrapper">
                                 <div>
                                     <div>
                                         <a href="" class="project-item-link">

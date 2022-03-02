@@ -16,9 +16,13 @@
     border-bottom-right-radius: 0;
     margin: 0;
 } 
-.main-content-news .new-block .new-item-wrapper a img{} 
+.main-content-news .new-block .new-item-wrapper a img{
+    width: 300px;
+    height: 200px;
+} 
 .main-content-news .new-block .new-item-info{
     padding-top: 0;
+    padding-left: 0;
 }
 .main-content-news .new-block .new-item-info p{
     color: #333333;

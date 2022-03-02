@@ -26,16 +26,16 @@ $mangxhs = $UserModel->getAllMangXH();
                     <?php if ($dichvu['hienthi'] == 1) { ?>
                         <div class="project-block">
                             <div class="project-item-wrapper">
-                                <div>
+                                <div class="col-xl-4 col-lg-4">
                                     <div>
                                         <a href="" class="project-item-link">
                                             <img src="./Admin/thumb/<?= $dichvu['photo'] ?>" alt="hinh anh cong trinh"></a>
                                     </div>
                                 </div>
-                                <div class="project-item-info">
-                                    <h3><a href="" class="project-item-title">
+                                <div class="col-xl-8 col-lg-8 project-item-info">
+                                    <a href="" class="project-item-title">
                                             <?= $dichvu['dichvu_name'] ?>
-                                        </a></h3>
+                                        </a>
                                     <p><?= htmlspecialchars_decode($dichvu['dichvu_noidung']) ?></p>
                                     <a href="chi-tiet.html" class="btn-load-more">Xem Thêm</a>
                                 </div>

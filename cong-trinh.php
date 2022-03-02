@@ -26,14 +26,14 @@ $mangxhs = $UserModel->getAllMangXH();
                 <div class="project-block">
                     <?php foreach ($congtrinhs as $congtrinh) { ?>
                         <?php if ($congtrinh['hienthi'] == 1) { ?>
-                            <div class="project-item-wrapper">
-                                <div>
+                            <div class="row project-item-wrapper">
+                                <div class="col-xl-4 col-lg-4">
                                     <div>
                                         <a href="" class="project-item-link">
                                             <img src="/Admin/thumb/<?= $congtrinh['congtrinh_photo'] ?>" alt="hinh anh cong trinh"></a>
                                     </div>
                                 </div>
-                                <div class="project-item-info">
+                                <div class="col-xl-8 col-lg-8 project-item-info">
                                     <h3><a href="" class="project-item-title">
                                             <?= $congtrinh['congtrinh_name'] ?>
                                         </a></h3>
