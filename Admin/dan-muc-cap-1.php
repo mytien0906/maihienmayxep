@@ -1,13 +1,13 @@
 <?php 
 session_start();
 require_once ('./Model/UserModel.php');
-include "/head.php" ;
+// include "/head.php" ;
 $UserModel = new UserModel();
 $danhsasch1 = $UserModel->getAlleDanhSach1();
 ?>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
-      <?php include "/header.php" ?>
+      <!-- <?php include "/header.php" ?> -->
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_settings-panel.html -->
@@ -38,27 +38,7 @@ $danhsasch1 = $UserModel->getAlleDanhSach1();
               <h3 class="card-title">Danh sách Danh mục cấp 1</h3>
             </div>
             <div class="card-body table-responsive p-0"  >
-            <div class="row" >
-              <div class="col-sm-12 col-md-6">
-                <div class="dataTables_length" id="order-listing_length">
-                  <label>Show 
-                    <select name="order-listing_length" aria-controls="order-listing" class="form-control">
-                      <option value="5">5</option>
-                      <option value="10">10</option>
-                      <option value="15">15</option>
-                      <option value="-1">All</option>
-                    </select> entries</label>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div id="order-listing_filter" class="dataTables_filter">
-                    <label>
-                      <input type="search" class="form-control" placeholder="Search" aria-controls="order-listing">
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <table class="table table-hover" >
+              <table class="table table-hover" id="order-listing">
                 <thead >
                   <tr>
                     <th class="align-middle" width="5%">

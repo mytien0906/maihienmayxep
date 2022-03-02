@@ -71,10 +71,21 @@ class UserModel extends BaseModel{
        
     }
     public function getproductbyIdlist($id_loai){
-        $sql = 'SELECT * FROM `table_product` WHERE  id_list = '.$id_loai;
-        // echo($sql);die();
-        $product = $this->select($sql);
-        return $product;
+        $pro = 'SELECT id_list FROM table_product';
+        $pros = $this->select($pro);
+        // var_dump($id_pro);die();
+        foreach($pros as $pr){
+            $md5id = md5($pr['id_list'] . "maixep");
+            // var_dump($md5id);die();
+            if($id_loai == $md5id){
+            //     var_dump($id_pro);
+            // var_dump($md5id);die();
+            $sql = 'SELECT * FROM `table_product` WHERE  id_list = '.$pr['id_list'];
+            // echo($sql);die();
+            $product = $this->select($sql);
+            return $product;
+            }
+        }
         
     }
     // Công trình
