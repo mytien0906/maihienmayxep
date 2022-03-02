@@ -572,7 +572,7 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
  .box-projects .project-block .project-item-wrapper .project-item-link img:hover {
      transform: scale(1.1);
  } */
-.project-item-link::before, .project-item-link::after {
+/* .project-item-link::before, .project-item-link::after {
     box-sizing: inherit;
     content: "";
     position: absolute;
@@ -582,7 +582,7 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     left: 10px;
     top: 10px;
     transform-origin: center;
-}
+} */
 
 .project-item-wrapper div div {
     overflow: hidden;

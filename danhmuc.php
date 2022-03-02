@@ -5,7 +5,7 @@ $UserModel = new UserModel();
 $danhsachs = $UserModel->getAlleDanhSach1();
 $tintucs = $UserModel->getAllTintuc();
 ?>
-<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 main-content-left">
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 main-content-left">
   <div class="category-block">
     <div class="category-content">
       <h3>Danh mục sản phẩm</h3>
