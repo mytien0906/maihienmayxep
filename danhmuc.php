@@ -27,12 +27,12 @@ $tintucs = $UserModel->getAllTintuc();
       <?php foreach ($tintucs as $tintuc) { ?>
         <?php if ($tintuc['noibat'] == 1) { ?>
           <div class="row new-item-wrapper">
-            <div class="col-xl-5 col-lg-5">
+            <div class="col-xl-4 col-lg-4">
               <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-link">
                 <img src="./Admin/thumb/<?= $tintuc['photo'] ?>" alt="hinh anh cong trinh"></a>
 
             </div>
-            <div class="col-xl-6 col-lg-6">
+            <div class="col-xl-8 col-lg-8">
               <div class="new-item-info tintuc_danhmuc">
                 <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
                     <?= $tintuc['tintuc_name'] ?>
