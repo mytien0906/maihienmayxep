@@ -113,7 +113,8 @@ include 'slide-index.php' ?>
                     <?php foreach ($videos as $video) { ?>
                         <?php if ($video['noibat'] == 1) { ?>
                             <div class="card">
-                                <iframe width="360" height="215" src="https://www.youtube.com/embed/<?= $video['video_noidung'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="360" height="215" src="https://www.youtube.com/embed/
+<?= $video['video_noidung'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <p class="card-text"><?= $video['video_name'] ?></p>
                             </div>
                         <?php } ?>
