@@ -42,11 +42,11 @@ if (isset($_POST['submit-contact'])) {
     <div class="container">
         <div class="main-content-wrapper">
             <h2><span class="title">LIÊN HỆ</span></h2>
-            <div id="main-content">
-                <div class="lienhe">
+            <div id="main-content" class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 lienhe">
                     <?= $lienhe[0]['noidung'] ?>
                 </div>
-                <form class="form-contact validation-contact" novalidate="" method="post" action="" enctype="multipart/form-data">
+                <form class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-contact validation-contact" novalidate="" method="post" action="" enctype="multipart/form-data">
                     <?php
                     if ($error != "") {
                     ?>

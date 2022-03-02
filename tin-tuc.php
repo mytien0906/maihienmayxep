@@ -25,11 +25,11 @@ $mangxhs = $UserModel->getAllMangXH();
                     <?php foreach ($tintucs as $tintuc) {
                         if ($tintuc['hienthi'] == 1) { ?>
                             <div class="row new-item-wrapper">
-                                <div class="col-xl-4 col-lg-4">
+                                <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
                                     <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-link">
                                         <img src="./Admin/thumb/<?= $tintuc['photo'] ?>" alt="hinh anh cong trinh"></a>
                                 </div>
-                                <div class="col-xl-8 col-lg-8  new-item-info tintuc">
+                                <div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-xs-9 new-item-info tintuc">
                                     <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
                                         <?= $tintuc['tintuc_name'] ?>
                                     </a>
@@ -37,6 +37,7 @@ $mangxhs = $UserModel->getAllMangXH();
                                     <div class="tintuc_noidung">
                                         <p> <?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?> </p>
                                     </div>
+                                    <a href="chi-tiet.html" class="btn-load-more">Xem Thêm</a>
                                 </div>
                             </div>
                     <?php }
@@ -60,6 +61,6 @@ $mangxhs = $UserModel->getAllMangXH();
     }
 
     var str = $('.tintuc .tintuc_noidung').text();
-    var result = trimText(str, 350);
+    var result = trimText(str, 250);
     $('.tintuc .tintuc_noidung').text(result);
 </script>

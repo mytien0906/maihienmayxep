@@ -22,7 +22,7 @@ $mangxhs = $UserModel->getAllMangXH();
                         <div class="row box-product-block">
                             <?php foreach ($videos as $video) { ?>
                                 <?php if ($video['hienthi'] == 1) { ?>
-                                    <div class="col-xl-4 col-lg-4 card">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 card">
                                         <iframe width="360" height="215" src="https://www.youtube.com/embed/<?= $video['video_noidung'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         <p class="card-text"><?= $video['video_name'] ?></p>
                                     </div>

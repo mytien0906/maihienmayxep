@@ -1,10 +1,13 @@
 $(document).ready(function () {
+    window.onscroll = function () {
+        myFunction();
+        window.scrollY > 100 ? scrollToTop.style.display = "block" : scrollToTop.style.display = "none";
+    };
 
     // Get the header
     var scrollToTop = document.querySelector(".scrollToTop");
-    window.onscroll = () => window.scrollY > 200 ? scrollToTop.style.display = "block" : scrollToTop.style.display = "none"
-    
-    window.onscroll = function () { myFunction() };
+    scrollToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
     var header = document.getElementById("myHeader");
     var sticky = header.offsetTop;
 
@@ -16,7 +19,6 @@ $(document).ready(function () {
         }
     }
 
-    scrollToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
     $('.your-class').slick({
         dots: true,
@@ -30,8 +32,8 @@ $(document).ready(function () {
             breakpoint: 768,
             infinite: true,
             settings: {
+                slidesToShow: 3,
                 slidesToScroll: 1,
-                slidesToShow: 1,
                 centerMode: true,
                 centerPadding: 0,
             }
