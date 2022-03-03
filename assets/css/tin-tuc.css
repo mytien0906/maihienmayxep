@@ -117,3 +117,22 @@
         -webkit-box-orient: vertical;
     }
 }
+@media screen and (max-width:590px){
+    .main-content-news .new-block .new-item-info, .main-content-news .new-block .new-item-wrapper a img{
+        height: 140px;
+    }
+    .main-content-news .new-block .new-item-info .date-publish{
+        margin-bottom: 0;
+    }
+    .main-content-news .new-block .new-item-info{
+        padding-top: 5px;
+    padding-right: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 20px;
+    line-height: 20px;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    }
+}

@@ -7,13 +7,13 @@ $logo = $UserModel->getlogobyId();
 <header class="header">
         <div class="top-header">
             <div class="container">
-                <div class="top-header-block">
-                    <div class="company-address">
+                <div class="row top-header-block">
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 company-address">
                         <i class="fa fa-map-marker-alt"></i>
                         <span>Địa chỉ: Số 29 Đường số 4, Khu Phố 17, Phường Bình Hưng Hòa A, Quận Bình Tân, TP. Hồ Chí
                             Minh</span>
                     </div>
-                    <div class="contact-block">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 contact-block">
                         <ul class="contact-block-list">
                             <li class="contact-block-item">
                                 <a href="#" class="contact-block-link">

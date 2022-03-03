@@ -25,13 +25,13 @@ $mangxhs = $UserModel->getAllMangXH();
                     <?php foreach ($tintucs as $tintuc) {
                         if ($tintuc['hienthi'] == 1) { ?>
                             <div class="row new-item-wrapper">
-                                <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-3">
                                     <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-link"
                                     >
                                         <img src="./Admin/thumb/<?= $tintuc['photo'] ?>" alt="hinh anh cong trinh">
                                     </a>
                                 </div>
-                                <div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-xs-9 new-item-info tintuc">
+                                <div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-9 new-item-info tintuc">
                                     <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
                                         <?= $tintuc['tintuc_name'] ?>
                                     </a>

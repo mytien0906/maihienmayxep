@@ -5,7 +5,7 @@ $UserModel = new UserModel();
 $danhsachs = $UserModel->getAlleDanhSach1();
 $tintucs = $UserModel->getAllTintuc();
 ?>
-<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 main-content-left">
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 main-content-left">
   <div class="category-block">
     <div class="category-content">
       <h3>Danh mục sản phẩm</h3>
@@ -27,12 +27,12 @@ $tintucs = $UserModel->getAllTintuc();
       <?php foreach ($tintucs as $tintuc) { ?>
         <?php if ($tintuc['noibat'] == 1) { ?>
           <div class="row new-item-wrapper">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
               <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-link">
                 <img src="./Admin/thumb/<?= $tintuc['photo'] ?>" alt="hinh anh cong trinh"></a>
 
             </div>
-            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 col-6">
               <div class="tintuc_danhmuc">
                   <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
                     <?= $tintuc['tintuc_name'] ?>
