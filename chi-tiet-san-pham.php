@@ -12,10 +12,8 @@ $selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
     <div class="main-content-detail-products">
         <div class="container">
             <div class="main-content-wrapper">
-                <div class="main-content-left">
                 <?php include 'danhmuc.php' ?>
-                </div>
-                <div class="main-content-right">
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12  main-content-right">
                     <div class="new-block">
                         <div class="new-item-wrapper">
                             <?php foreach($getproductbyId as $chitiet){ ?>

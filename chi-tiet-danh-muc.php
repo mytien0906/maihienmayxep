@@ -15,11 +15,9 @@ $getAlleproduct_chitiet = $UserModel->getproductbyIdlist($_GET['ussd']);
     <!-- Main Content -->
     <div class="main-content-details">
         <div class="container">
-            <div class="main-content-wrapper">
-                <div class="main-content-left">
+            <div class="row main-content-wrapper">
                    <?php include 'danhmuc.php' ?>
-                </div>
-                <div class="main-content-right">
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 main-content-right">
                     <div class="box-product-categories">
                         <h2><span class="title"><?= $geteDanhSach1byId[0]['tenvi'] ?></span></h2>
                         <div class="box-product-block">

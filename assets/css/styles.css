@@ -500,11 +500,6 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     text-align: center;
 }
 
-.box-product-categories .box-product-item-wrapper .box-product-link img {
-    width: 100%;
-    height: 200px;
-}
-
 .box-product-categories .box-product-item-wrapper h3 {
     font-size: 18px;
     color: #212529;
@@ -514,15 +509,43 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     font-weight: 500;
 }
 
-.box-product-categories a {
+.box-product-categories a.box-product-link {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background: #000;
+}
+
+.box-product-categories a.box-product-link:hover img {
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    -moz-transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+
+.box-product-categories a.box-product-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+.box-product-categories a.detail-pro {
     color: var(--red-light-color);
     padding-top: 5px;
-    display: block;
 }
+
 
 .box-projects {
     background: var(--bg-color);
     margin-top: 55px;
+    overflow: hidden;
+    display: block;
 }
 
 .box-projects .project-block, .box-product-block {
@@ -725,7 +748,7 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
 
 .box-fields-wrapper .box-field-info .box-field-title {
     color: #f6ed01;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -778,11 +801,7 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     text-align: center;
     padding-top: 25px;
     font-weight: 600;
-}
-
-.box-product-block .box-product-item-wrapper .box-product-link {
-    overflow: hidden;
-    display: block;
+    text-transform: uppercase;
 }
 
 .box-product-block .box-product-item-wrapper .box-product-link::before {
@@ -801,28 +820,6 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     content: none;
 }
 
-.box-product-block .box-product-item-wrapper .box-product-link img {
-    transition: 0.3s ease-out;
-    -moz-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    -o-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    transform: scale(1, 1);
-    width: 100%;
-    height: 300px;
-}
-
-.box-product-block .box-product-item-wrapper .box-product-link:hover img {
-    -webkit-transition: 0.3s ease-out;
-    -moz-transition: 0.3s ease-out;
-    -o-transition: 0.3s ease-out;
-    transition: 0.3s ease-out;
-    -moz-transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
-    -o-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    transform: scale(1.1, 1.1);
-}
 
 .box-news {}
 
@@ -1409,8 +1406,8 @@ ul.slick-dots {
         margin: 3%;
     }
 
-    .main-content-construct .project-item-wrapper img ,
-    .main-content-news .new-block .new-item-wrapper a img{
+    .main-content-construct .project-item-wrapper img,
+    .main-content-news .new-block .new-item-wrapper a img {
         height: 180px !important;
     }
 }
@@ -1472,13 +1469,16 @@ ul.slick-dots {
         text-align: center;
         display: block;
     }
-    .breadcrumbs{
+
+    .breadcrumbs {
         display: none;
     }
-    .header-slider{
+
+    .header-slider {
         display: none;
     }
-    .top-main-content{
+
+    .top-main-content {
         padding-top: 0;
     }
 }
@@ -1508,10 +1508,46 @@ ul.slick-dots {
         text-align: center;
         margin-top: 15px;
     }
-    .company-hotline{
+
+    .company-hotline {
         display: none;
     }
-    .bottom-header li.header-navbar-item{
+
+    .bottom-header li.header-navbar-item {
         width: 40%;
+    }
+
+    .box-fields-wrapper .box-field-info .box-field-title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-line-clamp: 1;
+        line-height: 1.6rem;
+        text-align: center;
+    }
+    .box-fields-wrapper .box-field-info p{
+        white-space: inherit;
+        line-height: 1.5em;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        text-align: left;
+        -webkit-box-orient: vertical;
+    }
+    .box-news .new-item{
+        width: 100%;
+    }
+    .new-item{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width:576px){
+    .box-product-block .box-product-item-wrapper .box-product-link img, .box-projects .project-block img{
+        height: 300px;
+    object-position: center;
     }
 }
