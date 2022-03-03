@@ -1087,6 +1087,7 @@ ul.slick-dots {
     height: 120px;
     object-fit: cover;
     margin-top: 20px;
+    margin-left: 40px;
 }
 
 .slider-item .your-class .btn-slider {
