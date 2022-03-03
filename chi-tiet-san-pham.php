@@ -8,6 +8,16 @@ $selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
 ?>
     <!-- End Header -->
     <?php include 'header.php' ?>
+    <div class="breadcrumbs">
+            <div class="container">
+                <div class="breadcrumb-wrapper">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><span>Trang chủ</span></a></li>
+                        <li class="breadcrumb-item active"><a href="#"><span>Chi tiết sản phẩm</span></a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     <!-- Main Content -->
     <div class="main-content-detail-products">
         <div class="container">

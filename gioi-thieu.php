@@ -10,6 +10,16 @@ $gioithieu = $UserModel->getGioiThieuhbyId();
 ?>
 <!-- Start Header-->
 <?php include 'header.php' ?>
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumb-wrapper">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#"><span>Trang chủ</span></a></li>
+                <li class="breadcrumb-item active"><a href="#"><span>Giới Thiệu</span></a></li>
+            </ol>
+        </div>
+    </div>
+</div>
 <!-- End Header -->
 <!-- Main Content -->
 <div class="main-content-intro">

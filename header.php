@@ -121,14 +121,5 @@ $logo = $UserModel->getlogobyId();
                 </nav>
             </div>
         </div>
-        <div class="breadcrumbs">
-            <div class="container">
-                <div class="breadcrumb-wrapper">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#"><span>Trang chủ</span></a></li>
-                        <li class="breadcrumb-item active"><a href="#"><span>Liên hệ</span></a></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
+        
     </header>
