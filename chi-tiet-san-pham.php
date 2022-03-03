@@ -3,11 +3,31 @@ require_once ('./Admin/Model/UserModel_index.php');
 include 'head.php';
 $UserModel = new UserModel();
 $GetAllThietLapThongTin = $UserModel->GetAllThietLapThongTin();
-$getproductbyId = $UserModel->getproductbyId($_GET['id']);
-$selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
+if(isset($_GET['id'])){
+    $getproductbyId = $UserModel->getproductbyId($_GET['id']);
+}
+else{
+    header('Location: 404.php');
+}
+if(isset($_GET['mssid'])){
+    $selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
+}
+else{
+    header('Location: 404.php');
+}
 ?>
     <!-- End Header -->
     <?php include 'header.php' ?>
+    <div class="breadcrumbs">
+            <div class="container">
+                <div class="breadcrumb-wrapper">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><span>Trang chủ</span></a></li>
+                        <li class="breadcrumb-item active"><a href="#"><span>Chi tiết sản phẩm</span></a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     <!-- Main Content -->
     <div class="main-content-detail-products">
         <div class="container">

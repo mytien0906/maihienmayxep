@@ -631,17 +631,19 @@ class UserModel extends BaseModel{
         $videos = $this->select($video);
 
         $video_nd = substr($video_noidung,-11);
+        // echo( $video_nd);die();
         foreach($videos as $vd){
             $md5id = md5($vd['video_id'] . "maixep");
             
-            if($video_id = $md5id){
+            if($video_id == $md5id){
             $sql = 'UPDATE `table_video` SET `video_name`="'.$video_name.'",`video_noidung`="'.$video_nd.'",`photo`= "'.$video_photo.'",`video_ngaytao`= "'.date("Y-m-d").'" WHERE video_id = '.$vd['video_id'];
             // echo( $sql);die();
             $product = $this->update($sql);
+            return $product;
             }
         }
         
-        return $product;
+        
     }
     public function DeleteVideo($video_id){
         $video = 'SELECT video_id FROM table_video';
@@ -1052,6 +1054,12 @@ class UserModel extends BaseModel{
         $product = $this->select($sql);
         return $product;
     }
+    public function getAllThongTinLienHeByHienThi(){
+        $sql = 'SELECT * FROM `table_lienhe_user` WHERE `xacnhan` = 0';
+        // echo($sql);die();
+        $product = $this->select($sql);
+        return $product;
+    }
     public function getAllThongTinLienHeById($id){
         $ds = 'SELECT id FROM table_lienhe_user';
         $dss = $this->select($ds);
@@ -1129,5 +1137,31 @@ class UserModel extends BaseModel{
         // echo($sql);die();
         $product = $this->select($sql);
         return $product;
+    }
+
+    public function getAllCouter(){
+        $sql = 'SELECT * FROM `table_counter` ';
+        $product = $this->select($sql);
+        return $product;
+    }
+
+    public function getAllCountByMonth($month,$year){
+        $ds = 'SELECT * FROM table_counter';
+        $dss = $this->select($ds);
+        foreach($dss as $vd){
+            $dates = date('m',$vd['date']) ;
+            // echo($vd['Year']);die();
+            if($month == $dates && $year == $vd['Year']){
+            // var_dump($id);
+            // var_dump($vd['date']);die();
+
+            $sql = 'SELECT * FROM `table_counter` WHERE `month` = '.$month.' AND `Year` = '.$year.'';
+            $product = $this->select($sql);
+            return $product;
+            }
+        }
+        // echo($sql);die();
+        
+        
     }
 }

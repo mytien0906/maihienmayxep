@@ -349,7 +349,6 @@
       <div class="collapse" id="charts">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"><a class="nav-link" href="logo.php">Logo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Favicon</a></li>
           <li class="nav-item"><a class="nav-link" href="slide.php">Slideshow</a></li>
           <li class="nav-item"><a class="nav-link" href="doi-tac.php">Đối tác</a></li>
           <li class="nav-item"><a class="nav-link" href="mang-xh.php">Mang Xa Hoi</a></li>

@@ -8,15 +8,34 @@ $tintucs = $UserModel->getAllTintuc();
 if(isset($_GET['id_tintuc'])){
     $getTintucbyId = $UserModel->getTintucbyId($_GET['id_tintuc']);
 }
+else{
+    header('Location: 404.php');
+}
 if(isset($_GET['essifd'])){
     $getcongtrinhbyId = $UserModel->getcongtrinhbyId($_GET['essifd']);
+}
+else{
+    header('Location: 404.php');
 }
 if(isset($_GET['tsst'])){
     $getdichvubyId = $UserModel->getdichvubyId($_GET['tsst']);
 }
+else{
+    header('Location: 404.php');
+}
 ?>
     <!-- Start Header-->
     <?php include 'header.php' ?>
+    <div class="breadcrumbs">
+            <div class="container">
+                <div class="breadcrumb-wrapper">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><span>Trang chủ</span></a></li>
+                        <li class="breadcrumb-item active"><a href="#"><span>Chi tiết</span></a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     <!-- End Header -->
     <!-- Main Content -->
     <div class="row main-content-details">

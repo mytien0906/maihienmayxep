@@ -3,7 +3,7 @@
 require_once ('./Model/UserModel.php');
 include "/head.php" ;
 $UserModel = new UserModel();
-$thongtinlienhe = $UserModel->getAllThongTinLienHe();
+$thongtinlienhe_header = $UserModel->getAllThongTinLienHeByHienThi();
 $admin=$UserModel->admin($_SESSION['userid']);
 ?>
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -76,9 +76,8 @@ $admin=$UserModel->admin($_SESSION['userid']);
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="thong-tin-lien-he.php">
               <i class="mdi mdi-settings text-primary"></i>
-              <?php foreach($thongtinlienhe as $thongtin) {?>
-                Liên Hệ <?php if($thongtin['xacnhan'] == 0) echo count($thongtin['xacnhan']) ?>
-              <?php }?>
+              Liên Hệ
+                 <?= count($thongtinlienhe_header) ?>
               </a>
               <a class="dropdown-item" href="thongtinadmin.php">
                 <i class="mdi mdi-settings text-primary"></i>

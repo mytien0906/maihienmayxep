@@ -7,7 +7,7 @@ $danhsasch1 = $UserModel->getAlleDanhSach1();
 ?>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
-      <!-- <?php include "/header.php" ?> -->
+      <?php include "/header.php" ?>
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_settings-panel.html -->
