@@ -288,6 +288,7 @@ p {
 .bottom-header nav.navbar {
     padding-top: 0;
     padding-bottom: 0;
+    padding-left: 13px;
 }
 
 .bottom-header .header-navbar-list {
@@ -1064,7 +1065,12 @@ ul.slick-dots {
     padding-top: 5px;
     padding-bottom: 15px;
 }
-
+.slider-item .your-class div .info-customer{
+    visibility: hidden;
+}
+.slider-item .your-class .slick-slide.slick-current .info-customer{
+    visibility: visible;
+}
 .slider-item .your-class ul.slick-dots button {
     width: 15px;
     height: 15px;
