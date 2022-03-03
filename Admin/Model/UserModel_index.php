@@ -1,5 +1,6 @@
 <?php
 require_once ('BaseModel_index.php');
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 class UserModel extends BaseModel{
     // Danh mục
@@ -317,6 +318,38 @@ class UserModel extends BaseModel{
         $sql = 'SELECT * FROM `thongtin`';
         // echo($sql);die();
         $product = $this->select($sql);
+        return $product;
+    }
+
+    // Couter
+
+    public function getIpUser(){
+        $sql = 'SELECT * FROM `table_counter` ';
+        $product = $this->select($sql);
+        return $product;
+    }
+    public function inserUser_online($ip){
+        $date = time();
+        // var_dump($date);die();
+        $sql = "INSERT INTO `table_user_online`( `ip`, `date`) VALUES ('$ip','$date')";
+        // var_dump($sql);die();
+        $product = $this->insert($sql);
+        // var_dump($product);die();
+        return $product;
+    }
+    public function inserCounts($ip){
+        $date = time();
+        $Year = date('Y');
+        $month = date('m');
+        $sql = "INSERT INTO `table_counter`(`ip`, `date`,`Year`,`month`) VALUES ('$ip','$date','$Year','$month')";
+        // var_dump($sql);die();
+        $product = $this->insert($sql);
+        return $product;
+    }
+    public function deleteUser_online($ip){
+        $sql = "DELETE FROM `table_user_online` WHERE ip = '$ip' ";
+        // var_dump($sql);die();
+        $product = $this->delete($sql);
         return $product;
     }
 }

@@ -38,8 +38,8 @@
   <!-- Custom js for this page-->
   <script src="/Admin/js/dashboard.js"></script>
   <script src="/Admin/js/checkbox.js"></script>
-  <script src="/Admin/js/chart.js"></script>
-  <script src="/Admin/js/chartist.js"></script>
+  <!-- <script src="/Admin/js/chart.js"></script> -->
+  <!-- <script src="/Admin/js/chartist.js"></script> -->
   <!-- End custom js for this page-->
 
   <!-- Jquery -->

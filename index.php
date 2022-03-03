@@ -1,6 +1,8 @@
 <?php
+session_start();
 require_once('./Admin/Model/UserModel_index.php');
 include 'head.php';
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 $UserModel = new UserModel();
 $danhsachs = $UserModel->getAlleDanhSach1();
 $congtrinhs = $UserModel->getAllcongtrinh();
@@ -16,6 +18,56 @@ $getproductbyIdlists = $UserModel->getproductbyIdlist($danhsachs[0]['id']);
 // var_dump($getproductbyIdlists);die();
 $getAlleproduct = $UserModel->getAlleproduct();
 $getAllSlide = $UserModel->getAllSlide();
+$ip = $_SERVER['REMOTE_ADDR'];
+$getIpUser = $UserModel->getIpUser();
+$time = time();
+// $counter = $UserModel->inserCounts($ip);
+// $user_online = $UserModel->inserUser_online($ip);
+
+// var_dump($f);var_dump($e);die();
+// var_dump($c);die();
+$d = count($getIpUser);
+$a = time()-3;
+$b = $a - ($getIpUser[0]['date']);
+if($getIpUser[0]['ip'] == $ip){
+    if($b > 300){
+        // echo(date ('i', $a));die(); 
+        $counter = $UserModel->inserCounts($ip);
+    }
+     
+}
+else{
+    $counter = $UserModel->inserCounts($ip);
+}
+
+// if($d == 0){
+//     echo(1);die();
+//     $counter = $UserModel->inserCounts($ip);
+//     $user_online = $UserModel->inserUser_online($ip);
+    
+//     var_dump($user_online);
+// }
+// else{
+//     if($getIpUser[0]['ip'] != $ip ){
+//         $counter = $UserModel->inserCounts($ip);
+//         $user_online = $UserModel->inserUser_online($ip);
+        
+//     }
+// }
+// $a = date ('i', $getIpUser[0]['date']);
+// $b = date ('i', $time);
+// $f = date ('H', $getIpUser[0]['date']);
+// $e = date ('H', $time);
+// $c = $b - $a;
+// if($c > 5){
+//     var_dump(1);die();
+//     $delete = $UserModel->deleteUser_online($ip);
+//     var_dump($delete);die();
+// }
+// if($e>$f){
+//     echo(1);die();
+//     $delete = $UserModel->deleteUser_online($ip);
+// }
 ?>
 <!-- Start Header-->
 <?php include 'header.php';
