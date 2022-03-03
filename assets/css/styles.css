@@ -1087,7 +1087,6 @@ ul.slick-dots {
     height: 120px;
     object-fit: cover;
     margin-top: 20px;
-    margin-left: 40px;
 }
 
 .slider-item .your-class .btn-slider {
@@ -1427,7 +1426,9 @@ ul.slick-dots {
         width: 30%;
         background: #ff2731;
     }
-
+    .slider-item .your-class img{
+        margin-left: 65px;
+    }
     .box-projects .project-block {
         grid-template-columns: repeat(2, 1fr);
     }

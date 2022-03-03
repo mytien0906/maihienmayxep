@@ -54,7 +54,7 @@ $selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
                             <h2><span class="title">SẢN PHẨM CÙNG LOẠI</span></h2>
                             <div class="row">
                                 <?php foreach($selectSpTheoListId as $select){ ?>
-                                <div class="col-xl-4 col-lg-4">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                     <div class="box-product-item-wrapper">
                                         <a href="chi-tiet-san-pham.php?id=<?= md5($select['id'] . "maixep") ?>&mssid=<?= md5($select['id_list'] . "maixep") ?>" class="box-product-link">
                                             <img src="./Admin/thumb/<?= $select['photo'] ?>"
@@ -64,8 +64,6 @@ $selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
                                 </div>
                                 <?php } ?>
                             </div>
-
-
                         </div>
                     </div>
                     <!-- <nav class="pagination-product">

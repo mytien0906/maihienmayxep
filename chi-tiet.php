@@ -21,7 +21,7 @@ if(isset($_GET['tsst'])){
     <!-- Main Content -->
     <div class="row main-content-details">
         <div class="container">
-            <div class="main-content-wrapper">
+            <div class="row main-content-wrapper">
                    <?php include 'danhmuc.php' ?>
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 main-content-right">
                     <div class="title">
