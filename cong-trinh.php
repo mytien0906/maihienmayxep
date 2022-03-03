@@ -27,19 +27,21 @@ $mangxhs = $UserModel->getAllMangXH();
                     <?php foreach ($congtrinhs as $congtrinh) { ?>
                         <?php if ($congtrinh['hienthi'] == 1) { ?>
                             <div class="row project-item-wrapper">
-                                <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-3">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-5">
                                     <div>
                                         <a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="project-item-link">
-                                            <img src="/Admin/thumb/<?= $congtrinh['congtrinh_photo'] ?>" alt="hinh anh cong trinh"></a>
+                                            <p style="background-image: url('/Admin/thumb/<?= $congtrinh['congtrinh_photo'] ?>'); 
+                                                "></p>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-9 project-item-info">
-                                    <h3><a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="project-item-title">
-                                            <?= $congtrinh['congtrinh_name'] ?>
-                                        </a></h3>
-                                        <div class="congtrinh_noidung">
-                                            <p><?= htmlspecialchars_decode($congtrinh['congtrinh_noidung']) ?></p>
-                                        </div>
+                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-7 project-item-info">
+                                    <a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="project-item-title">
+                                        <?= $congtrinh['congtrinh_name'] ?>
+                                    </a></h3>
+                                    <div class="congtrinh_noidung">
+                                        <p><?= htmlspecialchars_decode($congtrinh['congtrinh_noidung']) ?></p>
+                                    </div>
                                     <a href="chi-tiet.php?essifd=<?= md5($congtrinh['congtrinh_id'] . "maixep") ?>" class="btn-load-more">Xem Thêm</a>
                                 </div>
                             </div>
@@ -63,6 +65,6 @@ $mangxhs = $UserModel->getAllMangXH();
     }
 
     var str = $('.congtrinh_noidung').text();
-    var result = trimText(str,80);
+    var result = trimText(str, 180);
     $('.congtrinh_noidung').text(result);
 </script>

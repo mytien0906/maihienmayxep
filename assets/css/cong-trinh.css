@@ -9,6 +9,7 @@
     min-height: 230px;
     padding: 20px;
     padding-left: 150px;
+    position: relative;
 }
 
 .main-content-construct .project-item-wrapper .project-item-info .project-item-title {
@@ -26,7 +27,9 @@
     border: thin solid #f57e2e;
     color: #f57e2e;
     transition: all 0.5s;
-    float: right;
+    position: absolute;
+    right: 25px;
+    bottom: 15px;
 }
 
 .main-content-construct .project-item-wrapper .project-item-info .btn-load-more:hover,
@@ -36,10 +39,7 @@
     text-decoration: none !important;
 }
 
-.main-content-construct .project-item-wrapper img {
-    /* height: 260px; */
-    height: 230px;
-}
+
 
 .main-content-construct .project-item-wrapper>div {
     padding: 0;
@@ -50,9 +50,16 @@
     padding-left: 30px;
 }
 
+.congtrinh_noidung {
+    line-height: 25px;
+}
+.main-content-construct .project-item-wrapper .project-item-link p{
+    width: 100%; height: 230px; background-size: cover;
+    display: block; background-position: center;
+}
 @media screen and (min-width:992px) and (max-width:1200px) {
     .main-content-construct .project-item-wrapper .project-item-info {
-        min-height: unset;
+
         padding-left: 50px;
         height: 180px;
         text-align: justify;
@@ -61,63 +68,109 @@
         padding-bottom: 0;
     }
 
+    .main-content-construct .project-item-wrapper .project-item-link {
+        /* height: 180px !important; */
+    }
 }
 
 @media screen and (max-width:992px) {
     .main-content-construct .project-item-wrapper .project-item-info {
-        min-height: unset;
-        padding-left: 50px;
-        height: 180px;
+
+        padding-top: 5px;
+        padding-left: 20px;
+        min-height: 180px;
         text-align: justify;
         padding-right: 30px;
-        padding-top: 30px;
         padding-bottom: 0;
     }
 
     .main-content-construct .project-item-wrapper .project-item-link img {
         /* width: 150px; */
-        height: 180px;
+        /* height: 180px; */
     }
 
     .main-content-construct .project-item-wrapper .project-item-info div {
-        /* padding-bottom: 15px; */
+        display: -webkit-box;
+        font-size: 14px;
+        line-height: 20px;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .main-content-construct .project-item-wrapper .project-item-link p{
+        height: 180px !important;
+    }
+
+    .main-content-construct .project-item-wrapper .project-item-info .btn-load-more, .main-content-news .new-block .new-item-info .btn-load-more {
+        padding: 6px 18px;
+        right: 30px;
+        bottom: 7px;
     }
 }
+
 @media screen and (max-width: 768px) {
-    .main-content-construct .project-item-wrapper .project-item-info{
+    .main-content-construct .project-item-wrapper .project-item-info {
         padding-top: 10px;
-    padding-right: 50px;
+        padding-right: 50px;
     }
 }
-@media screen and (max-width:590px){
-    .main-content-construct .project-item-wrapper .project-item-info{
+
+@media screen and (max-width:590px) {
+    .main-content-construct .project-item-wrapper .project-item-info {
         padding-top: 0px;
         padding-right: 30px;
         padding-left: 20px;
     }
-    .main-content-construct .project-item-wrapper .project-item-info h3{
+
+    .main-content-construct .project-item-wrapper .project-item-info h3 {
         margin-bottom: 0;
     }
-    .main-content-construct .project-item-wrapper .project-item-info .project-item-title{
+
+    .main-content-construct .project-item-wrapper .project-item-info .project-item-title {
         font-size: 15px;
     }
-    .main-content-construct .project-item-wrapper .project-item-link img{
-        height: 140px;
+
+    .main-content-construct .project-item-wrapper .project-item-link p{
+        height: 180px !important;
     }
-    .main-content-construct .project-item-wrapper .project-item-info{
-        height: 140px;
+
+    .main-content-construct .project-item-wrapper .project-item-info {
+        min-height: 180px;
     }
-    .main-content-construct .project-item-wrapper .project-item-info .btn-load-more, .main-content-news .new-block .new-item-info .btn-load-more{
+
+    .main-content-construct .project-item-wrapper .project-item-info .btn-load-more, .main-content-news .new-block .new-item-info .btn-load-more {
         padding: 5px 10px;
     }
-    .main-content-construct .project-item-wrapper .project-item-info div{
+
+    .main-content-construct .project-item-wrapper .project-item-info div {
         display: -webkit-box;
-    max-height: 3.2rem;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    -webkit-line-clamp: 3;
-    line-height: 1.1rem;
+        /* max-height: 3.2rem; */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-line-clamp: 4;
+        line-height: 1.1rem;
     }
+    .congtrinh_noidung.tintuc_noidung{
+        -webkit-line-clamp: 3 !important;
+    }
+}
+
+@media screen and (max-width:376px) {
+    .main-content-construct .project-item-wrapper .project-item-info {
+        padding-top: 0px;
+        padding-right: 26px;
+    }
+    .main-content-construct .project-item-wrapper .project-item-info.new-item-info {
+        padding-top: 0px;
+        padding-right: 0;
+    }
+
+    .main-content-construct .project-item-wrapper .project-item-info div {
+        -webkit-line-clamp: 4;
+    }
+    
 }

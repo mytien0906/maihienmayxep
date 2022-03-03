@@ -11,7 +11,7 @@ $selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
     <!-- Main Content -->
     <div class="main-content-detail-products">
         <div class="container">
-            <div class="main-content-wrapper">
+            <div class="row main-content-wrapper">
                 <?php include 'danhmuc.php' ?>
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12  main-content-right">
                     <div class="new-block">
