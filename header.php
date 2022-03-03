@@ -1,3 +1,9 @@
+<?php
+require_once('./Admin/Model/UserModel_index.php');
+include 'head.php';
+$UserModel = new UserModel();
+$logo = $UserModel->getlogobyId();
+?>
 <header class="header">
         <div class="top-header">
             <div class="container">
@@ -39,7 +45,7 @@
                 <div class="row">
                     <div class="col-xl-2 col-lg-2 company-logo">
                         <a href="#" class="company-logo-link">
-                            <img src="./assets/images/logo-4752.png" alt="">
+                            <img src="./Admin//thumb/<?= $logo[0]['photo'] ?>" alt="">
                         </a>
                     </div>
                     <div class="col-xl-8 col-lg-10 col-md-12">

@@ -41,3 +41,12 @@
     border-radius: 3px;
     background: chocolate;
 }
+nav#sidebar{
+    background: #1c1f22;
+}
+.navbar-brand-wrapper.d-flex.justify-content-center{
+    background: #1c1f22;
+}
+.sidebar .nav .nav-item.active > .nav-link{
+    background: #1c1f22;
+}

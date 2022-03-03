@@ -1,6 +1,6 @@
 <?php 
 require_once ('./Model/UserModel.php');
-include "/head.php" ;
+// include "/head.php" ;
 $UserModel = new UserModel();
 $chinhanhs = $UserModel->getAllChinhanh();
 ?>

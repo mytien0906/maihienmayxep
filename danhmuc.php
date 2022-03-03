@@ -14,7 +14,7 @@ $tintucs = $UserModel->getAllTintuc();
           <?php foreach ($danhsachs as $danhsach) { ?>
             <?php if ($danhsach['hienthi'] == 1) { ?>
               <li>
-                <a href=""><?= $danhsach['tenvi'] ?></a>
+                <a href="chi-tiet-danh-muc.php?ussd=<?= md5($danhsach['id'] . "maixep") ?>"><?= $danhsach['tenvi'] ?></a>
               </li>
           <?php }
           } ?>
