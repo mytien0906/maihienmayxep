@@ -3,8 +3,18 @@ require_once ('./Admin/Model/UserModel_index.php');
 include 'head.php';
 $UserModel = new UserModel();
 $GetAllThietLapThongTin = $UserModel->GetAllThietLapThongTin();
-$getproductbyId = $UserModel->getproductbyId($_GET['id']);
-$selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
+if(isset($_GET['id'])){
+    $getproductbyId = $UserModel->getproductbyId($_GET['id']);
+}
+else{
+    header('Location: 404.php');
+}
+if(isset($_GET['mssid'])){
+    $selectSpTheoListId = $UserModel->selectSpTheoListId($_GET['mssid']);
+}
+else{
+    header('Location: 404.php');
+}
 ?>
     <!-- End Header -->
     <?php include 'header.php' ?>

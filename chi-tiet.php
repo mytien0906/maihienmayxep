@@ -8,11 +8,20 @@ $tintucs = $UserModel->getAllTintuc();
 if(isset($_GET['id_tintuc'])){
     $getTintucbyId = $UserModel->getTintucbyId($_GET['id_tintuc']);
 }
+else{
+    header('Location: 404.php');
+}
 if(isset($_GET['essifd'])){
     $getcongtrinhbyId = $UserModel->getcongtrinhbyId($_GET['essifd']);
 }
+else{
+    header('Location: 404.php');
+}
 if(isset($_GET['tsst'])){
     $getdichvubyId = $UserModel->getdichvubyId($_GET['tsst']);
+}
+else{
+    header('Location: 404.php');
 }
 ?>
     <!-- Start Header-->

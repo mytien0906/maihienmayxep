@@ -4,9 +4,13 @@ include 'head.php';
 $UserModel = new UserModel();
 if(isset($_GET['ussd'])){
     $geteDanhSach1byId = $UserModel->geteDanhSach1byId($_GET['ussd']);
+    $getAlleproduct_chitiet = $UserModel->getproductbyIdlist($_GET['ussd']);
+}
+else{
+    header('Location: 404.php');
 }
 // echo($_GET['ussd']);die();
-$getAlleproduct_chitiet = $UserModel->getproductbyIdlist($_GET['ussd']);
+
 // var_dump(($getAlleproduct_chitiet));die();
 ?>
     <!-- Start Header-->
