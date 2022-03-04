@@ -4,6 +4,7 @@ require_once('./Admin/Model/UserModel_index.php');
 include 'head.php';
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $UserModel = new UserModel();
+$getIpUser = $UserModel->getIpUser();
 $danhsachs = $UserModel->getAlleDanhSach1();
 $congtrinhs = $UserModel->getAllcongtrinh();
 $dichvus = $UserModel->getAlldichvu();
@@ -19,18 +20,21 @@ $getproductbyIdlists = $UserModel->getproductbyIdlist($danhsachs[0]['id']);
 $getAlleproduct = $UserModel->getAlleproduct();
 $getAllSlide = $UserModel->getAllSlide();
 $ip = $_SERVER['REMOTE_ADDR'];
-$getIpUser = $UserModel->getIpUser();
+
 $time = time();
 // $counter = $UserModel->inserCounts($ip);
 // $user_online = $UserModel->inserUser_online($ip);
 
 // var_dump($f);var_dump($e);die();
-// var_dump($c);die();
+// var_dump($getIpUser);die();
 $d = count($getIpUser);
-$a = time()-3;
-$b = $a - ($getIpUser[0]['date']);
-if($getIpUser[0]['ip'] == $ip){
-    if($b > 600){
+if($getIpUser == NULL){
+    $counter = $UserModel->inserCounts($ip);
+}
+elseif($getIpUser[0]['ip'] == $ip){
+    $a = time()-3;
+    $b = $a - ($getIpUser[0]['date']);
+    if($b > 900){
         // echo(date ('i', $a));die(); 
         $counter = $UserModel->inserCounts($ip);
     }
