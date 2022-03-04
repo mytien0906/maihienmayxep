@@ -33,23 +33,29 @@ else{
                    <?php include 'danhmuc.php' ?>
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 main-content-right">
                     <div class="box-product-categories">
-                        <h2><span class="title"><?= $geteDanhSach1byId[0]['tenvi'] ?></span></h2>
-                        <div class="box-product-block">
-                            <?php if( count($getAlleproduct_chitiet) != 0) {?>
-                                <?php foreach ($getAlleproduct_chitiet as $danhsach_chitiet) { ?>
-                                    <div class="box-product-item-wrapper">
-                                        <a href="chi-tiet-san-pham.php?id=<?= md5($danhsach_chitiet['id'] . "maixep") ?>&mssid=<?= md5($danhsach_chitiet['id_list'] . "maixep") ?>" class="box-product-link">
-                                            <img src="./Admin/thumb/<?= $danhsach_chitiet['photo'] ?>" alt="cong trinh"></a>
-                                        <h3><?= $danhsach_chitiet['tenvi'] ?></h3>
-                                        <a href="chi-tiet-san-pham.php?id=<?= md5($danhsach_chitiet['id'] . "maixep") ?>&mssid=<?= md5($danhsach_chitiet['id_list'] . "maixep") ?>">Chi tiết</a>
+                        <div class="container">
+                            
+                            <h2><span class="title"><?= $geteDanhSach1byId[0]['tenvi'] ?></span></h2>
+                            <div class="row box-product-block">
+                                <?php if( count($getAlleproduct_chitiet) != 0) {?>
+                                    <?php foreach ($getAlleproduct_chitiet as $danhsach_chitiet) { ?>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                                        
+                                            <div class="box-product-item-wrapper">
+                                                <a href="chi-tiet-san-pham.php?id=<?= md5($danhsach_chitiet['id'] . "maixep") ?>&mssid=<?= md5($danhsach_chitiet['id_list'] . "maixep") ?>" class="box-product-link">
+                                                    <img src="./Admin/thumb/<?= $danhsach_chitiet['photo'] ?>" alt="cong trinh"></a>
+                                                <h3><?= $danhsach_chitiet['tenvi'] ?></h3>
+                                                <a href="chi-tiet-san-pham.php?id=<?= md5($danhsach_chitiet['id'] . "maixep") ?>&mssid=<?= md5($danhsach_chitiet['id_list'] . "maixep") ?>">Chi tiết</a>
+                                            </div>
+                                    </div>
+                                    <?php } ?>
+                                <?php }?>
+                                <?php if( count($getAlleproduct_chitiet) == 0 ){?>
+                                    <div class="alert alert-warning" role="alert">
+                                        <strong><?= "Không Tìm Thấy Kết Quả" ?></strong>
                                     </div>
                                 <?php } ?>
-                            <?php }?>
-                            <?php if( count($getAlleproduct_chitiet) == 0 ){?>
-                                <div class="alert alert-warning" role="alert">
-                                    <strong><?= "Không Tìm Thấy Kết Quả" ?></strong>
-                                </div>
-                            <?php } ?>
+                            </div>
                         </div>
                     </div>
                 </div>

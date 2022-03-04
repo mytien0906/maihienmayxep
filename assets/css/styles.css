@@ -536,11 +536,12 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     transition: all 0.5s;
 }
 
-.box-product-categories a.detail-pro {
+.box-product-categories a.detail-pro,
+.box-product-block .box-product-item-wrapper a
+{
     color: var(--red-light-color);
     padding-top: 5px;
 }
-
 
 .box-projects {
     background: var(--bg-color);
