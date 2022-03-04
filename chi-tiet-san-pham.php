@@ -5,6 +5,8 @@ $UserModel = new UserModel();
 $GetAllThietLapThongTin = $UserModel->GetAllThietLapThongTin();
 if(isset($_GET['id'])){
     $getproductbyId = $UserModel->getproductbyId($_GET['id']);
+    $luotxem = $getproductbyId[0]['luotxem'] + 1;
+    $upluotxem = $UserModel->updateLuotXemproduct($_GET['id'],$luotxem);
 }
 else{
     header('Location: 404.php');
@@ -39,12 +41,13 @@ else{
                             <?php foreach($getproductbyId as $chitiet){ ?>
                             <a href="" class="new-item-link none-border-radius">
                                 <img src="./Admin/thumb/<?= $chitiet['photo'] ?>"
-                                    alt="hinh anh cong trinh"></a>
+                                    alt="hinh anh cong trinh">
+                            </a>
                             <div class="new-item-info">
                                 <h3><a href="" class="new-item-title none-border-radius">
                                        <?= $chitiet['tenvi'] ?>
                                     </a></h3>
-                                <p><b>Luợt xem:</b> <span>20</span></p>
+                                <p><b>Luợt xem:</b> <span><?= $chitiet['luotxem'] ?></span></p>
                                 <div>
                                     <p><b>Giá</b></p>
                                     <a href="tel:<?= $GetAllThietLapThongTin[0]['dienthoai'] ?>" class="price-product">

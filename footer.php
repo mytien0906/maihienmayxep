@@ -1,10 +1,16 @@
+<?php
+require_once ('./Admin/Model/UserModel_index.php');
+include 'head.php';
+$UserModel = new UserModel();
+$GetAllThietLapThongTin = $UserModel->GetAllThietLapThongTin();
+?>
 <footer class="footer-contacts">
 
     <div class="scrollToTop" style="display: none;">
         <img src="assets/images/top.png" alt="Go Top">
     </div>
 
-    <a class="btn-effect btn-contact-block">
+    <a href="https://zalo.me/<?= $GetAllThietLapThongTin[0]['dienthoai'] ?>" class="btn-effect btn-contact-block">
         <div class="child-nth-1 animate__animated animate__zoomIn"></div>
         <div class="child-nth-2 animate__animated animate__pulse"></div>
         <p class="btn-img">
@@ -12,7 +18,7 @@
         </p>
     </a>
     <!-- Optional JavaScript -->
-    <a class="btn-effect btn-contact-block">
+    <a href="tel:<?= $GetAllThietLapThongTin[0]['dienthoai'] ?>" class="btn-effect btn-contact-block">
         <div class="child-nth-1 animate__animated animate__zoomIn"></div>
         <div class="child-nth-2 animate__animated animate__pulse"></div>
         <p class="btn-img">
