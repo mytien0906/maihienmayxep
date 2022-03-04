@@ -259,7 +259,14 @@ class UserModel extends BaseModel{
     
     // Mang xh
     public function getAllMangXH(){
-        $sql = 'SELECT * FROM `table_mxh`';
+        $sql = 'SELECT * FROM `table_mxh` WHERE `loai` = 0';
+        // echo($sql);die();
+        $product = $this->select($sql);
+        return $product;
+    }
+    public function getAllMangXHTop(){
+        $sql = 'SELECT * FROM `table_mxh` WHERE `loai` = 1';
+        // echo($sql);die();
         $product = $this->select($sql);
         return $product;
     }

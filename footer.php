@@ -3,6 +3,7 @@ require_once ('./Admin/Model/UserModel_index.php');
 include 'head.php';
 $UserModel = new UserModel();
 $GetAllThietLapThongTin = $UserModel->GetAllThietLapThongTin();
+$mangxh = $UserModel->getAllMangXH();
 ?>
 <footer class="footer-contacts">
 
@@ -29,37 +30,20 @@ $GetAllThietLapThongTin = $UserModel->GetAllThietLapThongTin();
     <div class="top-footer">
         <div class="container">
             <div class="row">
+            <?php foreach($mangxh as $xh) {?>
                 <div class="col-md-4 col-sx-1">
                     <div class="fp-wrapper">
-                        <div class="img-fanpage">
-                            <img src="./assets/images/icon-facebook.png" alt="">
-                            <p>Fanpage Mái Hiên Hoàng Dương</p>
-                        </div>
-                        <p class="fg-text">Like để cập nhật những thông tin hoạt động mới nhất</p>
-                        <a href="#" class="fp-link"><span>THAM GIA NGAY</span></a>
+                        <?php if($xh['hienthi'] == 1){ ?>
+                            <div class="img-fanpage">
+                                <img src="./Admin/thumb/<?= $xh['photo'] ?>" alt="">
+                            <p><?= $xh['name'] ?></p>
+                            </div>
+                            <p class="fg-text">Like để cập nhật những thông tin hoạt động mới nhất</p>
+                            <a href="<?php if(isset($xh['lnk'])) echo $xh['lnk'] ?>" class="fp-link"><span>THAM GIA NGAY</span></a>
+                        <?php } ?>
                     </div>
                 </div>
-                <div class="col-md-4 col-sx-1">
-                    <div class="fp-wrapper">
-                        <div class="img-fanpage">
-                            <img src="./assets/images/icon-youtube.png" alt="">
-                            <p>Fanpage Mái Hiên Hoàng Dương</p>
-                        </div>
-                        <p class="fg-text">Like để cập nhật những thông tin hoạt động mới nhất</p>
-                        <a href="#" class="fp-link"><span>THAM GIA NGAY</span></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sx-1">
-                    <div class="fp-wrapper">
-                        <div class="img-fanpage">
-                            <img src="./assets/images/icon-zalo.png" alt="">
-                            <p>Fanpage Mái Hiên Hoàng Dương</p>
-                        </div>
-                        <p class="fg-text">Like để cập nhật những thông tin hoạt động mới nhất</p>
-                        <a href="#" class="fp-link"><span>THAM GIA NGAY</span></a>
-                    </div>
-                </div>
-
+                <?php }?>
             </div>
         </div>
     </div>

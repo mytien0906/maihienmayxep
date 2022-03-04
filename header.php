@@ -3,6 +3,7 @@ require_once('./Admin/Model/UserModel_index.php');
 include 'head.php';
 $UserModel = new UserModel();
 $logo = $UserModel->getlogobyId();
+$mangxh_top = $UserModel->getAllMangXHTop();
 ?>
 <header class="header">
         <div class="top-header">
@@ -15,26 +16,13 @@ $logo = $UserModel->getlogobyId();
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 contact-block">
                         <ul class="contact-block-list">
+                            <?php foreach($mangxh_top as $mxh_top){ ?>
                             <li class="contact-block-item">
-                                <a href="#" class="contact-block-link">
-                                    <img src="./assets/images/face-5727.png" alt="">
+                                <a href="<?php if(isset($xh_top['lnk'])) echo $xh_top['lnk'] ?>" class="contact-block-link">
+                                    <img src="./Admin/thumb/<?= $mxh_top['photo'] ?>" alt="">
                                 </a>
                             </li>
-                            <li class="contact-block-item">
-                                <a href="#" class="contact-block-link">
-                                    <img src="./assets/images/gg-6227.png" alt="">
-                                </a>
-                            </li>
-                            <li class="contact-block-item">
-                                <a href="#" class="contact-block-link">
-                                    <img src="./assets/images/tt-3790.png" alt="">
-                                </a>
-                            </li>
-                            <li class="contact-block-item">
-                                <a href="#" class="contact-block-link">
-                                    <img src="./assets/images/rss-1322.png" alt="">
-                                </a>
-                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
