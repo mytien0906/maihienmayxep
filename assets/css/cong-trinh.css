@@ -56,6 +56,16 @@
 .main-content-construct .project-item-wrapper .project-item-link p{
     width: 100%; height: 230px; background-size: cover;
     display: block; background-position: center;
+
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
 }
 @media screen and (min-width:992px) and (max-width:1200px) {
     .main-content-construct .project-item-wrapper .project-item-info {
