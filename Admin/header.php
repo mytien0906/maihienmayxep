@@ -83,6 +83,10 @@ $admin=$UserModel->admin($_SESSION['userid']);
                 <i class="mdi mdi-settings text-primary"></i>
                 Settings
               </a>
+              <a class="dropdown-item" href="doimatkhau.php">
+                <i class="mdi mdi-settings text-primary"></i>
+                Đổi mật khẩu
+              </a>
               <a class="dropdown-item" href="logout.php">
                 <i class="mdi mdi-logout text-primary"></i>
                 Logout

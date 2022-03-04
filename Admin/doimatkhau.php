@@ -10,14 +10,21 @@
     form.reset() 
     </script>';
   }
+  $error = "";
   // echo ($_SESSION['userid']);die();
    if(!empty ($_POST['submit'])){
        $id = $_SESSION['userid'];
-       $fullname = $_POST['fullname'];
-       $email = $_POST['email'];
-       $address = $_POST['address'];
-       $gender = $_POST['gender'];
-       $admins = $UserModel->Updateadmin($id,$fullname,$email,$gender,$address);
+       $mkhientai = $_POST['mkhientai'];
+       $mkmoi = $_POST['mkmoi'];
+       $mk = md5("maixep"."$mkhientai"."abc");
+      //  var_dump($admin[0]['password']);var_dump($mk);die();
+       if($admin[0]['password'] == $mk){
+        $admins = $UserModel->UpdatePassword($id,$mkmoi);
+        $error = "Cập nhật thàng công";
+       }
+       else{
+         $error = "Mật khẩu sai";
+       }
    }
 ?>
   <div class="container-scroller">
@@ -35,32 +42,23 @@
                   <p class="card-description">
                     Thông tin Admin
                   </p>
+                  <?php 
+                if($error != "") {
+                ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= $error ?>
+                </div>
+              <?php } ?>
                   <form class="forms-sample" method="post">
                       <?php foreach ($admin as $ad) {?>
                     <div class="form-group">
-                      <label for="exampleInputName1">Name</label>
-                      <input type="text" class="form-control" id="exampleInputName1" value="<?= $ad['name'] ?>" disabled="true">
+                      <label for="exampleInputName1">Mật Khẩu Hiện Tại</label>
+                      <input type="text" class="form-control" name="mkhientai" id="exampleInputName1">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputName1">FullName</label>
-                      <input type="text" name="fullname" class="form-control" id="exampleInputName1" value="<?= $ad['fullname'] ?>">
+                      <label for="exampleInputName1">Mật Khẩu Mới</label>
+                      <input type="text" name="mkmoi" class="form-control" id="exampleInputName1">
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Email address</label>
-                      <input type="email" name="email" class="form-control" id="exampleInputEmail3" value="<?= $ad['email'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputName1">Dịa Chỉ</label>
-                      <input type="text" name="address" class="form-control" id="exampleInputName1" value="<?= $ad['address'] ?>">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Gender</label>
-                        <select class="form-control" name="gender" id="exampleSelectGender">
-                          <option><?= $ad['gender'] ?></option>
-                          <option>Nam</option>
-                          <option>Nữ</option>
-                        </select>
-                      </div>
                       <?php } ?>
                     <button type="submit" name="submit"  value="submit" class="btn btn-primary mr-2">Submit</button>
                     <button class="btn btn-light" name="reset">Cancel</button>
