@@ -38,9 +38,7 @@ elseif($getIpUser[0]['ip'] == $ip){
         // echo(date ('i', $a));die(); 
         $counter = $UserModel->inserCounts($ip);
     }
-     
-}
-else{
+} else {
     $counter = $UserModel->inserCounts($ip);
 }
 
@@ -48,14 +46,14 @@ else{
 //     echo(1);die();
 //     $counter = $UserModel->inserCounts($ip);
 //     $user_online = $UserModel->inserUser_online($ip);
-    
+
 //     var_dump($user_online);
 // }
 // else{
 //     if($getIpUser[0]['ip'] != $ip ){
 //         $counter = $UserModel->inserCounts($ip);
 //         $user_online = $UserModel->inserUser_online($ip);
-        
+
 //     }
 // }
 // $a = date ('i', $getIpUser[0]['date']);
@@ -116,7 +114,7 @@ include 'slide-index.php' ?>
                 <?php } ?>
             <?php } ?>
         </div>
-        
+
         <div class="box-projects">
             <div class="container">
                 <h2><a href="#" class="title">DỰ ÁN CÔNG TRÌNH</a></h2>
