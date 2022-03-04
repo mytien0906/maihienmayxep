@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
               header('Location: tin-tuc.php');
           }
           else{
-            echo(1);die();
+            // echo(1);die();
               $UserModel->insertTintuc($tintuc_name, $tintuc_noidung, $photo);
               header('Location: tin-tuc.php');
           }

@@ -118,7 +118,7 @@ if(isset($_POST['submit'])){
                 class="form-control"
                 id="exampleTextarea1"
                 rows="4"
-              ></textarea>
+              ><?php if(!empty($getdoitac[0]['noidung'])) echo $getdoitac[0]['noidung']?></textarea>
             </div>
             <div class="form-group form-hinhanh">
                 Chọn file để upload:

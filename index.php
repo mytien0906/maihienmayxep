@@ -196,8 +196,11 @@ include 'slide-index.php' ?>
                                                 <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep")  ?>" class="new-item-title">
                                                         <?= $tintuc['tintuc_name'] ?>
                                                     </a></h3>
-                                                <p><?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?>
-                                                </p>
+                                                    <div class="congtrinh_noidung tintuc_noidung">
+                                                        
+                                                        <p><?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?>
+                                                        </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -220,7 +223,7 @@ include 'slide-index.php' ?>
                                                             <img src="./Admin/thumb/<?= $doitac['photo'] ?>" alt="">
                                                             <div class="info-customer">
                                                                 <p class="cus-name">
-                                                                    <?= $doitac['doitac_name'] ?>
+<?= $doitac['doitac_name'] ?>
                                                                 </p>
                                                                 <span class="cus-des"><?= htmlspecialchars_decode($doitac['noidung']) ?></span>
                                                             </div>
@@ -245,6 +248,7 @@ include 'slide-index.php' ?>
 <!-- Start Footer -->
 <?php include 'footer.php';
 include 'map-index.php' ?>
+
 <script>
     function trimText(str, wordCount) {
         var strArray = str.split(' ');
@@ -253,7 +257,7 @@ include 'map-index.php' ?>
         return result + '...';
     }
 
-    var str = $('.tintuc .tintuc_noidung').text();
-    var result = trimText(str, 200);
-    $('.tintuc .tintuc_noidung').text(result);
+    var str = $('.tintuc_noidung').text();
+    var result = trimText(str, 100);
+    $('.tintuc_noidung').text(result);
 </script>

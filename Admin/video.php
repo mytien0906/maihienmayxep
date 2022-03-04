@@ -46,7 +46,6 @@ $videos = $UserModel->getAllVideo();
                       </div>
                     </th>
                     <th class="align-middle text-center" width="10%">STT</th>
-                    <th class="align-middle">Hình</th>
                     <th class="align-middle" style="width: 30%">Tiêu đề</th>
                     <th class="align-middle text-center">Nổi bật</th>
                     <th class="align-middle text-center">Hiển thị</th>
@@ -73,18 +72,6 @@ $videos = $UserModel->getAllVideo();
                         data-id="29"
                         data-table="product_list"
                       />
-                    </td>
-                    <td class="align-middle">
-                      <a
-                        href="index.php?com=product&amp;act=edit_list&amp;type=san-pham&amp;p=1&amp;id=29"
-                        title="Cổng xếp tự động"
-                        >
-                        <img
-                          class="rounded img-preview"
-                          src="./thumb/<?php echo $video['photo'] ?>"
-                          alt="Cổng xếp tự động"
-                        />
-                      </a>
                     </td>
                     <td class="align-middle">
                       <a

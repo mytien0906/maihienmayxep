@@ -74,6 +74,6 @@ $mangxhs = $UserModel->getAllMangXH();
     }
 
     var str = $('.tintuc_noidung').text();
-    var result = trimText(str, 350);
+    var result = trimText(str, 80);
     $('.tintuc_noidung').text(result);
 </script>

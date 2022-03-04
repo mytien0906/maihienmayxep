@@ -37,7 +37,7 @@ $tintucs = $UserModel->getAllTintuc();
                     <?= $tintuc['tintuc_name'] ?>
                   </a>
                 <div class="tintuc_noidung_danhmuc">
-                  <p> <?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?> </p>
+                  <!-- <p> </?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?> </p> -->
                 </div>
               </div>
 
@@ -58,6 +58,6 @@ $tintucs = $UserModel->getAllTintuc();
   }
 
   var str = $('.tintuc_danhmuc .tintuc_noidung_danhmuc').text();
-  var result = trimText(str, 50);
+  var result = trimText(str, 30);
   $('.tintuc_danhmuc .tintuc_noidung_danhmuc').text(result);
 </script>

@@ -14,7 +14,7 @@ if(isset($_POST['reset'])){
   </script>';
 }
 if(isset($_POST['submit'])){
-  if(!empty($_POST['dichvu_name']) && !empty($_POST['dichvu_noidung']) && !empty($_FILES['fileupload'])) {
+  if(!empty($_POST['dichvu_name']) && !empty($_POST['dichvu_noidung'])) {
     $foderPath = 'thumb/' . time() . $_FILES['fileupload']['name'];
     $target_file = $_FILES["fileupload"]["name"];
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -25,11 +25,11 @@ if(isset($_POST['submit'])){
     }
     else{
       if($_FILES['fileupload']['tmp_name'] == ''){
-        // echo($getdanhsach1[0]['photo']);die();
+        // echo($getdichvu[0]['photo']);die();
         $dichvu_name = $_POST['dichvu_name'];
         $dichvu_noidung = $_POST['dichvu_noidung'];
         $photo =  $getdichvu[0]['photo'];
-        if(isset($_GET['congtrinh_id'])) {
+        if(isset($_GET['dichvu_id'])) {
           // echo(1);die();
           $UserModel->updaytedichvu($_GET['dichvu_id'],$dichvu_name, $dichvu_noidung, $photo);
           header('Location: dich-vu.php');
@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
           $dichvu_noidung = $_POST['dichvu_noidung'];
           $photo = time().$_FILES['fileupload']['name'];
           
-          if(isset($_GET['congtrinh_id'])) {
+          if(isset($_GET['dichvu_id'])) {
               // echo(1);die();
               $UserModel->updaytedichvu($_GET['dichvu_id'],$dichvu_name, $dichvu_noidung, $photo);
               header('Location: dich-vu.php');

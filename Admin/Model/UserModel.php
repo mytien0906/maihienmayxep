@@ -36,13 +36,14 @@ class UserModel extends BaseModel{
         
         $ds = 'SELECT id FROM table_product_list';
         $dss = $this->select($ds);
+        $nd = str_replace('"',"'",$motavi);
         foreach($dss as $vd){
             $md5id = md5($vd['id'] . "maixep");
             
             if($id == $md5id){
             // var_dump($id);
             // var_dump($md5id);die();
-            $sql = 'UPDATE `table_product_list` SET `tenvi`="'.$tenvi.'",`motavi`="'.$motavi.'",`photo`= "'.$photo.'",`ngaysua`= "'.date("Y-m-d").'" WHERE id = '.$vd['id'];
+            $sql = 'UPDATE `table_product_list` SET `tenvi`="'.$tenvi.'",`motavi`="'.$nd.'",`photo`= "'.$photo.'",`ngaysua`= "'.date("Y-m-d").'" WHERE id = '.$vd['id'];
             // echo( $sql);die();
             $product = $this->update($sql);
             return $product;
@@ -130,12 +131,13 @@ class UserModel extends BaseModel{
     public function updateproduct($id,$tenvi, $motavi, $photo,$id_list){
         $ds = 'SELECT id FROM table_product';
         $dss = $this->select($ds);
+        $nd = str_replace('"',"'",$motavi);
         foreach($dss as $vd){
             $md5id = md5($vd['id'] . "maixep");
             if($id == $md5id){
             //     var_dump($id);
             // var_dump($md5id);die();
-            $sql = 'UPDATE `table_product` SET `tenvi`="'.$tenvi.'",`noidungvi`="'.$motavi.'",`photo`= "'.$photo.'",`ngaysua`= "'.date("Y-m-d").'", id_list = "'.$id_list.'" WHERE id = '.$vd['id'];
+            $sql = 'UPDATE `table_product` SET `tenvi`="'.$tenvi.'",`noidungvi`="'.$nd.'",`photo`= "'.$photo.'",`ngaysua`= "'.date("Y-m-d").'", id_list = "'.$id_list.'" WHERE id = '.$vd['id'];
             // echo( $sql);die();
             $product = $this->update($sql);
             // var_dump( $product);die();
@@ -143,12 +145,6 @@ class UserModel extends BaseModel{
             }
         }
         
-    }
-    public function updateproductNoPhoto($id,$tenvi, $motavi,$id_list){
-        $sql = 'UPDATE `table_product` SET `tenvi`="'.$tenvi.'",`noidungvi`="'.$motavi.'",`ngaysua`= "'.date("Y-m-d").'", id_list = "'.$id_list.'" WHERE id = '.$id;
-        // echo( $sql);die();
-        $product = $this->update($sql);
-        return $product;
     }
     public function Deleteproduct($id){
         
@@ -383,12 +379,13 @@ class UserModel extends BaseModel{
     public function updayteTintuc($tintuc_id,$tintuc_name, $tintuc_noidung, $tintuc_photo){
         $ds = 'SELECT tintuc_id FROM table_tintuc';
         $dss = $this->select($ds);
+        $nd = str_replace('"',"'",$tintuc_noidung);
         foreach($dss as $vd){
             $md5id = md5($vd['tintuc_id'] . "maixep");
             if($tintuc_id == $md5id){
             //     var_dump($id);
             // var_dump($md5id);die();
-            $sql = 'UPDATE `table_tintuc` SET `tintuc_name`="'.$tintuc_name.'",`tintuc_noidung`="'.$tintuc_noidung.'",`photo`= "'.$tintuc_photo.'",`tintuc_ngaytao`= "'.date("Y-m-d").'" WHERE tintuc_id = '.$vd['tintuc_id'];
+            $sql = 'UPDATE `table_tintuc` SET `tintuc_name`="'.$tintuc_name.'",`tintuc_noidung`="'.$nd.'",`photo`= "'.$tintuc_photo.'",`tintuc_ngaytao`= "'.date("Y-m-d").'" WHERE tintuc_id = '.$vd['tintuc_id'];
             // echo( $sql);die();
             $product = $this->update($sql);
             return $product;
@@ -464,12 +461,13 @@ class UserModel extends BaseModel{
     public function updayteTieuchi($tieuchi_id,$tieuchi_name, $tieuchi_noidung, $tieuchi_photo){
         $ds = 'SELECT tieuchi_id FROM table_tieuchi';
         $dss = $this->select($ds);
+        $nd = str_replace('"',"'",$tieuchi_noidung);
         foreach($dss as $vd){
             $md5id = md5($vd['tieuchi_id'] . "maixep");
             if($tieuchi_id == $md5id){
             //     var_dump($id);
             // var_dump($md5id);die();
-            $sql = 'UPDATE `table_tieuchi` SET `tieuchi_name`="'.$tieuchi_name.'",`tieuchi_noidung`="'.$tieuchi_noidung.'",`photo`= "'.$tieuchi_photo.'",`tieuchi_ngaytao`= "'.date("Y-m-d").'" WHERE tieuchi_id = '.$vd['tieuchi_id'];
+            $sql = 'UPDATE `table_tieuchi` SET `tieuchi_name`="'.$tieuchi_name.'",`tieuchi_noidung`="'.$nd.'",`photo`= "'.$tieuchi_photo.'",`tieuchi_ngaytao`= "'.date("Y-m-d").'" WHERE tieuchi_id = '.$vd['tieuchi_id'];
             // echo( $sql);die();
             $product = $this->update($sql);
             return $product;
@@ -545,12 +543,13 @@ class UserModel extends BaseModel{
     public function updateChinhanh($chinhanh_id,$chinhanh_name, $chinhanh_noidung){
         $ds = 'SELECT chinhanh_id FROM table_chinhanh';
         $dss = $this->select($ds);
+        $nd = str_replace('"',"'",$chinhanh_noidung);
         foreach($dss as $vd){
             $md5id = md5($vd['chinhanh_id'] . "maixep");
             if($chinhanh_id == $md5id){
             //     var_dump($id);
             // var_dump($md5id);die();
-            $sql = 'UPDATE `table_chinhanh` SET `chinhanh_name`="'.$chinhanh_name.'",`chinhanh_noidung`="'.$chinhanh_noidung.'",`chinhanh_ngaytao`= "'.date("Y-m-d").'" WHERE chinhanh_id = '.$vd['chinhanh_id'];
+            $sql = 'UPDATE `table_chinhanh` SET `chinhanh_name`="'.$chinhanh_name.'",`chinhanh_noidung`="'.$nd.'",`chinhanh_ngaytao`= "'.date("Y-m-d").'" WHERE chinhanh_id = '.$vd['chinhanh_id'];
             // echo( $sql);die();
             $product = $this->update($sql);
             return $product;
@@ -618,25 +617,24 @@ class UserModel extends BaseModel{
         
         return $product;
     }
-    public function insertVideo($video_name, $video_noidung, $video_photo){
+    public function insertVideo($video_name, $video_noidung){
         $date = date("Y-m-d");
         $video_nd = substr($video_noidung,-11);
-        $sql = "INSERT INTO `table_video`(`video_name`,`video_noidung`,`photo`, `video_ngaytao`) VALUES ('$video_name','$video_nd','$video_photo','$date')";
+        $sql = "INSERT INTO `table_video`(`video_name`,`video_noidung`, `video_ngaytao`) VALUES ('$video_name','$video_nd','$date')";
         // echo( $sql);die();
         $product = $this->insert($sql);
         return $product;
     }
-    public function updateVideo($video_id,$video_name, $video_noidung, $video_photo){
+    public function updateVideo($video_id,$video_name, $video_noidung){
         $video = 'SELECT video_id FROM table_video';
         $videos = $this->select($video);
-
         $video_nd = substr($video_noidung,-11);
         // echo( $video_nd);die();
         foreach($videos as $vd){
             $md5id = md5($vd['video_id'] . "maixep");
             
             if($video_id == $md5id){
-            $sql = 'UPDATE `table_video` SET `video_name`="'.$video_name.'",`video_noidung`="'.$video_nd.'",`photo`= "'.$video_photo.'",`video_ngaytao`= "'.date("Y-m-d").'" WHERE video_id = '.$vd['video_id'];
+            $sql = 'UPDATE `table_video` SET `video_name`="'.$video_name.'",`video_noidung`="'.$video_nd.'",`video_ngaytao`= "'.date("Y-m-d").'" WHERE video_id = '.$vd['video_id'];
             // echo( $sql);die();
             $product = $this->update($sql);
             return $product;
@@ -955,7 +953,9 @@ class UserModel extends BaseModel{
         return $product;
     }
     public function updaytGioithieu($name, $mota,$noidung, $photo){
-        $sql = 'UPDATE `table_gioithieu` SET `name`="'.$name.'",`mota`="'.$mota.'",`noidung`="'.$noidung.'",`photo`= "'.$photo.'",`ngaytao`= "'.date("Y-m-d").'" WHERE id = 1';
+        $mt = str_replace('"',"'",$mota);
+        $nd = str_replace('"',"'",$noidung);
+        $sql = 'UPDATE `table_gioithieu` SET `name`="'.$name.'",`mota`="'.$mt.'",`noidung`="'.$nd.'",`photo`= "'.$photo.'",`ngaytao`= "'.date("Y-m-d").'" WHERE id = 1';
         // echo( $sql);die();
         $product = $this->update($sql);
         return $product;
@@ -1002,7 +1002,8 @@ class UserModel extends BaseModel{
     }
     // lienhe
     public function updatelienhe($noidung){
-        $sql = 'UPDATE `lienhe` SET `noidung` = "'.$noidung.'" WHERE `lienhe`.`id` = 1;';
+        $nd = str_replace('"',"'",$noidung);
+        $sql = 'UPDATE `lienhe` SET `noidung` = "'.$nd.'" WHERE `lienhe`.`id` = 1;';
         // echo( $sql);die();
         $product = $this->update($sql);
         return $product;
@@ -1132,13 +1133,14 @@ class UserModel extends BaseModel{
 
         $ds = 'SELECT id FROM table_lienhe_user';
         $dss = $this->select($ds);
+        $nd = str_replace('"',"'",$noidung);
         foreach($dss as $vd){
             $md5id = md5($vd['id'] . "maixep");
             
             if($id == $md5id){
             // var_dump($id);
             // var_dump($md5id);die();
-            $sql = 'UPDATE `table_lienhe_user` SET `name`= "'.$name.'",`sđt`= "'.$sdt.'",`address`= "'.$diachi.'",`email`= "'.$email.'",`chude`="'.$chude.'",`noidung`= "'.$noidung.'",`file`= "'.$file.'",`ngaytao`="'.date("Y-m-d").'" WHERE `id` =' .$vd['id'];
+            $sql = 'UPDATE `table_lienhe_user` SET `name`= "'.$name.'",`sđt`= "'.$sdt.'",`address`= "'.$diachi.'",`email`= "'.$email.'",`chude`="'.$chude.'",`noidung`= "'.$nd.'",`file`= "'.$file.'",`ngaytao`="'.date("Y-m-d").'" WHERE `id` =' .$vd['id'];
             // echo($sql);die();
             $product = $this->update($sql);
             return $product;
@@ -1175,8 +1177,10 @@ class UserModel extends BaseModel{
     }
     // thiet lap thong tin
     public function updateThieLapThongTin($diachi,$email,$hotline,$dienthoai,$zalo,$wbsite,$fanpage,$toado,$google_map,$google_analytics,$google_webmaster,$head_js,$Body_js,$tieude,$seo_title,$seo_keyword,$seo_description){
+        $analytics = str_replace('"',"'",$google_analytics);
+        $webmaster = str_replace('"',"'",$google_webmaster);
         $map = str_replace('"',"'",$google_map);
-        $sql = 'UPDATE `thongtin` SET `diachi`="'.$diachi.'",`email`="'.$email.'",`hotline`="'.$hotline.'",`dienthoai`="'.$dienthoai.'",`zalo`="'.$zalo.'",`wbsite`="'.$wbsite.'",`fanpage`="'.$fanpage.'",`toado`="'.$toado.'",`google_map`= "'.$map.'",`google_analytics`="'.$google_analytics.'",`google_webmaster`="'.$google_webmaster.'",`head_js`="'.$head_js.'",`Body_js`="'.$Body_js.'",`tieude`="'.$tieude.'",`seo_title`="'.$seo_title.'",`seo_keyword`="'.$seo_keyword.'",`seo_description`="'.$seo_description.'" WHERE `id` = 1';
+        $sql = 'UPDATE `thongtin` SET `diachi`="'.$diachi.'",`email`="'.$email.'",`hotline`="'.$hotline.'",`dienthoai`="'.$dienthoai.'",`zalo`="'.$zalo.'",`wbsite`="'.$wbsite.'",`fanpage`="'.$fanpage.'",`toado`="'.$toado.'",`google_map`= "'.$map.'",`google_analytics`="'.$analytics.'",`google_webmaster`="'.$webmaster.'",`head_js`="'.$head_js.'",`Body_js`="'.$Body_js.'",`tieude`="'.$tieude.'",`seo_title`="'.$seo_title.'",`seo_keyword`="'.$seo_keyword.'",`seo_description`="'.$seo_description.'" WHERE `id` = 1';
 
         // echo($sql);die();
         $product = $this->update($sql);

@@ -16,4 +16,4 @@ if (!empty($_GET['dichvu_id'])) {
 else{
     $UserModel->TruncatePDichVu();
 }
-header('Location: cong-trinh.php');
+header('Location: dich-vu.php');
