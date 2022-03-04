@@ -75,16 +75,16 @@ $admin=$UserModel->admin($_SESSION['userid']);
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="thong-tin-lien-he.php">
-              <i class="mdi mdi-settings text-primary"></i>
-              Liên Hệ
+              <i class="bi bi-journals"style="color: #0d6efd;"></i>
+                Liên Hệ
                  <?= count($thongtinlienhe_header) ?>
               </a>
               <a class="dropdown-item" href="thongtinadmin.php">
                 <i class="mdi mdi-settings text-primary"></i>
-                Settings
+                Cài Đặt
               </a>
               <a class="dropdown-item" href="doimatkhau.php">
-                <i class="mdi mdi-settings text-primary"></i>
+              <i class="bi bi-key-fill" style="color: #0d6efd;"></i>
                 Đổi mật khẩu
               </a>
               <a class="dropdown-item" href="logout.php">
@@ -94,6 +94,9 @@ $admin=$UserModel->admin($_SESSION['userid']);
             </div>
           </li>
         </ul>
-        
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+            data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+        </button>
       </div>
     </nav>
