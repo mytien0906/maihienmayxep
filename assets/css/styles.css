@@ -1430,7 +1430,9 @@ ul.slick-dots {
         box-shadow: 0 0 2px 1px #e7dfdf;
         margin-left: 15px;
     }
-
+    .company-hotline {
+        display: none;
+    }
     .bottom-header nav {}
 
     .bottom-header li.header-navbar-item {
