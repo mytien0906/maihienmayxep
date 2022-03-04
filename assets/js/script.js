@@ -37,7 +37,18 @@ $(document).ready(function () {
                 centerMode: true,
                 centerPadding: 0,
             }
-        }]
+        },
+        {
+            breakpoint: 500,
+            infinite: true,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                centerPadding: 0,
+            }
+        },
+    ]
 
     });
 });

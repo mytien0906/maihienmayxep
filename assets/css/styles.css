@@ -1330,7 +1330,10 @@ ul.slick-dots {
 /* END FOOTER */
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-
+    .customer-item .customer-item-block .slider{
+        padding-left: 0px;
+    padding-right: 18px;
+    }
     /* START HEADER */
     .main-header {
         margin-top: 10px;
@@ -1492,8 +1495,15 @@ ul.slick-dots {
         padding-top: 0;
     }
 }
-
+@media screen and (max-width: 830px){
+    .slider-item .your-class img {
+        margin-left: 42px;
+    }
+}
 @media screen and (max-width: 768px) {
+    .slider-item .your-class img {
+        margin-left: 15px;
+    }
     .top-header-block .company-address{
         padding: 13px;
     }
@@ -1567,15 +1577,26 @@ ul.slick-dots {
         bottom: 130px;
     }
 }
+
 @media screen and (max-width:576px){
+    .customer-item .customer-item-block .slider{
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+    .slider-item .your-class img{
+        margin-left: 0;
+    }
     .box-product-block .box-product-item-wrapper .box-product-link img, .box-projects .project-block img{
         height: 300px;
     object-position: center;
     }
+    .slider-item .your-class div{
+        padding-top: 15px;
+    }
     .slider-item .your-class img{
         width: 80px;
         height: 80px;
-        margin-left: 15px;
+        margin: 0 auto;
     }
     .top-header-block .company-address span{
         font-size: 12px;
