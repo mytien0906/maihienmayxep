@@ -35,9 +35,9 @@ $gioithieu = $UserModel->getGioiThieuhbyId();
                 <div class="intro-block">
                     <?= $gioithieu[0]['noidung'] ?>
                 </div>
-                <div class="share-block">
+                <!-- <div class="share-block">
                     <b>Chia sẻ:</b>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

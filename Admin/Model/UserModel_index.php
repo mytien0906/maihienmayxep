@@ -54,6 +54,23 @@ class UserModel extends BaseModel{
             }
         }
     }
+    public function updateLuotXemproduct($id, $luotxem){
+        $ds = 'SELECT id FROM table_product';
+        $dss = $this->select($ds);
+        foreach($dss as $vd){
+            $md5id = md5($vd['id'] . "maixep");
+            if($id == $md5id){
+            //     var_dump($id);
+            // var_dump($md5id);die();
+            $sql = 'UPDATE `table_product` SET `luotxem` = "'.$luotxem.'" WHERE id = '.$vd['id'];
+            // echo( $sql);die();
+            $product = $this->update($sql);
+            // var_dump( $product);die();
+            return $product;
+            }
+        }
+        
+    }
     public function selectSpTheoListId($id_list){
         $pro = 'SELECT id FROM table_product';
         $pros = $this->select($pro);
@@ -242,7 +259,14 @@ class UserModel extends BaseModel{
     
     // Mang xh
     public function getAllMangXH(){
-        $sql = 'SELECT * FROM `table_mxh`';
+        $sql = 'SELECT * FROM `table_mxh` WHERE `loai` = 0';
+        // echo($sql);die();
+        $product = $this->select($sql);
+        return $product;
+    }
+    public function getAllMangXHTop(){
+        $sql = 'SELECT * FROM `table_mxh` WHERE `loai` = 1';
+        // echo($sql);die();
         $product = $this->select($sql);
         return $product;
     }

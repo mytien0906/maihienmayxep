@@ -755,7 +755,13 @@ class UserModel extends BaseModel{
     }
     // Mang xh
     public function getAllMangXH(){
-        $sql = 'SELECT * FROM `table_mxh`';
+        $sql = 'SELECT * FROM `table_mxh` WHERE `loai` = 0';
+        $product = $this->select($sql);
+        return $product;
+    }
+    public function getAllMangXHTop(){
+        $sql = 'SELECT * FROM `table_mxh` WHERE `loai` = 1';
+        // echo($sql);die();
         $product = $this->select($sql);
         return $product;
     }
@@ -780,6 +786,13 @@ class UserModel extends BaseModel{
         $product = $this->insert($sql);
         return $product;
     }
+    public function insertMangxhTop($name, $link, $photo){
+        $date = date("Y-m-d");
+        $sql = "INSERT INTO `table_mxh`(`name`, `link`,`photo`, `ngaytao`,`loai`) VALUES ('$name','$link','$photo','$date','1')";
+        // echo( $sql);die();
+        $product = $this->insert($sql);
+        return $product;
+    }
     public function updaytMangxh($id,$name, $link, $photo){
         $ds = 'SELECT id FROM table_mxh';
         $dss = $this->select($ds);
@@ -789,6 +802,23 @@ class UserModel extends BaseModel{
             //     var_dump($id);
             // var_dump($md5id);die();
             $sql = 'UPDATE `table_mxh` SET `name`="'.$name.'",`link`="'.$link.'",`photo`= "'.$photo.'",`ngaytao`= "'.date("Y-m-d").'" WHERE id = '.$vd['id'];
+            // echo( $sql);die();
+            $product = $this->update($sql);
+            return $product;
+            }
+        }
+    
+    }
+    public function updaytMangxhTop($id,$name, $link, $photo){
+        // $loai = 1;
+        $ds = 'SELECT id FROM table_mxh';
+        $dss = $this->select($ds);
+        foreach($dss as $vd){
+            $md5id = md5($vd['id'] . "maixep");
+            if($id == $md5id){
+            //     var_dump($id);
+            // var_dump($md5id);die();
+            $sql = 'UPDATE `table_mxh` SET `name`="'.$name.'",`link`="'.$link.'",`photo`= "'.$photo.'",`ngaytao`= "'.date("Y-m-d").' " WHERE id = '.$vd['id'];
             // echo( $sql);die();
             $product = $this->update($sql);
             return $product;
@@ -810,7 +840,21 @@ class UserModel extends BaseModel{
             return $product;
             }
         }
-    
+    }
+    public function DeleteMangxhTop($id){
+        $ds = 'SELECT id FROM table_mxh';
+        $dss = $this->select($ds);
+        foreach($dss as $vd){
+            $md5id = md5($vd['id'] . "maixep");
+            if($id == $md5id){
+            //     var_dump($id);
+            // var_dump($md5id);die();
+            $sql = 'DELETE FROM `table_mxh` WHERE  id = '.$vd['id'];
+            // echo($sql);die();
+            $product = $this->delete($sql);
+            return $product;
+            }
+        }
     }
     public function updateHienThiMangxh($id){
         $sql = "UPDATE `table_mxh` SET `hienthi`= 1 WHERE `id` = " .$id;
@@ -1123,9 +1167,9 @@ class UserModel extends BaseModel{
         return $product; 
     }
     // thiet lap thong tin
-    public function updateThieLapThongTin($phantrang_sp,$phantrang_baivet,$diachi,$email,$hotline,$dienthoai,$zalo,$wbsite,$fanpage,$toado,$google_map,$google_analytics,$google_webmaster,$head_js,$Body_js,$tieude,$seo_title,$seo_keyword,$seo_description){
+    public function updateThieLapThongTin($diachi,$email,$hotline,$dienthoai,$zalo,$wbsite,$fanpage,$toado,$google_map,$google_analytics,$google_webmaster,$head_js,$Body_js,$tieude,$seo_title,$seo_keyword,$seo_description){
         $map = str_replace('"',"'",$google_map);
-        $sql = 'UPDATE `thongtin` SET `phantrang_sp`= "'.$phantrang_sp.'" ,`phantrang_baivet`= "'.$phantrang_baivet.'",`diachi`="'.$diachi.'",`email`="'.$email.'",`hotline`="'.$hotline.'",`dienthoai`="'.$dienthoai.'",`zalo`="'.$zalo.'",`wbsite`="'.$wbsite.'",`fanpage`="'.$fanpage.'",`toado`="'.$toado.'",`google_map`= "'.$map.'",`google_analytics`="'.$google_analytics.'",`google_webmaster`="'.$google_webmaster.'",`head_js`="'.$head_js.'",`Body_js`="'.$Body_js.'",`tieude`="'.$tieude.'",`seo_title`="'.$seo_title.'",`seo_keyword`="'.$seo_keyword.'",`seo_description`="'.$seo_description.'" WHERE `id` = 1';
+        $sql = 'UPDATE `thongtin` SET `diachi`="'.$diachi.'",`email`="'.$email.'",`hotline`="'.$hotline.'",`dienthoai`="'.$dienthoai.'",`zalo`="'.$zalo.'",`wbsite`="'.$wbsite.'",`fanpage`="'.$fanpage.'",`toado`="'.$toado.'",`google_map`= "'.$map.'",`google_analytics`="'.$google_analytics.'",`google_webmaster`="'.$google_webmaster.'",`head_js`="'.$head_js.'",`Body_js`="'.$Body_js.'",`tieude`="'.$tieude.'",`seo_title`="'.$seo_title.'",`seo_keyword`="'.$seo_keyword.'",`seo_description`="'.$seo_description.'" WHERE `id` = 1';
 
         // echo($sql);die();
         $product = $this->update($sql);
@@ -1146,21 +1190,23 @@ class UserModel extends BaseModel{
     }
 
     public function getAllCountByMonth($month,$year){
+        // echo($month);die();
         $ds = 'SELECT * FROM table_counter';
         $dss = $this->select($ds);
         foreach($dss as $vd){
-            $dates = date('m',$vd['date']) ;
+            // $dates = date('m',$vd['date']) ;
             // echo($vd['Year']);die();
-            if($month == $dates && $year == $vd['Year']){
-            // var_dump($id);
-            // var_dump($vd['date']);die();
+            if($month == $vd['month'] && $year == $vd['Year']){
+            // var_dump($month);
+            // var_dump($vd['month']);die();
 
             $sql = 'SELECT * FROM `table_counter` WHERE `month` = '.$month.' AND `Year` = '.$year.'';
+            // echo($sql);die();
             $product = $this->select($sql);
             return $product;
             }
         }
-        // echo($sql);die();
+        
         
         
     }

@@ -69,7 +69,9 @@ if(isset($_POST['submit'])){
     $getAllCountBy_muoi = $userModel->getAllCountByMonth(10,$year_vl);
     $getAllCountBy_muoimot = $userModel->getAllCountByMonth(11,$year_vl);
     $getAllCountBy_muoihai = $userModel->getAllCountByMonth(12,$year_vl);
+    // echo(count($getAllCountBy_mot) );die();
 }
+ 
 // var_dump(count($getAllCountBy_ba));die();
 ?>
 <!-- Main content -->

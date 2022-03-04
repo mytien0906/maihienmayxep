@@ -352,6 +352,7 @@
           <li class="nav-item"><a class="nav-link" href="slide.php">Slideshow</a></li>
           <li class="nav-item"><a class="nav-link" href="doi-tac.php">Đối tác</a></li>
           <li class="nav-item"><a class="nav-link" href="mang-xh.php">Mang Xa Hoi</a></li>
+          <li class="nav-item"><a class="nav-link" href="mang-xh-top.php">Mang Xa Hoi Top</a></li>
         </ul>
       </div>
     </li>

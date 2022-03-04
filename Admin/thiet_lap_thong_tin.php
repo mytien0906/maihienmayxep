@@ -12,8 +12,8 @@ $UserModel = new UserModel();
 // }
 
 if(isset ($_POST['submit'])){
-  $phantrang_sp = $_POST['phantrang_sp'];
-  $phantrang_baivet = $_POST['phantrang_baivet'];
+  // $phantrang_sp = $_POST['phantrang_sp'];
+  // $phantrang_baivet = $_POST['phantrang_baivet'];
   $diachi = $_POST['diachi'];
   $email = $_POST['email'];
   $hotline = $_POST['hotline'];
@@ -31,7 +31,7 @@ if(isset ($_POST['submit'])){
   $seo_title = $_POST['seo_title'];
   $seo_keyword = $_POST['seo_keyword'];
   $seo_description = $_POST['seo_description'];
-  $thongtinmins = $UserModel->updateThieLapThongTin($phantrang_sp,$phantrang_baivet,$diachi,$email,$hotline,$dienthoai,$zalo,$wbsite,$fanpage,$toado,$google_map,$google_analytics,$google_webmaster,$head_js,$Body_js,$tieude,$seo_title,$seo_keyword,$seo_description);
+  $thongtinmins = $UserModel->updateThieLapThongTin($diachi,$email,$hotline,$dienthoai,$zalo,$wbsite,$fanpage,$toado,$google_map,$google_analytics,$google_webmaster,$head_js,$Body_js,$tieude,$seo_title,$seo_keyword,$seo_description);
 }
 $thongtinthietlap = $UserModel->GetAllThietLapThongTin();
   //  if(!empty($thongtinthietlap[0]['phantrang_baivet'])) echo $thongtinthietlap[0]['phantrang_baivet'];die();
@@ -55,7 +55,7 @@ $thongtinthietlap = $UserModel->GetAllThietLapThongTin();
                   </p>
                   <form class="forms-sample" method="post">
                     <div class="row">
-                      <div class="col-md-4">
+                      <!-- <div class="col-md-4">
                         <div class="form-group">
                           <label for="exampleInputName1">Phân trang index</label>
                           <input type="text" class="form-control" id="exampleInputName1" name="phantrang_sp" placeholder="Phân trang index" value="<?php if(!empty($thongtinthietlap[0]['phantrang_sp'])) echo $thongtinthietlap[0]['phantrang_sp']?>">
@@ -66,7 +66,7 @@ $thongtinthietlap = $UserModel->GetAllThietLapThongTin();
                           <label for="exampleInputName1">Phân Trang bài viết</label>
                           <input type="text" class="form-control" id="exampleInputName1" name="phantrang_baivet" placeholder="Phân Trang bài viết" value="<?php if(!empty($thongtinthietlap[0]['phantrang_baivet'])) echo $thongtinthietlap[0]['phantrang_baivet'] ?>">
                         </div>
-                      </div>
+                      </div> -->
                       <div class="col-md-4">
                         <div class="form-group">
                           <label for="exampleInputName1">Địa Chỉ</label>

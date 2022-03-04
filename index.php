@@ -30,7 +30,7 @@ $d = count($getIpUser);
 $a = time()-3;
 $b = $a - ($getIpUser[0]['date']);
 if($getIpUser[0]['ip'] == $ip){
-    if($b > 300){
+    if($b > 600){
         // echo(date ('i', $a));die(); 
         $counter = $UserModel->inserCounts($ip);
     }
@@ -168,7 +168,7 @@ include 'slide-index.php' ?>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 card">
                                 <iframe width="360" height="215" src="https://www.youtube.com/embed/
 <?= $video['video_noidung'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <p class="card-text"><?= $video['video_name'] ?></p>
+                                <!-- <p class="card-text"><?= $video['video_name'] ?></p> -->
                             </div>
                         <?php } ?>
                     <?php } ?>
