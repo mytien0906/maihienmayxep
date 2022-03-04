@@ -514,7 +514,7 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     position: relative;
     overflow: hidden;
     display: block;
-    background: #000;
+    background: #fff;
 }
 
 .box-product-categories a.box-product-link:hover img {
@@ -536,11 +536,12 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
     transition: all 0.5s;
 }
 
-.box-product-categories a.detail-pro {
+.box-product-categories a.detail-pro,
+.box-product-block .box-product-item-wrapper a
+{
     color: var(--red-light-color);
-    padding-top: 5px;
+    font-weight: 500;
 }
-
 
 .box-projects {
     background: var(--bg-color);
@@ -1147,7 +1148,7 @@ ul.slick-dots {
 .scrollToTop {
     position: fixed;
     bottom: 65px;
-    right: 25px;
+    right: 38px;
     /* display: none; */
     z-index: 10;
     cursor: pointer;
@@ -1329,7 +1330,10 @@ ul.slick-dots {
 /* END FOOTER */
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-
+    .customer-item .customer-item-block .slider{
+        padding-left: 0px;
+    padding-right: 18px;
+    }
     /* START HEADER */
     .main-header {
         margin-top: 10px;
@@ -1491,8 +1495,15 @@ ul.slick-dots {
         padding-top: 0;
     }
 }
-
+@media screen and (max-width: 830px){
+    .slider-item .your-class img {
+        margin-left: 42px;
+    }
+}
 @media screen and (max-width: 768px) {
+    .slider-item .your-class img {
+        margin-left: 15px;
+    }
     .top-header-block .company-address{
         padding: 13px;
     }
@@ -1559,21 +1570,38 @@ ul.slick-dots {
     .new-item{
         margin-left: 0;
     }
+    .btn-effect{
+        bottom: 215px;
+    }
+    .btn-effect:nth-child(2) {
+        bottom: 130px;
+    }
 }
+
 @media screen and (max-width:576px){
+    .customer-item .customer-item-block .slider{
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+    .slider-item .your-class img{
+        margin-left: 0;
+    }
     .box-product-block .box-product-item-wrapper .box-product-link img, .box-projects .project-block img{
         height: 300px;
     object-position: center;
     }
+    .slider-item .your-class div{
+        padding-top: 15px;
+    }
     .slider-item .your-class img{
         width: 80px;
         height: 80px;
-        margin-left: 15px;
+        margin: 0 auto;
     }
     .top-header-block .company-address span{
         font-size: 12px;
     }
     .contact-block-link img{
-        width: 80%;
+        width: 95%;
     }
 }

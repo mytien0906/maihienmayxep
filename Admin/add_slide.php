@@ -95,7 +95,7 @@ if(isset($_POST['submit'])){
                 class="form-control"
                 id="exampleInputName1"
                 placeholder="Name" 
-                value="<?php if(!empty($getslide[0]['name'])) echo $getdoitac[0]['name']?>"
+                value="<?php if(!empty($getslide[0]['name'])) echo $getslide[0]['name']?>"
               />
             </div>
             <div class="form-group form-hinhanh">

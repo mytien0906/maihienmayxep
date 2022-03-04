@@ -29,10 +29,12 @@
                             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                 <?php foreach($getAllSlide as $key=>$slide){ ?>
-                                    <div class="carousel-item<?= $key == 0 ? ' active' : '' ?>">
-                                        <img src="/Admin/thumb/<?= $slide['photo'] ?>" class="d-block w-100"
+                                    <?php if($slide['hienthi'] == 1){ ?>
+                                        <div class="carousel-item<?= $key == 0 ? ' active' : '' ?>">
+                                            <img src="/Admin/thumb/<?= $slide['photo'] ?>" class="d-block w-100"
                                             alt="...">
-                                    </div>
+                                        </div>
+                                    <?php } ?>
                                     <?php }?>
                                 </div>
                                 <button class="carousel-control-prev" type="button"
