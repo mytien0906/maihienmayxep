@@ -53,9 +53,53 @@
 .congtrinh_noidung {
     line-height: 25px;
 }
-.main-content-construct .project-item-wrapper .project-item-link p{
-    width: 100%; height: 230px; background-size: cover;
-    display: block; background-position: center;
+
+.main-content-construct .project-item-wrapper div div {
+    position: relative;
+}
+
+.main-content-construct .project-item-wrapper .project-item-link {
+    display: block;
+    overflow: hidden;
+}
+
+.main-content-construct .project-item-wrapper .project-item-link::before {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scale3d(0, 1, 1);
+}
+.main-content-construct .project-item-wrapper .project-item-link::after {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: scale3d(1, 0, 1);
+}
+
+.main-content-construct .project-item-wrapper .project-item-link::before,
+.main-content-construct .project-item-wrapper .project-item-link::after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    z-index: 9;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    left: 10px;
+    top: 10px;
+    transform-origin: center;
+}
+
+.main-content-construct .project-item-wrapper .project-item-link:hover:before,
+.main-content-construct .project-item-wrapper .project-item-link:hover::after {
+    transform: scale3d(1, 1, 1);
+    transition: transform 0.5s;
+}
+
+
+.main-content-construct .project-item-wrapper .project-item-link p {
+    width: 100%;
+    height: 230px;
+    background-size: cover;
+    display: block;
+    background-position: center;
 
     -webkit-transition: 0.3s ease-out;
     -moz-transition: 0.3s ease-out;
@@ -67,6 +111,18 @@
     -ms-transform: scale(1, 1);
     transform: scale(1, 1);
 }
+.main-content-construct .project-item-wrapper .project-item-link:hover p {
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    -moz-transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+
 @media screen and (min-width:992px) and (max-width:1200px) {
     .main-content-construct .project-item-wrapper .project-item-info {
 
@@ -109,7 +165,7 @@
         text-overflow: ellipsis;
     }
 
-    .main-content-construct .project-item-wrapper .project-item-link p{
+    .main-content-construct .project-item-wrapper .project-item-link p {
         height: 180px !important;
     }
 
@@ -142,7 +198,7 @@
         font-size: 15px;
     }
 
-    .main-content-construct .project-item-wrapper .project-item-link p{
+    .main-content-construct .project-item-wrapper .project-item-link p {
         height: 180px !important;
     }
 
@@ -164,7 +220,8 @@
         -webkit-line-clamp: 4;
         line-height: 1.1rem;
     }
-    .congtrinh_noidung.tintuc_noidung{
+
+    .congtrinh_noidung.tintuc_noidung {
         -webkit-line-clamp: 3 !important;
     }
 }
@@ -174,6 +231,7 @@
         padding-top: 0px;
         padding-right: 26px;
     }
+
     .main-content-construct .project-item-wrapper .project-item-info.new-item-info {
         padding-top: 0px;
         padding-right: 0;
@@ -182,5 +240,5 @@
     .main-content-construct .project-item-wrapper .project-item-info div {
         -webkit-line-clamp: 4;
     }
-    
+
 }
