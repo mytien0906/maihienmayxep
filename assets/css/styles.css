@@ -609,12 +609,12 @@ span.carousel-control-prev-icon:hover, span.carousel-control-next-icon:hover {
 } */
 
 .project-item-wrapper div div {
-    /* overflow: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     line-height: 20px;
     -webkit-line-clamp: 5;
     display: -webkit-box;
-    -webkit-box-orient: vertical; */
+    -webkit-box-orient: vertical;
 }
 
 .project-item-link::before {
@@ -1123,6 +1123,7 @@ ul.slick-dots {
 
 .info-customer span {
     font-size: 12px;
+    text-align: justify;
 }
 
 @keyframes zoomIn {
