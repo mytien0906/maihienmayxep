@@ -37,7 +37,7 @@ if((isset($_POST['month']) && $_POST['month'] != '') && (isset($_POST['year']) &
     $blank = date('w', strtotime("{$year}-{$month}-01"));
 
 $getAllCouter = $userModel->getAllCouter();
-$thang = date ('m', $getAllCouter[0]['date']);
+// $thang = date ('m', $getAllCouter[0]['date']);
 // var_dump($year);die();
 if(empty($_POST['submit'])){
     $year_vl = 2022;

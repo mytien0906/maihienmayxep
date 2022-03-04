@@ -1090,6 +1090,13 @@ class UserModel extends BaseModel{
         $product = $this->update($sql);
         return $product;
     }
+    public function UpdatePassword($id,$password){
+        $pass = md5("maixep".$password."abc");
+        $sql = 'UPDATE `user` SET `password`="'.$pass.'" WHERE id = '.$id;
+        // echo($sql);die();
+        $product = $this->update($sql);
+        return $product;
+    }
     //thông tin Liên hệ
 
     public function getAllThongTinLienHe(){
