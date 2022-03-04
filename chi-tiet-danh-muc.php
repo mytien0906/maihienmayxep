@@ -1,6 +1,6 @@
 <?php
 require_once ('./Admin/Model/UserModel_index.php');
-include 'head.php';
+// include 'head.php';
 $UserModel = new UserModel();
 if(isset($_GET['ussd'])){
     $geteDanhSach1byId = $UserModel->geteDanhSach1byId($_GET['ussd']);

@@ -17,8 +17,8 @@
         <!-- Link file css -->
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/chi-tiet.css">
-    <link rel="stylesheet" href="./assets/css/cong-trinh.css">
     <link rel="stylesheet" href="./assets/css/gioi-thieu.css">
+    <link rel="stylesheet" href="./assets/css/cong-trinh.css">
     <link rel="stylesheet" href="./assets/css/lien-he.css">
     <link rel="stylesheet" href="./assets/css/tin-tuc.css">
     <link rel="stylesheet" href="./assets/css/video.css">

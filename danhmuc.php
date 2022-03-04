@@ -1,6 +1,5 @@
 <?php
 require_once('./Admin/Model/UserModel_index.php');
-include 'head.php';
 $UserModel = new UserModel();
 $danhsachs = $UserModel->getAlleDanhSach1();
 $tintucs = $UserModel->getAllTintuc();

@@ -1,6 +1,6 @@
 <?php
 require_once ('./Admin/Model/UserModel_index.php');
-include 'head.php';
+// include 'head.php';
 $UserModel = new UserModel();
 $videos = $UserModel->getAllVideo();
 $danhsachs = $UserModel->getAlleDanhSach1();
