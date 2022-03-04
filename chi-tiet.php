@@ -29,13 +29,11 @@ if(isset($_GET['tsst'])){
         </div>
     <!-- End Header -->
     <!-- Main Content -->
-    <div class="main-content-details">
+    <div class="row main-content-details">
         <div class="container">
-            <div class="main-content-wrapper">
-                <div class="main-content-left">
+            <div class="row main-content-wrapper">
                    <?php include 'danhmuc.php' ?>
-                </div>
-                <div class="main-content-right">
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 main-content-right">
                     <div class="title">
                         <h2>
                             <p class="title">

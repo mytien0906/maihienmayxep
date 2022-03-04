@@ -102,7 +102,7 @@ include 'slide-index.php' ?>
                                             <a href="chi-tiet-san-pham.php?id=<?= md5($proudct['id'] . "maixep") ?>&mssid=<?= md5($proudct['id_list'] . "maixep") ?>" class="box-product-link">
                                                 <img src="./Admin/thumb/<?= $proudct['photo'] ?>" alt="cong trinh"></a>
                                             <h3><?= $proudct['tenvi'] ?></h3>
-                                            <a href="chi-tiet-san-pham.php?id=<?= md5($proudct['id'] . "maixep") ?>&mssid=<?= md5($proudct['id_list'] . "maixep") ?>">Chi tiết</a>
+                                            <a href="chi-tiet-san-pham.php?id=<?= md5($proudct['id'] . "maixep") ?>&mssid=<?= md5($proudct['id_list'] . "maixep") ?>" class="detail-pro">Chi tiết</a>
                                         </div>
                                     <?php } ?>
                                 <?php } ?>
@@ -112,6 +112,7 @@ include 'slide-index.php' ?>
                 <?php } ?>
             <?php } ?>
         </div>
+        
         <div class="box-projects">
             <div class="container">
                 <h2><a href="#" class="title">DỰ ÁN CÔNG TRÌNH</a></h2>
@@ -142,13 +143,13 @@ include 'slide-index.php' ?>
                 <div class="row box-fields-wrapper">
                     <?php foreach ($dichvus as $dichvu) { ?>
                         <?php if ($dichvu['noibat'] == 1) { ?>
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 box-field-item">
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 box-field-item">
                                 <a href="chi-tiet.php?tsst=<?= md5($dichvu['dichvu_id'] . "maixep") ?>" class="box-field-link">
                                     <img src="./Admin/thumb/<?= $dichvu['photo'] ?>" alt="hinh anh cong trinh"></a>
                                 <div class="box-field-info">
                                     <a href="chi-tiet.php?tsst=<?= md5($dichvu['dichvu_id'] . "maixep") ?>" class="box-field-title">
-                                            <?= $dichvu['dichvu_name'] ?>
-                                        </a>
+                                        <?= $dichvu['dichvu_name'] ?>
+                                    </a>
                                     <p><?= htmlspecialchars_decode($dichvu['dichvu_noidung']) ?>
                                     </p>
                                 </div>
@@ -164,7 +165,7 @@ include 'slide-index.php' ?>
                 <div class="row box-product-block">
                     <?php foreach ($videos as $video) { ?>
                         <?php if ($video['noibat'] == 1) { ?>
-                            <div class="col-xl-4 col-lg-4 col-md-6 card">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 card">
                                 <iframe width="360" height="215" src="https://www.youtube.com/embed/
 <?= $video['video_noidung'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <p class="card-text"><?= $video['video_name'] ?></p>

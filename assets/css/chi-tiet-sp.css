@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     margin: 10px 0;
+    line-height: 27px;
 }
 .price-product{
     margin-left: 15px;
@@ -45,4 +46,7 @@
 }
 .pagination-product .pagination{
     justify-content: center;
+}
+.show-info> p{
+    line-height: 27px;
 }

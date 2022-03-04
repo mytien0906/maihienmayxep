@@ -31,11 +31,9 @@ else{
     <!-- Main Content -->
     <div class="main-content-detail-products">
         <div class="container">
-            <div class="main-content-wrapper">
-                <div class="main-content-left">
+            <div class="row main-content-wrapper">
                 <?php include 'danhmuc.php' ?>
-                </div>
-                <div class="main-content-right">
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12  main-content-right">
                     <div class="new-block">
                         <div class="new-item-wrapper">
                             <?php foreach($getproductbyId as $chitiet){ ?>
@@ -76,7 +74,7 @@ else{
                             <h2><span class="title">SẢN PHẨM CÙNG LOẠI</span></h2>
                             <div class="row">
                                 <?php foreach($selectSpTheoListId as $select){ ?>
-                                <div class="col-xl-4 col-lg-4">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                     <div class="box-product-item-wrapper">
                                         <a href="chi-tiet-san-pham.php?id=<?= md5($select['id'] . "maixep") ?>&mssid=<?= md5($select['id_list'] . "maixep") ?>" class="box-product-link">
                                             <img src="./Admin/thumb/<?= $select['photo'] ?>"
@@ -86,8 +84,6 @@ else{
                                 </div>
                                 <?php } ?>
                             </div>
-
-
                         </div>
                     </div>
                     <!-- <nav class="pagination-product">

@@ -21,41 +21,42 @@ $mangxhs = $UserModel->getAllMangXH();
 </div>
 <!-- End Header -->
 <!-- Main Content -->
-<div class="main-content-news">
+<div class="main-content-construct">
     <div class="container">
         <div class="row main-content-wrapper">
             <?php include 'danhmuc.php' ?>
-            <div class="col-xl-8 col-lg-8  main-content-right">
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 main-content-right">
                 <div class="title">
                     <h2>
                         <p class="title">TIN TỨC</p>
                     </h2>
                 </div>
-                <div class="new-block">
-                    <?php foreach ($tintucs as $tintuc) {
-                        if ($tintuc['hienthi'] == 1) { ?>
-                            <div class="row new-item-wrapper">
-                                <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-xs-3">
-                                    <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-link"
-                                    >
-                                        <img src="./Admin/thumb/<?= $tintuc['photo'] ?>" alt="hinh anh cong trinh">
-                                    </a>
+                <?php foreach ($tintucs as $tintuc) {
+                    if ($tintuc['hienthi'] == 1) { ?>
+                        <div class="project-block">
+                            <div class="project-item-wrapper">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-5">
+                                    <div>
+                                        <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="project-item-link">
+                                            <p style="background-image: url('/Admin/thumb/<?= $tintuc['photo'] ?>');"></p>
+                                    </div>
                                 </div>
-                                <div class="col-xl-8 col-lg-8 col-md-9 col-sm-9 col-xs-9 new-item-info tintuc">
-                                    <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="new-item-title">
+                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-7 project-item-info new-item-info">
+                                    <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="project-item-title">
                                         <?= $tintuc['tintuc_name'] ?>
                                     </a>
-                                    <span class="date-publish">Ngày đăng: <?= $tintuc['tintuc_ngaytao'] ?></span>
-                                    <div class="tintuc_noidung">
+                                    <p class="date-publish">Ngày đăng: <?= $tintuc['tintuc_ngaytao'] ?></p>
+                                    <div class="congtrinh_noidung tintuc_noidung">
+
                                         <p> <?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?> </p>
                                     </div>
-                                    <a href="chi-tiet.html" class="btn-load-more">Xem Thêm</a>
+                                    <a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep") ?>" class="btn-load-more">Xem Thêm</a>
                                 </div>
                             </div>
-                    <?php }
-                    } ?>
 
-                </div>
+                        </div>
+                <?php }
+                } ?>
             </div>
         </div>
     </div>
@@ -72,7 +73,7 @@ $mangxhs = $UserModel->getAllMangXH();
         return result + '...';
     }
 
-    var str = $('.tintuc .tintuc_noidung').text();
-    var result = trimText(str, 250);
-    $('.tintuc .tintuc_noidung').text(result);
+    var str = $('.tintuc_noidung').text();
+    var result = trimText(str, 350);
+    $('.tintuc_noidung').text(result);
 </script>
