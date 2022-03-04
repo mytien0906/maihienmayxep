@@ -1148,7 +1148,7 @@ ul.slick-dots {
 .scrollToTop {
     position: fixed;
     bottom: 65px;
-    right: 25px;
+    right: 38px;
     /* display: none; */
     z-index: 10;
     cursor: pointer;
@@ -1560,6 +1560,12 @@ ul.slick-dots {
     .new-item{
         margin-left: 0;
     }
+    .btn-effect{
+        bottom: 215px;
+    }
+    .btn-effect:nth-child(2) {
+        bottom: 130px;
+    }
 }
 @media screen and (max-width:576px){
     .box-product-block .box-product-item-wrapper .box-product-link img, .box-projects .project-block img{
@@ -1575,6 +1581,6 @@ ul.slick-dots {
         font-size: 12px;
     }
     .contact-block-link img{
-        width: 80%;
+        width: 95%;
     }
 }
