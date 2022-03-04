@@ -27,16 +27,14 @@ $time = time();
 // var_dump($f);var_dump($e);die();
 // var_dump($c);die();
 $d = count($getIpUser);
-$a = time()-3;
+$a = time() - 3;
 $b = $a - ($getIpUser[0]['date']);
-if($getIpUser[0]['ip'] == $ip){
-    if($b > 600){
+if ($getIpUser[0]['ip'] == $ip) {
+    if ($b > 600) {
         // echo(date ('i', $a));die(); 
         $counter = $UserModel->inserCounts($ip);
     }
-     
-}
-else{
+} else {
     $counter = $UserModel->inserCounts($ip);
 }
 
@@ -44,14 +42,14 @@ else{
 //     echo(1);die();
 //     $counter = $UserModel->inserCounts($ip);
 //     $user_online = $UserModel->inserUser_online($ip);
-    
+
 //     var_dump($user_online);
 // }
 // else{
 //     if($getIpUser[0]['ip'] != $ip ){
 //         $counter = $UserModel->inserCounts($ip);
 //         $user_online = $UserModel->inserUser_online($ip);
-        
+
 //     }
 // }
 // $a = date ('i', $getIpUser[0]['date']);
@@ -112,7 +110,7 @@ include 'slide-index.php' ?>
                 <?php } ?>
             <?php } ?>
         </div>
-        
+
         <div class="box-projects">
             <div class="container">
                 <h2><a href="#" class="title">DỰ ÁN CÔNG TRÌNH</a></h2>
@@ -192,8 +190,11 @@ include 'slide-index.php' ?>
                                                 <h3><a href="chi-tiet.php?id_tintuc=<?= md5($tintuc['tintuc_id'] . "maixep")  ?>" class="new-item-title">
                                                         <?= $tintuc['tintuc_name'] ?>
                                                     </a></h3>
-                                                <p><?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?>
-                                                </p>
+                                                    <div class="congtrinh_noidung tintuc_noidung">
+                                                        
+                                                        <p><?= htmlspecialchars_decode($tintuc['tintuc_noidung']) ?>
+                                                        </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -249,7 +250,7 @@ include 'map-index.php' ?>
         return result + '...';
     }
 
-    var str = $('.tintuc .tintuc_noidung').text();
-    var result = trimText(str, 200);
-    $('.tintuc .tintuc_noidung').text(result);
+    var str = $('.tintuc_noidung').text();
+    var result = trimText(str, 300);
+    $('.tintuc_noidung').text(result);
 </script>
