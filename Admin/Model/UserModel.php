@@ -608,7 +608,7 @@ class UserModel extends BaseModel{
         foreach($videos as $vd){
             $md5id = md5($vd['video_id'] . "maixep");
             
-            if($id = $md5id){
+            if($id == $md5id){
             //     var_dump($id);
             // var_dump($md5id);die();
                 $sql = 'SELECT * FROM `table_video` WHERE  video_id = '.$vd['video_id'];

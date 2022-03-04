@@ -5,6 +5,7 @@ require_once ('./Model/UserModel.php');
 $UserModel = new UserModel();
 
 if(!empty($_GET['video_id'])){
+  // echo ($_GET['video_id']);die();
   $getvideo = $UserModel->getVideobyId($_GET['video_id']);
 }
 $error = "";
@@ -92,6 +93,7 @@ if(isset($_POST['submit'])){
                 </div>
               <?php } ?>
           <form method="post" enctype="multipart/form-data" class="forms-sample">
+            <?php foreach($getvideo as $video_as) {?>
             <div class="form-group">
               <label for="exampleInputName1">Tên</label>
               <input
@@ -100,7 +102,7 @@ if(isset($_POST['submit'])){
                 class="form-control"
                 id="exampleInputName1"
                 placeholder="Name" 
-                value="<?php if(!empty($getvideo[0]['video_name'])) echo $getvideo[0]['video_name']?>"
+                value="<?php if(!empty($video_as['video_name'])) echo $video_as['video_name']?>"
               />
             </div>
             <div class="form-group">
@@ -110,15 +112,16 @@ if(isset($_POST['submit'])){
                 class="form-control"
                 id="exampleTextarea1"
                 rows="4"
-              ><?php if(!empty($getvideo[0]['video_noidung'])) echo $getvideo[0]['video_noidung']?></textarea>
+              ><?php if(!empty($video_as['video_noidung'])) echo $video_as['video_noidung']?></textarea>
             </div>
             <div class="form-group form-hinhanh">
                 Chọn file để upload:
               <input type="file" name="fileupload" id="fileupload"/>
               <?php if(!empty($getvideo[0]['photo'])){?>
-              <img src="./thumb/<?= $getvideo[0]['photo']?>" alt="">
+              <img src="./thumb/<?= $video_as['photo']?>" alt="">
               <?php } ?>
             </div>
+            <?php }?>
             <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
             <button class="btn btn-light" name="reset">Cancel</button>
           </form>
