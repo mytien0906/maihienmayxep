@@ -107,7 +107,6 @@ if (isset($_POST['submit-contact'])) {
             </div>
         </div>
     </div>
-
 </div>
 </div>
 </div>
